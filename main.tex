@@ -7,7 +7,6 @@
 \usepackage{xcolor}
 \usepackage{tabularx}
 \usepackage{enumitem}
-\usepackage{fontawesome5}
 \usepackage[hidelinks]{hyperref}
 \usepackage[most]{tcolorbox}
 
@@ -44,7 +43,7 @@
 }
 
 \newcommand{\project}[4]{%
-  \textbf{\href{#2}{#1 \faGithub}}\hfill{\footnotesize\color{resumeMuted}#3}\\
+  \textbf{\href{#2}{#1 | GitHub}}\hfill{\footnotesize\color{resumeMuted}#3}\\
   {\footnotesize\color{resumeMuted}#4}
   \vspace{1pt}
 }
@@ -55,8 +54,8 @@
 }
 
 \newcommand{\skillrow}[2]{%
-  \textbf{#1}\\[-1pt]
-  {\footnotesize #2}\vspace{5pt}
+  \textbf{#1}\par
+  {\footnotesize #2}\par\vspace{5pt}
 }
 
 \begin{document}
@@ -64,10 +63,10 @@
 \begin{tabularx}{\linewidth}{X r}
   {\fontsize{24}{26}\selectfont\bfseries PARTH THAKRE} &
   \begin{tabular}{r}
-    {\footnotesize +91-7420903522 \faPhone}\\
-    {\footnotesize \href{mailto:parthsthakre@gmail.com}{parthsthakre@gmail.com} \faEnvelope}\\
-    {\footnotesize \href{https://github.com/parth-thakre}{github.com/parth-thakre} \faGithub}\\
-    {\footnotesize \href{https://www.linkedin.com/parthsthakre/}{linkedin.com/in/parthsthakre} \faLinkedin}
+    {\footnotesize +91-7420903522}\\
+    {\footnotesize \href{mailto:parthsthakre@gmail.com}{parthsthakre@gmail.com}}\\
+    {\footnotesize \href{https://github.com/parth-thakre}{github.com/parth-thakre}}\\
+    {\footnotesize \href{https://www.linkedin.com/parthsthakre/}{linkedin.com/in/parthsthakre}}
   \end{tabular}
 \end{tabularx}
 
@@ -77,12 +76,13 @@
 \vspace{2pt}
 
 \sectionbar{PROFESSIONAL SUMMARY}
-{\small
+{\small\raggedright
 B.Tech Computer Science student with honors in Artificial Intelligence and Data Science. Builds local-first AI products, LLM evaluation systems, agentic workflow tools, and production-minded ML pipelines. Comfortable owning full-stack systems across Electron, React, TypeScript, Python, FastAPI, Flask, PyTorch, Docker, and OpenAI-compatible model stacks. Strong bias toward practical AI: retrieval, OCR, model orchestration, benchmark design, automation, and clean developer workflows.
-}
+\par}
 
 \vspace{3pt}
 \begin{minipage}[t]{0.66\linewidth}
+  \raggedright
   \sectionbar{SELECTED PROJECTS}
 
   \project{Threads}{https://github.com/parth-thakre/threads}{Electron, React, TypeScript, Azure AI}{Local-first desktop AI workspace}
@@ -120,6 +120,7 @@ B.Tech Computer Science student with honors in Artificial Intelligence and Data 
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.30\linewidth}
+  \raggedright
   \sectionbar{TECHNICAL SKILLSETS}
   \skillrow{Languages}{Python, TypeScript, JavaScript, C/C++, Java, Bash}
   \skillrow{AI \& ML}{PyTorch, TensorFlow, YOLOv8, U-Net, BART, OCR, RAG, LLM evaluation}
