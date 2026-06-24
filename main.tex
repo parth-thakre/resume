@@ -14,6 +14,7 @@
 \definecolor{resumeMuted}{HTML}{6D7480}
 \definecolor{resumePaper}{HTML}{F7F7F5}
 \definecolor{resumeRule}{HTML}{D8DDE3}
+\definecolor{resumePale}{HTML}{E9EDF1}
 
 \pagecolor{resumePaper}
 \color{resumeInk}
@@ -43,14 +44,14 @@
 }
 
 \newcommand{\project}[4]{%
-  \textcolor{resumeInk}{\rule{2pt}{10pt}}\hspace{5pt}\textbf{\href{#2}{#1 | GitHub}}\hfill{\footnotesize\color{resumeMuted}#3}\\
-  \hspace*{7pt}{\footnotesize\color{resumeMuted}#4}
+  \noindent\colorbox{resumeInk}{\rule{0pt}{13pt}\hspace{5pt}}\hspace{7pt}\textbf{\href{#2}{#1 | GitHub}}\hfill{\footnotesize\color{resumeMuted}#3}\\
+  \hspace*{17pt}{\footnotesize\color{resumeMuted}#4}
   \vspace{1pt}
 }
 
 \newcommand{\role}[3]{%
-  \textcolor{resumeInk}{\rule{2pt}{10pt}}\hspace{5pt}\textbf{#1}\hfill{\footnotesize\color{resumeMuted}#2}\\
-  \hspace*{7pt}{\footnotesize\color{resumeMuted}#3}
+  \noindent\colorbox{resumeInk}{\rule{0pt}{13pt}\hspace{5pt}}\hspace{7pt}\textbf{#1}\hfill{\footnotesize\color{resumeMuted}#2}\\
+  \hspace*{17pt}{\footnotesize\color{resumeMuted}#3}
 }
 
 \newcommand{\skillrow}[2]{%
