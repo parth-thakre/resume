@@ -1,233 +1,157 @@
-´%---- Required Packages and Functions ----
+\documentclass[a4paper,10pt]{article}
 
-\documentclass[a4paper,11pt]{article}
-\usepackage{latexsym}
-\usepackage{xcolor}
-\usepackage{float}
-\usepackage{ragged2e}
-\usepackage[empty]{fullpage}
-\usepackage{wrapfig}
-\usepackage{lipsum}
-\usepackage{tabularx}
-\usepackage{titlesec}
-\usepackage{geometry}
-\usepackage{marvosym}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{fontawesome5}
-\usepackage{multicol}
-\usepackage{graphicx}
-\usepackage{cfr-lm}
 \usepackage[T1]{fontenc}
-\setlength{\multicolsep}{0pt} 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
-% Adjust margins
-%\addtolength{\oddsidemargin}{-0.5in}
-%\addtolength{\evensidemargin}{-0.5in}
-%\addtolength{\textwidth}{1in}
+\usepackage[scaled=0.96]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[margin=1.15cm]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
 \usepackage[most]{tcolorbox}
-\tcbset{
-	frame code={}
-	center title,
-	left=0pt,
-	right=0pt,
-	top=0pt,
-	bottom=0pt,
-	colback=gray!20,
-	colframe=white,
-	width=\dimexpr\textwidth\relax,
-	enlarge left by=-2mm,
-	boxsep=4pt,
-	arc=0pt,outer arc=0pt,
+
+\definecolor{resumeInk}{HTML}{323B4C}
+\definecolor{resumeMuted}{HTML}{6D7480}
+\definecolor{resumePaper}{HTML}{F7F7F5}
+\definecolor{resumeRule}{HTML}{D8DDE3}
+
+\pagecolor{resumePaper}
+\color{resumeInk}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=1.2em, itemsep=1.5pt, topsep=2pt, parsep=0pt, partopsep=0pt}
+\renewcommand{\labelitemi}{\textcolor{resumeInk}{\scriptsize$\bullet$}}
+
+\newcommand{\sectionbar}[1]{%
+  \vspace{7pt}
+  \begin{tcolorbox}[
+    enhanced,
+    colback=resumeInk,
+    colframe=resumeInk,
+    boxrule=0pt,
+    arc=0pt,
+    left=7pt,
+    right=7pt,
+    top=4pt,
+    bottom=4pt,
+    width=\linewidth,
+  ]
+    {\color{white}\bfseries\fontsize{9.5}{11}\selectfont #1}
+  \end{tcolorbox}
+  \vspace{3pt}
 }
 
-\urlstyle{same}
-
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item{
-    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
-  }
+\newcommand{\project}[4]{%
+  \textbf{\href{#2}{#1 \faGithub}}\hfill{\footnotesize\color{resumeMuted}#3}\\
+  {\footnotesize\color{resumeMuted}#4}
+  \vspace{1pt}
 }
 
-\newcommand{\resumePOR}[3]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
-    \end{tabular*}
-    \vspace{-2mm}
+\newcommand{\role}[3]{%
+  \textbf{#1}\hfill{\footnotesize\color{resumeMuted}#2}\\
+  {\footnotesize\color{resumeMuted}#3}
 }
 
-\newcommand{\resumeSubheading}[4]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#4}} \\
-        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
-    \end{tabular*}
-    \vspace{-2.4mm}
+\newcommand{\skillrow}[2]{%
+  \textbf{#1}\\[-1pt]
+  {\footnotesize #2}\vspace{5pt}
 }
-
-\newcommand{\resumeProject}[4]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#3}} \\
-        \footnotesize{\textit{#2}} & \footnotesize{#4}
-    \end{tabular*}
-    \vspace{-2.4mm}
-}
-
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
-% \renewcommand{\labelitemii}{$\circ$}
-\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
-\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
-\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
-\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
-\newcommand{\cvsection}[1]{%
-\vspace{2mm}
-\begin{tcolorbox}
-    \textbf{\large #1}
-\end{tcolorbox}
-    \vspace{-4mm}
-}
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
-\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
-\newcolumntype{C}{>{\centering\arraybackslash}X}%
-%---- End of Packages and Functions ------
-
-%-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%
-%%%%%% DEFINE ELEMENTS HERE %%%%%%%
-\newcommand{\name}{Parth Thakre} % Your Name
-\newcommand{\course}{Computer Science and Engineering} % Your Program
-\newcommand{\honors}{Honors in Artificial Intelligence and Data Science}
-\newcommand{\phone}{7420903522} % Your Phone Number
-\newcommand{\emaila}{parthsthakre@gmail.com} %Email 1
 
 \begin{document}
-\fontfamily{cmr}\selectfont
-%----------HEADING-----------------
 
 \begin{tabularx}{\linewidth}{X r}
-  \textbf{\Large \name} & \raisebox{0.0\height}~{+91-\phone } {\footnotesize \faPhone}\\
-  Bachelor of Technology & \href{mailto:\emaila}{\raisebox{0.0\height}~{\emaila } }{\footnotesize \faEnvelope} \\
-  Honors in Artificial Intelligence and Data Science & \href{https://github.com/parth-thakre}{\raisebox{0.0\height}~github.com/parth-thakre }{\footnotesize \faGithub} \\  
-  Shri Ramdeobaba College of Engineering and Management & \href{https://www.linkedin.com/parthsthakre/}{\raisebox{0.0\height}~linkedin.com/in/parthsthakre }{\footnotesize \faLinkedin}
+  {\fontsize{24}{26}\selectfont\bfseries PARTH THAKRE} &
+  \begin{tabular}{r}
+    {\footnotesize +91-7420903522 \faPhone}\\
+    {\footnotesize \href{mailto:parthsthakre@gmail.com}{parthsthakre@gmail.com} \faEnvelope}\\
+    {\footnotesize \href{https://github.com/parth-thakre}{github.com/parth-thakre} \faGithub}\\
+    {\footnotesize \href{https://www.linkedin.com/parthsthakre/}{linkedin.com/in/parthsthakre} \faLinkedin}
+  \end{tabular}
 \end{tabularx}
 
-\section{\textbf{Education}}
-\resumeSubHeadingListStart
-    \resumeSubheading
-      {Shri Ramdeobaba College of Engineering and Management}{Nagpur, Maharashtra}
-      {B.Tech in Computer Science and Engineering (Honors in AI and Data Science); CGPA: 7.64}{2022 – Present}
-    \resumeSubheading
-      {Taywade College}{Nagpur, Maharashtra}
-      {Higher Secondary Certificate (HSC)}{Completed: 2022, Percentage: 77.33\%}
-    \resumeSubheading
-      {Bhavan's Trimurti Nagar School}{Nagpur, Maharashtra}
-      {Central Board of Secondary Education (CBSE)}{Completed: 2020, Percentage: 92.2\%}
-\resumeSubHeadingListEnd
-%------------SUMMARY-----------------
-\section{\textbf{Summary}}
-\vspace{1mm}
-{Honors AI \& Data Science B.Tech candidate focused on software engineering and applied machine learning. Designs and trains ML models and end-to-end pipelines for computer vision and NLP (YOLO, U-Net, BART). Skilled in data preprocessing, augmentation, labeling workflows, and rigorous model evaluation/validation. Builds production-ready inference APIs and containerized deployments using Flask, PyTorch, and Docker. Delivers reproducible and maintainable ML solutions with versioned experiments and performance-driven optimization.}
+\vspace{2pt}
+{\Large AI Engineer \& Software Developer}\\[-2pt]
+\textcolor{resumeRule}{\rule{\linewidth}{1.2pt}}
+\vspace{2pt}
 
-\vspace{0mm}
+\sectionbar{PROFESSIONAL SUMMARY}
+{\small
+B.Tech Computer Science student with honors in Artificial Intelligence and Data Science. Builds local-first AI products, LLM evaluation systems, agentic workflow tools, and production-minded ML pipelines. Comfortable owning full-stack systems across Electron, React, TypeScript, Python, FastAPI, Flask, PyTorch, Docker, and OpenAI-compatible model stacks. Strong bias toward practical AI: retrieval, OCR, model orchestration, benchmark design, automation, and clean developer workflows.
+}
 
+\vspace{3pt}
+\begin{minipage}[t]{0.66\linewidth}
+  \sectionbar{SELECTED PROJECTS}
 
+  \project{Threads}{https://github.com/parth-thakre/threads}{Electron, React, TypeScript, Azure AI}{Local-first desktop AI workspace}
+  \begin{itemize}
+    \item Built a desktop chat app with Azure-backed model access, local conversation persistence, search, memory, and attachment-aware retrieval.
+    \item Implemented file understanding for PDFs, DOCX, PPTX, XLSX, CSV, Markdown, images, and scanned PDFs with OCR in the Electron layer.
+    \item Structured the app across React renderer, Electron main/preload services, and package/release scripts for a desktop-first beta workflow.
+  \end{itemize}
 
+  \project{Story Tourney}{https://github.com/parth-thakre/story-tourney}{Node.js, TypeScript, Next.js, SQLite}{Blind multi-model story tournament platform}
+  \begin{itemize}
+    \item Designed a tournament flow that sends one prompt to multiple LLMs, anonymizes outputs, runs peer review, revision, and ranking rounds.
+    \item Added encrypted OpenRouter key storage, model selection, deterministic mock fallback, and self-hosting scripts for private deployment.
+  \end{itemize}
 
+  \project{SemKerBot}{https://github.com/parth-thakre/SemKerBot-updated-teams}{Python, FastAPI, Semantic Kernel, Docker}{Local Kinaxis query bot with Teams-ready agent layer}
+  \begin{itemize}
+    \item Built a local agent/API split for querying Kinaxis through a FastAPI service and an LLM-powered assistant layer.
+    \item Supported Azure OpenAI, LM Studio, and Ollama-style OpenAI-compatible endpoints with Docker-based local setup.
+  \end{itemize}
 
+  \project{AISB}{https://github.com/parth-thakre/project3}{Python, CLI, Simulation, Benchmarking}{AI Society Benchmark}
+  \begin{itemize}
+    \item Created a benchmark that evaluates LLMs by running artificial societies and measuring economic, social, and institutional dynamics.
+    \item Refactored toward a package-first CLI, canonical data layout, typed artifact schemas, and multi-axis scorecards to reduce reward hacking.
+  \end{itemize}
 
-%-----------PROJECTS-----------------
-\section{\textbf{Projects}}
-\resumeSubHeadingListStart
-    \resumeProject
-        {PatchSense – Deep Learning Based Highway Patch Detector} %Project Name
-        {In-House Project (Internship)} %Project Name, Location Name
-        {} %Event Dates
-    
-    \resumeItemListStart
-        \item {Developed a YOLO segmentation model to detect pothole repair patches from high-resolution highway images.}
-        \item {Containerized the YOLO pipeline with Docker for reliable, repeatable deployments.}
-        \item {Automated dataset ingestion and pre-processing to eliminate manual intervention.}
-        \item {Monitored inference latency and throughput, defining SLIs (frame-processing time) and SLOs (95\% of frames <5s).}
-    \resumeItemListEnd
-    \vspace{-2mm}
-    
-    \resumeProject
-        {\href{https://github.com/parth-thakre/frontend.git}{Intelligent Messaging Summarization and Scheduling App  \faGithub}} %Project Name
-      {Contributor} %Project Name, Location Name
-        {} %Event Dates
-    
-    \resumeItemListStart
-        \item {Built a Flask application leveraging spaCy, NLTK, and Facebook BART to extract key information, summarize content, and auto-schedule events from user emails and WhatsApp notifications.}
-        \item {Integrated Gmail and Google Calendar APIs with secure OAuth 2.0 and RESTful APIs for full functionality.}
-        \item {Reduced manual scheduling time by 25\% through NLP-based automation, calendar syncing, and dynamic event notifications.}
-    \resumeItemListEnd
-    \vspace{-2mm}
+  \sectionbar{INTERNSHIP}
+  \role{Masycoda Solutions}{May 2025 - July 2025}{AI and Data Science Intern}
+  \begin{itemize}
+    \item Engineered a YOLO-based highway patch detection pipeline for high-resolution road imagery.
+    \item Containerized model training and inference workflows with Docker for repeatable deployment.
+    \item Collaborated with product, QA, and field stakeholders to define quality benchmarks and operational constraints.
+  \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.30\linewidth}
+  \sectionbar{TECHNICAL SKILLSETS}
+  \skillrow{Languages}{Python, TypeScript, JavaScript, C/C++, Java, Bash}
+  \skillrow{AI \& ML}{PyTorch, TensorFlow, YOLOv8, U-Net, BART, OCR, RAG, LLM evaluation}
+  \skillrow{Backend}{FastAPI, Flask, Express, REST APIs, SQLite, Pydantic}
+  \skillrow{Frontend}{React, Next.js, Vite, Electron, HTML, CSS}
+  \skillrow{Cloud \& Tools}{Docker, Git, GitHub, Linux, Azure OpenAI, OpenRouter, AWS basics}
 
-    \resumeProject
-        {Embryo Analysis} %Project Name
-        {Contributor} %Project Name, Location Name
-        {} %Event Dates
-    
-    \resumeItemListStart
-        \item {Designed a U-Net model with 6-channel input for embryo cell boundary detection in multifocal grayscale images.}
-        \item {Trained using PyTorch with Adam optimizer and dice loss, achieving high precision in segmentation tasks.}
-    \resumeItemListEnd
-      
-  \resumeSubHeadingListEnd
-\vspace{-8.5mm}
-%-----------EXPERIENCE-----------------
-\section{\textbf{Internship}}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Masycoda Solutions (AI and Data Science Intern)}{}
-      
-      {May 2025 - July 2025}{}
-      \vspace{-5.0mm}
-    \resumeItemListStart
-        \item{Engineered and optimized a YOLO-based vision pipeline to detect highway patch repairs.}
-        \item{Implemented end-to-end data workflows—including pre-processing, model training, and inference-containerized using Docker for seamless production deployment.}
-        \item{Collaborated cross-functionally with product managers, QA engineers, and field teams to define requirements and establish performance benchmarks.}
-    \resumeItemListEnd
-    \vspace{-3.0mm}
-%-----------Technical skills-----------------
-\section{\textbf{Technical Skills and Interests}}
-\begin{itemize}[leftmargin=0.05in, label={}]
-    \small{\item{
-        \textbf{Languages}{: Python, C/C++, Java, JavaScript, Bash} \\
-        \textbf{Dev Tools \& VCS}{: Git, GitHub, VSCode, Vim} \\
-        \textbf{OS \& Environments}{: Linux (Arch, Ubuntu), Windows} \\
-        \textbf{Cloud \& Containers}{: AWS (EC2, S3 – basics), Docker (image building, containerization)} \\
-        \textbf{Frameworks \& ML}{: PyTorch, TensorFlow, YOLOv8, Flask, ReactJS} \\
-        \textbf{Relevant Coursework}{: Operating Systems, DBMS, Data Structures \& Algorithms} \\
-        \textbf{Techniques}{: Semantic Segmentation, Transfer Learning, Data Augmentation} \\
-        \textbf{Soft Skills}{: Debugging, Problem Solving, Quick Self-learning, Adaptability} \\
-        \textbf{Areas of Interest}{: Data Science Engineering, ML Infrastructure, Cloud AI, Generative AI}
-    }}
-\end{itemize}
+  \sectionbar{EDUCATION}
+  \textbf{Shri Ramdeobaba College of Engineering and Management}\\
+  {\footnotesize B.Tech in Computer Science and Engineering}\\
+  {\footnotesize Honors in AI and Data Science}\\
+  {\footnotesize CGPA: 7.64 \hfill 2022 - Present}
 
- \vspace{-16pt}
+  \vspace{6pt}
+  \textbf{Taywade College}\\
+  {\footnotesize Higher Secondary Certificate}\\
+  {\footnotesize 77.33\% \hfill 2022}
 
+  \vspace{6pt}
+  \textbf{Bhavan's Trimurti Nagar School}\\
+  {\footnotesize CBSE}\\
+  {\footnotesize 92.2\% \hfill 2020}
+
+  \sectionbar{FOCUS AREAS}
+  {\footnotesize
+  Local-first AI tools\\
+  Agentic workflows\\
+  LLM benchmarking\\
+  Computer vision pipelines\\
+  ML infrastructure\\
+  Developer tooling
+  }
+\end{minipage}
 
 \end{document}
