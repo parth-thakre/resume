@@ -43,15 +43,29 @@
   \vspace{3pt}
 }
 
+\newcommand{\headingmarker}{%
+  {\setlength{\fboxsep}{0pt}\colorbox{resumeInk}{\rule{8pt}{13pt}}}%
+}
+
 \newcommand{\project}[4]{%
-  \noindent\colorbox{resumeInk}{\rule{0pt}{13pt}\hspace{5pt}}\hspace{7pt}\textbf{\href{#2}{#1 | GitHub}}\hfill{\footnotesize\color{resumeMuted}#3}\\
-  \hspace*{17pt}{\footnotesize\color{resumeMuted}#4}
-  \vspace{1pt}
+  \par\noindent
+  \begin{tabularx}{\linewidth}{@{}p{1.2em}@{}Xr@{}}
+    \raisebox{-1.5pt}{\headingmarker} &
+    \textbf{\href{#2}{#1 | GitHub}} &
+    {\footnotesize\color{resumeMuted}#3} \\
+    & {\footnotesize\color{resumeMuted}#4} &
+  \end{tabularx}
+  \par\vspace{1pt}
 }
 
 \newcommand{\role}[3]{%
-  \noindent\colorbox{resumeInk}{\rule{0pt}{13pt}\hspace{5pt}}\hspace{7pt}\textbf{#1}\hfill{\footnotesize\color{resumeMuted}#2}\\
-  \hspace*{17pt}{\footnotesize\color{resumeMuted}#3}
+  \par\noindent
+  \begin{tabularx}{\linewidth}{@{}p{1.2em}@{}Xr@{}}
+    \raisebox{-1.5pt}{\headingmarker} &
+    \textbf{#1} &
+    {\footnotesize\color{resumeMuted}#2} \\
+    & {\footnotesize\color{resumeMuted}#3} &
+  \end{tabularx}
 }
 
 \newcommand{\skillrow}[2]{%
