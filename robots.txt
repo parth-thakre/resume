@@ -22,4 +22,4 @@ Disallow:
 User-agent: *
 Disallow:
 
-Sitemap: http://resume.psthl.com/sitemap.xml
+Sitemap: https://resume.psthl.com/sitemap.xml

@@ -6,9 +6,9 @@ This site intentionally exposes machine-readable resume artifacts for AI agents,
 
 ## Preferred Agent Entry Points
 
-- Canonical HTML: http://resume.psthl.com/
-- Markdown resume: http://resume.psthl.com/resume.md
-- PDF resume: http://resume.psthl.com/assets/Parth_Thakre_Resume.pdf
+- Canonical HTML: https://resume.psthl.com/
+- Markdown resume: https://resume.psthl.com/resume.md
+- PDF resume: https://resume.psthl.com/assets/Parth_Thakre_Resume.pdf
 - GitHub: https://github.com/parth-thakre
 - LinkedIn: https://www.linkedin.com/in/parthsthakre/
 - Email: mailto:parth@masycoda.com
