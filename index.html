@@ -106,6 +106,7 @@
       .button {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         min-height: 2.75rem;
         padding: 0.72rem 1rem;
         border: 1px solid var(--ink);
@@ -127,6 +128,12 @@
         gap: 0.65rem 1rem;
         color: var(--muted);
         font-size: 0.95rem;
+      }
+
+      .contact a,
+      .project a,
+      footer a {
+        overflow-wrap: anywhere;
       }
 
       .preview-stack {
@@ -350,15 +357,161 @@
 
       @media (max-width: 560px) {
         body {
-          font-size: 15px;
+          font-size: 16px;
+          overflow-x: hidden;
+        }
+
+        .shell {
+          width: min(100% - 1.25rem, 1180px);
+        }
+
+        .hero {
+          gap: 1.6rem;
+          padding: 1.35rem 0 2rem;
+        }
+
+        .eyebrow {
+          margin-bottom: 0.8rem;
+          font-size: 0.76rem;
+        }
+
+        h1 {
+          max-width: 7.2ch;
+          font-size: clamp(3.05rem, 17vw, 4.2rem);
+          line-height: 0.9;
+        }
+
+        .subtitle {
+          max-width: none;
+          font-size: clamp(1.24rem, 7vw, 1.7rem);
+          line-height: 1.08;
+        }
+
+        .summary {
+          margin-top: 1rem;
+          font-size: 1rem;
+          line-height: 1.58;
         }
 
         .actions {
           display: grid;
+          grid-template-columns: 1fr;
+          gap: 0.65rem;
+          margin-top: 1.3rem;
         }
 
         .button {
-          justify-content: center;
+          width: 100%;
+          min-height: 3rem;
+          padding: 0.78rem 0.9rem;
+          text-align: center;
+        }
+
+        .contact {
+          display: grid;
+          gap: 0.45rem;
+          margin-top: 1rem;
+          font-size: 0.92rem;
+        }
+
+        .contact a {
+          display: inline-flex;
+          align-items: center;
+          min-height: 2rem;
+        }
+
+        .preview-stack {
+          align-items: start;
+        }
+
+        .preview-card img {
+          width: min(100%, 300px);
+        }
+
+        .preview-card figcaption,
+        .page-shot figcaption {
+          font-size: 0.84rem;
+        }
+
+        .band {
+          padding: 2rem 0;
+        }
+
+        .section-head {
+          gap: 0.6rem;
+          margin-bottom: 1.2rem;
+        }
+
+        h2 {
+          font-size: clamp(1.65rem, 10vw, 2.25rem);
+          line-height: 1;
+        }
+
+        .section-note {
+          line-height: 1.5;
+        }
+
+        .skills,
+        .proof-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .proof {
+          padding: 1rem;
+        }
+
+        .project {
+          gap: 0.85rem;
+          padding: 1.15rem 0;
+        }
+
+        .project h3,
+        .experience h3,
+        .education h3 {
+          font-size: 1rem;
+        }
+
+        ul {
+          padding-left: 1rem;
+        }
+
+        li + li {
+          margin-top: 0.5rem;
+        }
+
+        .split {
+          gap: 2rem;
+        }
+
+        .document-preview {
+          gap: 1.4rem;
+        }
+
+        footer {
+          padding: 1.4rem 0 2rem;
+        }
+
+        footer .shell {
+          display: grid;
+          gap: 0.3rem;
+        }
+
+        footer span[aria-hidden="true"] {
+          display: none;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .shell {
+          width: min(100% - 1rem, 1180px);
+        }
+
+        h1 {
+          font-size: clamp(2.7rem, 16vw, 3.05rem);
+        }
+
+        .preview-card img {
+          width: 100%;
         }
       }
     </style>
@@ -388,7 +541,7 @@
         </div>
         <div class="preview-stack" aria-label="Resume preview">
           <figure class="preview-card">
-            <img src="/assets/resume-page-1.png" alt="Preview of page one of Parth Thakre's resume">
+            <img src="/assets/resume-page-1.png" width="1191" height="1684" alt="Preview of page one of Parth Thakre's resume">
             <figcaption>Latest two-page resume, rendered from the source PDF.</figcaption>
           </figure>
         </div>
@@ -553,11 +706,11 @@
           </div>
           <div class="document-preview">
             <figure class="page-shot">
-              <img src="/assets/resume-page-1.png" alt="Page one of Parth Thakre's resume">
+              <img src="/assets/resume-page-1.png" width="1191" height="1684" loading="lazy" alt="Page one of Parth Thakre's resume">
               <figcaption>Page 1</figcaption>
             </figure>
             <figure class="page-shot">
-              <img src="/assets/resume-page-2.png" alt="Page two of Parth Thakre's resume">
+              <img src="/assets/resume-page-2.png" width="1191" height="1684" loading="lazy" alt="Page two of Parth Thakre's resume">
               <figcaption>Page 2</figcaption>
             </figure>
           </div>
