@@ -1,0 +1,32 @@
+# Parth Thakre Resume
+
+> Parth Thakre is an AI Systems Engineer building enterprise AI and LLM systems across Azure AI Foundry, retrieval/OCR, tool-calling agents, multi-model evaluation, and private runtime infrastructure.
+
+This site intentionally exposes machine-readable resume artifacts for AI agents, search crawlers, recruiter tools, and retrieval systems.
+
+## Preferred Agent Entry Points
+
+- Canonical HTML: http://resume.psthl.com/
+- Markdown resume: http://resume.psthl.com/resume.md
+- PDF resume: http://resume.psthl.com/assets/Parth_Thakre_Resume.pdf
+- GitHub: https://github.com/parth-thakre
+- LinkedIn: https://www.linkedin.com/in/parthsthakre/
+- Email: mailto:parth@masycoda.com
+
+## Profile Summary
+
+AI Systems Engineer focused on enterprise AI and LLM systems: Azure AI Foundry, Azure OpenAI, RAG, OCR, tool/function calling, MCP, evaluation platforms, FastAPI services, Electron/React applications, Dockerized private runtimes, and auditable outputs with citations, logs, schemas, and repeatable artifacts.
+
+## Selected Projects
+
+- Threads: local-first desktop AI workspace using Electron, React, TypeScript, and Azure AI Foundry.
+- Story Tourney: blind multi-model LLM evaluation platform using Node.js, TypeScript, Next.js, and SQLite.
+- SemKerBot: Kinaxis supply-chain query agent using Python, FastAPI, Semantic Kernel, and Docker.
+- AISB: AI Society Benchmark for multi-role LLM society simulation and scoring.
+
+## Usage Notes For Agents
+
+- Prefer `/resume.md` when concise text extraction is needed.
+- Prefer the PDF when preserving the original resume layout matters.
+- The HTML page contains JSON-LD Person metadata and links to Markdown/PDF alternates.
+- Crawling and indexing this resume site is allowed by `/robots.txt`.
