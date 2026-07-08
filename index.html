@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Parth Thakre, AI Systems Engineer building enterprise AI, LLM systems, evaluation platforms, and private runtime infrastructure.">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#131916">
     <link rel="canonical" href="https://resume.psthl.com/">
     <link rel="alternate" type="text/markdown" href="/resume.md" title="Parth Thakre resume in Markdown">
     <link rel="alternate" type="application/pdf" href="/assets/Parth_Thakre_Resume.pdf" title="Parth Thakre resume PDF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;500;650;800&display=swap" rel="stylesheet">
     <meta property="og:title" content="Parth Thakre - AI Systems Engineer">
     <meta property="og:description" content="Enterprise AI and LLM systems across Azure AI Foundry, RAG, OCR, tool-calling agents, evaluation, and infrastructure.">
     <meta property="og:type" content="website">
@@ -51,17 +55,22 @@
     </script>
     <style>
       :root {
-        color-scheme: light;
-        --ink: oklch(26% 0.036 258);
-        --muted: oklch(47% 0.026 258);
-        --quiet: oklch(92% 0.011 258);
-        --paper: oklch(97% 0.006 95);
-        --panel: oklch(99% 0.004 95);
-        --accent: oklch(55% 0.16 215);
-        --accent-deep: oklch(39% 0.11 225);
-        --rule: oklch(84% 0.012 255);
-        --shadow: 0 24px 80px oklch(24% 0.05 250 / 0.14);
-        font-family: "Aptos", "Segoe UI", system-ui, sans-serif;
+        color-scheme: dark;
+        --bg: oklch(13% 0.012 158);
+        --bg-raised: oklch(17% 0.014 158);
+        --panel: oklch(20% 0.017 158);
+        --panel-strong: oklch(24% 0.021 158);
+        --ink: oklch(92% 0.011 118);
+        --soft: oklch(77% 0.018 135);
+        --muted: oklch(62% 0.024 145);
+        --rule: oklch(35% 0.026 155);
+        --rule-strong: oklch(45% 0.035 155);
+        --amber: oklch(76% 0.145 72);
+        --cyan: oklch(75% 0.105 190);
+        --green: oklch(73% 0.135 148);
+        --rust: oklch(66% 0.145 35);
+        --shadow: 0 24px 80px oklch(8% 0.018 160 / 0.48);
+        font-family: "Source Sans 3", "Aptos", "Segoe UI", system-ui, sans-serif;
       }
 
       * {
@@ -75,75 +84,144 @@
       body {
         margin: 0;
         background:
-          linear-gradient(135deg, oklch(94% 0.024 214) 0 1px, transparent 1px 34px),
-          radial-gradient(circle at 88% 8%, oklch(80% 0.08 205 / 0.35), transparent 32rem),
-          var(--paper);
+          linear-gradient(90deg, oklch(20% 0.014 158 / 0.28) 1px, transparent 1px),
+          linear-gradient(0deg, oklch(20% 0.014 158 / 0.22) 1px, transparent 1px),
+          linear-gradient(180deg, oklch(16% 0.016 158) 0%, var(--bg) 44%, oklch(12% 0.012 158) 100%);
+        background-size: 56px 56px, 56px 56px, auto;
         color: var(--ink);
-        font: 16px/1.6 "Aptos", "Segoe UI", system-ui, sans-serif;
+        font: 400 17px/1.68 "Source Sans 3", "Aptos", "Segoe UI", system-ui, sans-serif;
+      }
+
+      img,
+      svg {
+        max-width: 100%;
       }
 
       a {
         color: inherit;
-        text-decoration-color: oklch(64% 0.12 215 / 0.45);
-        text-underline-offset: 0.18em;
+        text-decoration-color: oklch(75% 0.105 190 / 0.48);
+        text-underline-offset: 0.22em;
+        transition: color 180ms ease, text-decoration-color 180ms ease, border-color 180ms ease, background 180ms ease;
       }
 
       a:hover {
-        text-decoration-color: var(--accent);
+        color: var(--cyan);
+        text-decoration-color: var(--cyan);
       }
 
       .shell {
-        width: min(1180px, calc(100% - clamp(1.25rem, 4vw, 4rem)));
+        width: min(1160px, calc(100% - 40px));
         margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid oklch(35% 0.026 155 / 0.64);
+        background: oklch(13% 0.012 158 / 0.92);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        min-height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.72rem;
+        font-family: "Archivo", "Source Sans 3", system-ui, sans-serif;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .mark::before {
+        content: "";
+        width: 0.78rem;
+        height: 0.78rem;
+        border: 2px solid var(--amber);
+        background: var(--bg);
+        box-shadow: 0 0 0 5px oklch(76% 0.145 72 / 0.12);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        color: var(--soft);
+        font-size: 0.96rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
       }
 
       .hero {
         min-height: auto;
         display: grid;
-        grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.68fr);
-        gap: clamp(2rem, 6vw, 5rem);
+        grid-template-columns: minmax(0, 0.98fr) minmax(360px, 0.72fr);
         align-items: start;
-        padding: clamp(1.75rem, 5vw, 4.25rem) 0 clamp(2.5rem, 5vw, 4.5rem);
-      }
-
-      .hero-copy {
-        padding-top: clamp(0.25rem, 2vw, 1.6rem);
+        gap: 3.5rem;
+        padding: 3.8rem 0 4.5rem;
       }
 
       .eyebrow {
-        margin: 0 0 1.2rem;
-        color: var(--accent-deep);
-        font-size: 0.82rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        margin: 0 0 1.5rem;
+        color: var(--amber);
         font-weight: 800;
-        letter-spacing: 0;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 3.2rem;
+        height: 1px;
+        background: var(--amber);
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Archivo", "Source Sans 3", system-ui, sans-serif;
+        font-weight: 800;
       }
 
       h1 {
+        max-width: 8ch;
         margin: 0;
-        max-width: 8.6ch;
-        font-size: clamp(4.2rem, 13vw, 10rem);
-        line-height: 0.83;
-        letter-spacing: 0;
+        font-size: 6.25rem;
+        line-height: 0.88;
       }
 
       .subtitle {
-        margin: clamp(1rem, 2.4vw, 1.8rem) 0 0;
-        color: var(--muted);
-        font-size: clamp(1.35rem, 3vw, 2.7rem);
+        margin: 1.4rem 0 0;
+        max-width: 18ch;
+        color: var(--cyan);
+        font-family: "Archivo", "Source Sans 3", system-ui, sans-serif;
+        font-size: 2.15rem;
+        font-weight: 700;
         line-height: 1.05;
-        max-width: 16ch;
       }
 
       .summary {
-        max-width: 70ch;
-        margin: clamp(1.4rem, 2.8vw, 2.2rem) 0 0;
-        font-size: clamp(1rem, 1.6vw, 1.18rem);
+        max-width: 65ch;
+        margin: 1.6rem 0 0;
+        color: var(--soft);
+        font-size: 1.16rem;
       }
 
       .actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.8rem;
+        gap: 0.75rem;
         margin-top: 2rem;
       }
 
@@ -151,13 +229,20 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 2.75rem;
-        padding: 0.72rem 1rem;
-        border: 1px solid var(--ink);
+        min-height: 2.9rem;
+        padding: 0.68rem 1rem;
+        border: 1px solid var(--rule-strong);
+        border-radius: 6px;
         background: var(--ink);
-        color: var(--paper);
+        color: var(--bg);
         font-weight: 800;
         text-decoration: none;
+      }
+
+      .button:hover {
+        background: var(--cyan);
+        color: var(--bg);
+        border-color: var(--cyan);
       }
 
       .button.secondary {
@@ -165,13 +250,18 @@
         color: var(--ink);
       }
 
+      .button.secondary:hover {
+        background: var(--panel-strong);
+        color: var(--ink);
+      }
+
       .contact {
-        margin-top: 1.6rem;
         display: flex;
         flex-wrap: wrap;
-        gap: 0.65rem 1rem;
+        gap: 0.6rem 1rem;
+        margin-top: 1.4rem;
         color: var(--muted);
-        font-size: 0.95rem;
+        font-size: 0.98rem;
       }
 
       .contact a,
@@ -180,410 +270,455 @@
         overflow-wrap: anywhere;
       }
 
-      .preview-stack {
-        align-self: start;
+      .hero-board {
         display: grid;
-        align-items: start;
+        gap: 1rem;
       }
 
-      .preview-card {
-        position: relative;
-        margin: 0;
-      }
-
-      .preview-card img {
-        display: block;
-        width: min(100%, 420px);
-        max-height: min(74vh, 680px);
-        object-fit: contain;
-        margin-left: auto;
+      .system-panel,
+      .resume-tile,
+      .proof,
+      .skill,
+      .experience,
+      .education,
+      .page-shot {
         border: 1px solid var(--rule);
+        border-radius: 8px;
+        background: linear-gradient(180deg, oklch(20% 0.017 158 / 0.96), oklch(16% 0.014 158 / 0.98));
         box-shadow: var(--shadow);
-        background: var(--panel);
       }
 
-      .preview-card figcaption {
-        margin-top: 0.8rem;
+      .system-panel {
+        padding: 1rem;
+      }
+
+      .panel-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
         color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .panel-dots {
+        display: flex;
+        gap: 0.36rem;
+      }
+
+      .panel-dots span {
+        width: 0.62rem;
+        height: 0.62rem;
+        border-radius: 999px;
+        background: var(--rule-strong);
+      }
+
+      .panel-dots span:nth-child(1) {
+        background: var(--rust);
+      }
+
+      .panel-dots span:nth-child(2) {
+        background: var(--amber);
+      }
+
+      .panel-dots span:nth-child(3) {
+        background: var(--green);
+      }
+
+      .flow-map {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0.25rem 0 1rem;
+      }
+
+      .node-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.6rem;
+      }
+
+      .node-list span {
+        min-height: 2.6rem;
+        display: flex;
+        align-items: center;
+        border: 1px solid oklch(40% 0.03 155);
+        border-radius: 6px;
+        padding: 0.55rem 0.65rem;
+        color: var(--soft);
+        background: oklch(15% 0.014 158 / 0.76);
+        font-size: 0.94rem;
+        font-weight: 650;
+      }
+
+      .resume-tile {
+        display: grid;
+        grid-template-columns: 132px minmax(0, 1fr);
+        gap: 1rem;
+        align-items: start;
+        padding: 0.85rem;
+      }
+
+      .resume-tile img {
+        display: block;
+        width: 132px;
+        height: 188px;
+        object-fit: contain;
+        object-position: top;
+        border: 1px solid var(--rule-strong);
+        border-radius: 4px;
+        background: oklch(92% 0.01 118);
+      }
+
+      .resume-tile p {
+        margin: 0.35rem 0 0;
+        color: var(--muted);
+      }
+
+      .micro-label {
+        color: var(--amber);
         font-size: 0.9rem;
-        text-align: right;
+        font-weight: 800;
       }
 
       .band {
         border-top: 1px solid var(--rule);
-        padding: clamp(2rem, 5vw, 4.5rem) 0;
+        padding: 4.5rem 0;
+      }
+
+      .band.tight {
+        padding-top: 3rem;
       }
 
       .section-head {
         display: grid;
-        grid-template-columns: minmax(max-content, 0.32fr) minmax(0, 1fr);
-        gap: clamp(1.2rem, 4vw, 3rem);
-        align-items: baseline;
-        margin-bottom: clamp(1.5rem, 4vw, 3rem);
+        grid-template-columns: minmax(220px, 0.4fr) minmax(0, 1fr);
+        gap: 2.5rem;
+        align-items: end;
+        margin-bottom: 2rem;
       }
 
       h2 {
         margin: 0;
-        font-size: clamp(1.65rem, 3.6vw, 3.2rem);
+        font-size: 3rem;
         line-height: 0.98;
       }
 
       .section-note {
+        max-width: 68ch;
         margin: 0;
         color: var(--muted);
-        max-width: 68ch;
-        min-width: 0;
-      }
-
-      .skills {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem 1.4rem;
-      }
-
-      .skill {
-        padding-top: 0.75rem;
-        border-top: 2px solid var(--ink);
-      }
-
-      .skill strong {
-        display: block;
-        margin-bottom: 0.2rem;
-      }
-
-      .skill span {
-        color: var(--muted);
-        font-size: 0.95rem;
       }
 
       .proof-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.9rem;
       }
 
       .proof {
-        border: 1px solid var(--rule);
-        background: oklch(99% 0.004 95 / 0.84);
-        padding: 1.15rem;
+        min-height: 100%;
+        padding: 1rem;
+        box-shadow: none;
       }
 
       .proof h3,
-      .project h3,
+      .skill h3,
       .experience h3,
-      .education h3 {
+      .education h3,
+      .project h3 {
         margin: 0;
         font-size: 1.08rem;
         line-height: 1.2;
       }
 
       .proof p,
-      .project p,
+      .skill p,
       .experience p,
-      .education p {
-        margin: 0.45rem 0 0;
+      .education p,
+      .project p {
+        margin: 0.48rem 0 0;
         color: var(--muted);
       }
 
       .projects {
         display: grid;
-        gap: 1rem;
+        gap: 0;
+        border-top: 1px solid var(--rule);
       }
 
       .project {
         display: grid;
-        grid-template-columns: minmax(0, 0.7fr) minmax(260px, 1fr);
-        gap: clamp(1rem, 3vw, 2rem);
-        padding: clamp(1rem, 2.4vw, 1.6rem) 0;
-        border-top: 1px solid var(--rule);
+        grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+        gap: 2.5rem;
+        padding: 1.6rem 0;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .project-kicker {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.7rem;
+        color: var(--amber);
+        font-size: 0.92rem;
+        font-weight: 800;
+      }
+
+      .project-kicker span {
+        width: 1.6rem;
+        height: 1px;
+        background: var(--amber);
       }
 
       .stack {
-        color: var(--accent-deep);
-        font-size: 0.92rem;
+        color: var(--cyan);
+        font-size: 0.96rem;
         font-weight: 800;
       }
 
       ul {
         margin: 0;
-        padding-left: 1.1rem;
+        padding-left: 1.15rem;
       }
 
       li + li {
-        margin-top: 0.34rem;
+        margin-top: 0.35rem;
+      }
+
+      .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .skill {
+        padding: 1rem;
+        box-shadow: none;
+      }
+
+      .skill:nth-child(3n + 1) .micro-label {
+        color: var(--cyan);
+      }
+
+      .skill:nth-child(3n + 2) .micro-label {
+        color: var(--green);
       }
 
       .split {
         display: grid;
-        grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
-        gap: clamp(1.5rem, 5vw, 4rem);
+        grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+        gap: 1rem;
       }
 
       .experience,
       .education {
-        border-top: 2px solid var(--ink);
-        padding-top: 1rem;
-      }
-
-      .split .section-head {
-        grid-template-columns: 1fr;
-        gap: 0.45rem;
-        margin-bottom: 1.1rem;
+        padding: 1.1rem;
+        box-shadow: none;
       }
 
       .education + .education {
-        margin-top: 1.35rem;
+        margin-top: 0.85rem;
       }
 
       .meta {
-        color: var(--muted);
-        font-size: 0.95rem;
+        color: var(--cyan);
+        font-weight: 650;
       }
 
       .document-preview {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(1rem, 3vw, 2rem);
+        gap: 1rem;
       }
 
       .page-shot {
         margin: 0;
+        padding: 0.8rem;
       }
 
       .page-shot img {
         display: block;
         width: 100%;
         border: 1px solid var(--rule);
-        box-shadow: 0 18px 50px oklch(24% 0.05 250 / 0.12);
+        border-radius: 4px;
+        background: oklch(92% 0.01 220);
       }
 
       .page-shot figcaption {
-        margin-top: 0.6rem;
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-
-      footer {
-        padding: 2rem 0 3rem;
+        margin-top: 0.65rem;
         color: var(--muted);
         font-size: 0.92rem;
       }
 
-      @media (max-width: 980px) {
-        .section-head {
-          grid-template-columns: 1fr;
-        }
+      footer {
+        border-top: 1px solid var(--rule);
+        padding: 2rem 0 3rem;
+        color: var(--muted);
+        font-size: 0.95rem;
       }
 
-      @media (max-width: 1040px) {
+      footer .shell {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 0.8rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      @media (max-width: 1080px) {
         .hero,
         .project,
         .split,
-        .document-preview {
+        .section-head {
           grid-template-columns: 1fr;
         }
 
         .hero {
-          min-height: auto;
-          padding-top: clamp(1.5rem, 6vw, 3rem);
+          align-items: start;
         }
 
-        .hero-copy {
-          padding-top: 0;
-        }
-
-        h1 {
-          max-width: 6.8ch;
-        }
-
-        .preview-card img {
-          margin: 0;
-          width: min(100%, 340px);
-          max-height: none;
-        }
-
-        .preview-card figcaption {
-          text-align: left;
+        .proof-grid,
+        .stack-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
-      @media (max-width: 560px) {
+      @media (max-width: 760px) {
         body {
           font-size: 16px;
-          overflow-x: hidden;
         }
 
         .shell {
-          width: min(100% - 1.25rem, 1180px);
+          width: min(100% - 28px, 1160px);
+        }
+
+        .site-header {
+          position: static;
+        }
+
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 0.95rem 0;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: flex-start;
+          flex-wrap: wrap;
+          gap: 0.55rem 0.85rem;
         }
 
         .hero {
-          gap: 1.6rem;
-          padding: 1.35rem 0 2rem;
-        }
-
-        .eyebrow {
-          margin-bottom: 0.8rem;
-          font-size: 0.76rem;
+          gap: 2rem;
+          padding: 3rem 0 3.5rem;
         }
 
         h1 {
-          max-width: 7.2ch;
-          font-size: clamp(3.05rem, 17vw, 4.2rem);
-          line-height: 0.9;
+          max-width: 7.8ch;
+          font-size: 4rem;
         }
 
         .subtitle {
-          max-width: none;
-          font-size: clamp(1.24rem, 7vw, 1.7rem);
-          line-height: 1.08;
+          font-size: 1.55rem;
         }
 
         .summary {
-          margin-top: 1rem;
-          font-size: 1rem;
-          line-height: 1.58;
+          font-size: 1.04rem;
         }
 
         .actions {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 0.65rem;
-          margin-top: 1.3rem;
         }
 
         .button {
           width: 100%;
-          min-height: 3rem;
-          padding: 0.78rem 0.9rem;
-          text-align: center;
         }
 
         .contact {
           display: grid;
           gap: 0.45rem;
-          margin-top: 1rem;
-          font-size: 0.92rem;
         }
 
-        .contact a {
-          display: inline-flex;
-          align-items: center;
-          min-height: 2rem;
+        .node-list,
+        .proof-grid,
+        .stack-grid,
+        .document-preview,
+        .resume-tile {
+          grid-template-columns: 1fr;
         }
 
-        .preview-stack {
-          align-items: start;
-        }
-
-        .preview-card img {
-          width: min(100%, 300px);
-        }
-
-        .preview-card figcaption,
-        .page-shot figcaption {
-          font-size: 0.84rem;
+        .resume-tile img {
+          width: min(260px, 100%);
+          height: auto;
         }
 
         .band {
-          padding: 2rem 0;
-        }
-
-        .section-head {
-          gap: 0.6rem;
-          margin-bottom: 1.2rem;
+          padding: 3rem 0;
         }
 
         h2 {
-          font-size: clamp(1.65rem, 10vw, 2.25rem);
-          line-height: 1;
-        }
-
-        .section-note {
-          line-height: 1.5;
-        }
-
-        .skills,
-        .proof-grid {
-          grid-template-columns: minmax(0, 1fr);
-        }
-
-        .proof {
-          padding: 1rem;
+          font-size: 2.25rem;
         }
 
         .project {
-          gap: 0.85rem;
-          padding: 1.15rem 0;
-        }
-
-        .project h3,
-        .experience h3,
-        .education h3 {
-          font-size: 1rem;
-        }
-
-        ul {
-          padding-left: 1rem;
-        }
-
-        li + li {
-          margin-top: 0.5rem;
-        }
-
-        .split {
-          gap: 2rem;
-        }
-
-        .document-preview {
-          gap: 1.4rem;
-        }
-
-        footer {
-          padding: 1.4rem 0 2rem;
+          gap: 1rem;
+          padding: 1.35rem 0;
         }
 
         footer .shell {
-          display: grid;
-          gap: 0.3rem;
-        }
-
-        footer span[aria-hidden="true"] {
-          display: none;
+          align-items: flex-start;
+          flex-direction: column;
         }
       }
 
-      @media (max-width: 360px) {
-        .shell {
-          width: min(100% - 1rem, 1180px);
-        }
-
+      @media (max-width: 420px) {
         h1 {
-          font-size: clamp(2.7rem, 16vw, 3.05rem);
+          font-size: 3.2rem;
         }
 
-        .preview-card img {
-          width: 100%;
+        h2 {
+          font-size: 1.9rem;
+        }
+
+        .hero {
+          padding-top: 2.3rem;
         }
       }
     </style>
   </head>
   <body>
+    <header class="site-header">
+      <nav class="shell nav" aria-label="Primary navigation">
+        <a class="mark" href="#top">Parth Thakre</a>
+        <div class="nav-links">
+          <a href="#systems">Systems</a>
+          <a href="#proof">Proof</a>
+          <a href="#stack">Stack</a>
+          <a href="#resume">Resume</a>
+        </div>
+      </nav>
+    </header>
+
     <main>
       <section class="shell hero" aria-labelledby="top">
         <div class="hero-copy">
-          <p class="eyebrow">AI systems, shipped with receipts.</p>
+          <p class="eyebrow">AI systems engineer</p>
           <h1 id="top">Parth Thakre</h1>
-          <p class="subtitle">AI Systems Engineer</p>
+          <p class="subtitle">AI systems that come with proof.</p>
           <p class="summary">
             Building enterprise AI and LLM systems across Azure AI Foundry, retrieval/OCR,
             tool-calling agents, multi-model evaluation, and private runtime infrastructure.
-            The work is client-facing and evidence-heavy: citations, logs, schemas, scorecards,
-            and repeatable artifacts.
+            The work is client-facing and evidence-heavy: citations, logs, schemas,
+            scorecards, and repeatable artifacts.
           </p>
-          <div class="actions" aria-label="Resume downloads">
+          <div class="actions" aria-label="Primary links">
             <a class="button" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Download PDF</a>
             <a class="button secondary" href="/resume.md" download="Parth_Thakre_Resume.md">Download Markdown</a>
+            <a class="button secondary" href="https://github.com/parth-thakre">GitHub</a>
           </div>
           <div class="contact" aria-label="Contact links">
             <a href="mailto:parth@masycoda.com">parth@masycoda.com</a>
@@ -591,40 +726,51 @@
             <a href="https://www.linkedin.com/in/parthsthakre/">linkedin.com/in/parthsthakre</a>
           </div>
         </div>
-        <div class="preview-stack" aria-label="Resume preview">
-          <figure class="preview-card">
+
+        <div class="hero-board" aria-label="Portfolio evidence preview">
+          <div class="system-panel">
+            <div class="panel-bar">
+              <div class="panel-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span>runtime evidence map</span>
+            </div>
+            <svg class="flow-map" viewBox="0 0 520 220" role="img" aria-label="Map of AI system delivery layers">
+              <rect x="18" y="24" width="130" height="52" rx="6" fill="oklch(24% 0.025 158)" stroke="oklch(45% 0.035 155)"></rect>
+              <rect x="198" y="24" width="130" height="52" rx="6" fill="oklch(24% 0.025 158)" stroke="oklch(45% 0.035 155)"></rect>
+              <rect x="372" y="24" width="130" height="52" rx="6" fill="oklch(24% 0.025 158)" stroke="oklch(45% 0.035 155)"></rect>
+              <rect x="66" y="144" width="130" height="52" rx="6" fill="oklch(21% 0.024 158)" stroke="oklch(75% 0.105 190)"></rect>
+              <rect x="278" y="144" width="176" height="52" rx="6" fill="oklch(21% 0.024 158)" stroke="oklch(76% 0.145 72)"></rect>
+              <path d="M148 50 H198 M328 50 H372 M260 76 V116 H131 V144 M260 116 H366 V144" fill="none" stroke="oklch(62% 0.024 145)" stroke-width="2"></path>
+              <circle cx="148" cy="50" r="4" fill="oklch(76% 0.145 72)"></circle>
+              <circle cx="328" cy="50" r="4" fill="oklch(73% 0.135 148)"></circle>
+              <circle cx="260" cy="116" r="4" fill="oklch(75% 0.105 190)"></circle>
+              <text x="38" y="55" fill="oklch(92% 0.011 118)" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="700">messy data</text>
+              <text x="218" y="55" fill="oklch(92% 0.011 118)" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="700">agent loop</text>
+              <text x="392" y="55" fill="oklch(92% 0.011 118)" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="700">answers</text>
+              <text x="88" y="176" fill="oklch(92% 0.011 118)" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="700">citations</text>
+              <text x="300" y="176" fill="oklch(92% 0.011 118)" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="700">scorecards + logs</text>
+            </svg>
+            <div class="node-list">
+              <span>Azure AI Foundry</span>
+              <span>RAG + OCR</span>
+              <span>MCP tool flows</span>
+              <span>Eval artifacts</span>
+            </div>
+          </div>
+
+          <figure class="resume-tile">
             <img src="/assets/resume-page-1.png" width="1191" height="1684" alt="Preview of page one of Parth Thakre's resume">
-            <figcaption>Latest two-page resume, rendered from the source PDF.</figcaption>
+            <figcaption>
+              <span class="micro-label">current artifact</span>
+              <p>Two-page resume is still available, but the site now leads with work and proof instead of a document preview.</p>
+            </figcaption>
           </figure>
         </div>
       </section>
 
-      <section class="band" aria-labelledby="skills">
+      <section class="band tight" id="proof" aria-labelledby="proof-title">
         <div class="shell">
           <div class="section-head">
-            <h2 id="skills">Technical Skillsets</h2>
-            <p class="section-note">
-              Practical coverage across model orchestration, product surfaces, deployment,
-              and the verification layer that makes AI systems usable beyond demos.
-            </p>
-          </div>
-          <div class="skills">
-            <div class="skill"><strong>Languages</strong><span>Python, TypeScript, JavaScript, C/C++, Java, Bash</span></div>
-            <div class="skill"><strong>AI/LLM Systems</strong><span>Azure AI Foundry, Azure OpenAI, RAG, OCR, tool/function calling, MCP, prompt/schema design</span></div>
-            <div class="skill"><strong>Evaluation</strong><span>LLM benchmarks, multi-model orchestration, structured rubrics, simulation metrics, artifact schemas</span></div>
-            <div class="skill"><strong>Backend/Product</strong><span>FastAPI, Flask, Express, Node.js, REST APIs, SQLite, Pydantic, Zod</span></div>
-            <div class="skill"><strong>Frontend/Desktop</strong><span>React, Next.js, Vite, Electron, HTML, CSS</span></div>
-            <div class="skill"><strong>Infra &amp; Cloud</strong><span>Docker, Docker Compose, Linux, reverse proxies, Microsoft Azure, Azure AI Search, Microsoft Fabric</span></div>
-            <div class="skill"><strong>AI Coding Tools</strong><span>Codex, OpenCode, OpenClaw, agentic coding workflows</span></div>
-            <div class="skill"><strong>Microsoft Platforms</strong><span>Copilot Studio, Power Apps</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="band" aria-labelledby="proof">
-        <div class="shell">
-          <div class="section-head">
-            <h2 id="proof">Delivery Proof</h2>
+            <h2 id="proof-title">Delivery Proof</h2>
             <p class="section-note">
               The profile is tuned for billable, client-facing AI engineering: shipped artifacts,
               auditable outputs, controlled runtimes, and systems that survive scrutiny.
@@ -632,35 +778,44 @@
           </div>
           <div class="proof-grid">
             <article class="proof">
-              <h3>Shipped Artifacts</h3>
+              <span class="micro-label">ship</span>
+              <h3>Working artifacts</h3>
               <p>Electron apps, FastAPI services, Dockerized agents, CLI packages, and rendered reports.</p>
             </article>
             <article class="proof">
-              <h3>Inspectable Outputs</h3>
+              <span class="micro-label">verify</span>
+              <h3>Inspectable outputs</h3>
               <p>Citations, structured JSON contracts, debug traces, scorecards, and repeatable run artifacts.</p>
             </article>
             <article class="proof">
-              <h3>Private Infrastructure</h3>
+              <span class="micro-label">operate</span>
+              <h3>Private runtimes</h3>
               <p>20+ container operations covering routing, monitoring, service recovery, and reliability.</p>
             </article>
             <article class="proof">
-              <h3>Supply Chain Q&amp;A</h3>
+              <span class="micro-label">apply</span>
+              <h3>Supply-chain Q&amp;A</h3>
               <p>Kinaxis work moved worksheet lookup from manual navigation to cited natural-language answers.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="band" aria-labelledby="projects">
+      <section class="band" id="systems" aria-labelledby="systems-title">
         <div class="shell">
           <div class="section-head">
-            <h2 id="projects">Selected AI/LLM Projects</h2>
-            <p class="section-note">Projects that show the range: local-first AI workspace, LLM evaluation, enterprise query agents, and simulation benchmarks.</p>
+            <h2 id="systems-title">Selected Systems</h2>
+            <p class="section-note">
+              A portfolio of local-first AI workspace work, model evaluation, enterprise query agents,
+              and simulation benchmarks. The through-line is verification.
+            </p>
           </div>
+
           <div class="projects">
             <article class="project">
               <div>
-                <h3><a href="https://github.com/parth-thakre/threads">Threads | GitHub</a></h3>
+                <div class="project-kicker"><span></span>01</div>
+                <h3><a href="https://github.com/parth-thakre/threads">Threads</a></h3>
                 <p>Local-first desktop AI workspace</p>
                 <p class="stack">Electron, React, TypeScript, Azure AI Foundry</p>
               </div>
@@ -673,7 +828,8 @@
 
             <article class="project">
               <div>
-                <h3><a href="https://github.com/parth-thakre/story-tourney">Story Tourney | GitHub</a></h3>
+                <div class="project-kicker"><span></span>02</div>
+                <h3><a href="https://github.com/parth-thakre/story-tourney">Story Tourney</a></h3>
                 <p>Blind multi-model LLM evaluation platform</p>
                 <p class="stack">Node.js, TypeScript, Next.js, SQLite</p>
               </div>
@@ -686,7 +842,8 @@
 
             <article class="project">
               <div>
-                <h3><a href="https://github.com/parth-thakre/SemKerBot-updated-teams">SemKerBot | GitHub</a></h3>
+                <div class="project-kicker"><span></span>03</div>
+                <h3><a href="https://github.com/parth-thakre/SemKerBot-updated-teams">SemKerBot</a></h3>
                 <p>Kinaxis supply-chain query agent</p>
                 <p class="stack">Python, FastAPI, Semantic Kernel, Docker</p>
               </div>
@@ -699,7 +856,8 @@
 
             <article class="project">
               <div>
-                <h3><a href="https://github.com/parth-thakre/project3">AISB | GitHub</a></h3>
+                <div class="project-kicker"><span></span>04</div>
+                <h3><a href="https://github.com/parth-thakre/project3">AISB</a></h3>
                 <p>AI Society Benchmark</p>
                 <p class="stack">Python, CLI, Simulation, Benchmarking</p>
               </div>
@@ -713,11 +871,33 @@
         </div>
       </section>
 
-      <section class="band" aria-labelledby="experience">
+      <section class="band" id="stack" aria-labelledby="stack-title">
+        <div class="shell">
+          <div class="section-head">
+            <h2 id="stack-title">Operating Stack</h2>
+            <p class="section-note">
+              Practical coverage across model orchestration, product surfaces, deployment,
+              and the verification layer that makes AI systems usable beyond demos.
+            </p>
+          </div>
+          <div class="stack-grid">
+            <article class="skill"><span class="micro-label">languages</span><h3>Implementation</h3><p>Python, TypeScript, JavaScript, C/C++, Java, Bash</p></article>
+            <article class="skill"><span class="micro-label">models</span><h3>AI/LLM systems</h3><p>Azure AI Foundry, Azure OpenAI, RAG, OCR, tool/function calling, MCP, prompt/schema design</p></article>
+            <article class="skill"><span class="micro-label">eval</span><h3>Measurement</h3><p>LLM benchmarks, multi-model orchestration, structured rubrics, simulation metrics, artifact schemas</p></article>
+            <article class="skill"><span class="micro-label">backend</span><h3>Product services</h3><p>FastAPI, Flask, Express, Node.js, REST APIs, SQLite, Pydantic, Zod</p></article>
+            <article class="skill"><span class="micro-label">frontend</span><h3>User surfaces</h3><p>React, Next.js, Vite, Electron, HTML, CSS</p></article>
+            <article class="skill"><span class="micro-label">infra</span><h3>Runtime</h3><p>Docker, Docker Compose, Linux, reverse proxies, Microsoft Azure, Azure AI Search, Microsoft Fabric</p></article>
+            <article class="skill"><span class="micro-label">agents</span><h3>Coding loop</h3><p>Codex, OpenCode, OpenClaw, agentic coding workflows</p></article>
+            <article class="skill"><span class="micro-label">microsoft</span><h3>Automation</h3><p>Copilot Studio, Power Apps</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" aria-labelledby="experience-title">
         <div class="shell split">
           <div>
             <div class="section-head">
-              <h2 id="experience">Experience</h2>
+              <h2 id="experience-title">Experience</h2>
               <p class="section-note">Enterprise AI prototypes across Microsoft and Azure surfaces.</p>
             </div>
             <article class="experience">
@@ -732,8 +912,8 @@
             </article>
           </div>
 
-          <aside aria-labelledby="education">
-            <h2 id="education">Education</h2>
+          <aside aria-labelledby="education-title">
+            <h2 id="education-title">Education</h2>
             <article class="education">
               <h3>Shri Ramdeobaba College of Engineering and Management</h3>
               <p>B.Tech in Computer Science and Engineering<br>Honors in AI and Data Science<br>Final CGPA: 7.7 | 2022 - June 2026</p>
@@ -750,19 +930,22 @@
         </div>
       </section>
 
-      <section class="band" aria-labelledby="document">
+      <section class="band" id="resume" aria-labelledby="resume-title">
         <div class="shell">
           <div class="section-head">
-            <h2 id="document">Resume Preview</h2>
-            <p class="section-note">Rendered pages from the PDF source, available as PDF and Markdown downloads above.</p>
+            <h2 id="resume-title">Resume Artifact</h2>
+            <p class="section-note">
+              The printable source remains available for recruiters and ATS workflows.
+              The portfolio above carries the shape and context that the PDF cannot.
+            </p>
           </div>
           <div class="document-preview">
             <figure class="page-shot">
-              <img src="/assets/resume-page-1.png" width="1191" height="1684" loading="lazy" alt="Page one of Parth Thakre's resume">
+              <img src="/assets/resume-page-1.png" width="1191" height="1684" alt="Page one of Parth Thakre's resume">
               <figcaption>Page 1</figcaption>
             </figure>
             <figure class="page-shot">
-              <img src="/assets/resume-page-2.png" width="1191" height="1684" loading="lazy" alt="Page two of Parth Thakre's resume">
+              <img src="/assets/resume-page-2.png" width="1191" height="1684" alt="Page two of Parth Thakre's resume">
               <figcaption>Page 2</figcaption>
             </figure>
           </div>
@@ -773,8 +956,7 @@
     <footer>
       <div class="shell">
         <span>Parth Thakre</span>
-        <span aria-hidden="true"> · </span>
-        <a href="mailto:parth@masycoda.com">parth@masycoda.com</a>
+        <span><a href="mailto:parth@masycoda.com">parth@masycoda.com</a> | <a href="https://github.com/parth-thakre">GitHub</a> | <a href="https://www.linkedin.com/in/parthsthakre/">LinkedIn</a></span>
       </div>
     </footer>
   </body>
