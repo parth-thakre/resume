@@ -52,6 +52,7 @@
         }
       }
     </script>
+    <script>document.documentElement.classList.add("js");</script>
     <style>
       :root {
         color-scheme: dark;
@@ -69,6 +70,9 @@
         --green: oklch(73% 0.135 148);
         --rust: oklch(66% 0.145 35);
         --shadow: 0 24px 80px oklch(8% 0.018 160 / 0.48);
+        --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+        --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
         font-family: "Source Sans 3", "Aptos", "Segoe UI", system-ui, sans-serif;
       }
 
@@ -82,6 +86,7 @@
 
       body {
         margin: 0;
+        overflow-x: hidden;
         background:
           linear-gradient(90deg, oklch(20% 0.014 158 / 0.28) 1px, transparent 1px),
           linear-gradient(0deg, oklch(20% 0.014 158 / 0.22) 1px, transparent 1px),
@@ -100,7 +105,7 @@
         color: inherit;
         text-decoration-color: oklch(75% 0.105 190 / 0.48);
         text-underline-offset: 0.22em;
-        transition: color 180ms ease, text-decoration-color 180ms ease, border-color 180ms ease, background 180ms ease;
+        transition: color 180ms var(--ease-out-quart), text-decoration-color 180ms var(--ease-out-quart), border-color 180ms var(--ease-out-quart), background 180ms var(--ease-out-quart), opacity 180ms var(--ease-out-quart);
       }
 
       a:hover {
@@ -120,6 +125,21 @@
         border-bottom: 1px solid oklch(35% 0.026 155 / 0.64);
         background: oklch(13% 0.012 158 / 0.92);
         backdrop-filter: blur(18px);
+        transition: background 260ms var(--ease-out-quart), border-color 260ms var(--ease-out-quart), box-shadow 260ms var(--ease-out-quart);
+      }
+
+      .scroll-meter {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--amber), var(--cyan), var(--green));
+        transform: scaleX(var(--scroll-progress, 0));
+        transform-origin: left center;
+        opacity: 0.92;
+        pointer-events: none;
       }
 
       .nav {
@@ -146,6 +166,13 @@
         border: 2px solid var(--amber);
         background: var(--bg);
         box-shadow: 0 0 0 5px oklch(76% 0.145 72 / 0.12);
+        transition: transform 280ms var(--ease-out-quint), box-shadow 280ms var(--ease-out-quint), border-color 280ms var(--ease-out-quint);
+      }
+
+      .mark:hover::before {
+        transform: rotate(45deg) scale(1.08);
+        border-color: var(--cyan);
+        box-shadow: 0 0 0 6px oklch(75% 0.105 190 / 0.14);
       }
 
       .nav-links {
@@ -236,12 +263,31 @@
         color: var(--bg);
         font-weight: 800;
         text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        transition: color 220ms var(--ease-out-quart), background 220ms var(--ease-out-quart), border-color 220ms var(--ease-out-quart), box-shadow 220ms var(--ease-out-quart), transform 220ms var(--ease-out-quart);
+      }
+
+      .button::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(105deg, transparent 0 28%, oklch(92% 0.011 118 / 0.34) 42%, transparent 58% 100%);
+        transform: translateX(-120%);
+        transition: transform 520ms var(--ease-out-expo);
+        pointer-events: none;
       }
 
       .button:hover {
         background: var(--cyan);
         color: var(--bg);
         border-color: var(--cyan);
+        box-shadow: 0 14px 38px oklch(8% 0.018 160 / 0.3), 0 0 0 4px oklch(75% 0.105 190 / 0.12);
+        transform: translateY(-2px);
+      }
+
+      .button:hover::after {
+        transform: translateX(120%);
       }
 
       .button.secondary {
@@ -288,6 +334,28 @@
 
       .system-panel {
         padding: 1rem;
+        position: relative;
+        overflow: hidden;
+        transition: border-color 320ms var(--ease-out-quart), box-shadow 320ms var(--ease-out-quart), transform 320ms var(--ease-out-quart);
+      }
+
+      .system-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background:
+          linear-gradient(115deg, transparent 0 35%, oklch(75% 0.105 190 / 0.12) 45%, transparent 56% 100%),
+          linear-gradient(180deg, transparent, oklch(76% 0.145 72 / 0.06));
+        transform: translateX(-55%);
+        animation: panel-sweep 8s var(--ease-out-expo) 1.2s infinite;
+        pointer-events: none;
+      }
+
+      .system-panel:hover {
+        border-color: var(--rule-strong);
+        box-shadow: 0 28px 90px oklch(8% 0.018 160 / 0.54), 0 0 0 1px oklch(75% 0.105 190 / 0.14);
+        transform: translateY(-3px);
       }
 
       .panel-bar {
@@ -428,6 +496,12 @@
         gap: 2.5rem;
         padding: 1.6rem 0;
         border-bottom: 1px solid var(--rule);
+        transition: border-color 260ms var(--ease-out-quart), transform 260ms var(--ease-out-quart);
+      }
+
+      .project:hover {
+        border-bottom-color: var(--rule-strong);
+        transform: translateX(4px);
       }
 
       .project-kicker {
@@ -444,6 +518,13 @@
         width: 1.6rem;
         height: 1px;
         background: var(--amber);
+        transform-origin: left center;
+        transition: transform 260ms var(--ease-out-quart), background 260ms var(--ease-out-quart);
+      }
+
+      .project:hover .project-kicker span {
+        background: var(--cyan);
+        transform: scaleX(1.45);
       }
 
       .stack {
@@ -470,6 +551,15 @@
       .skill {
         padding: 1rem;
         box-shadow: none;
+        transition: border-color 260ms var(--ease-out-quart), background 260ms var(--ease-out-quart), transform 260ms var(--ease-out-quart);
+      }
+
+      .skill:hover,
+      .proof:hover,
+      .resume-links:hover {
+        border-color: var(--rule-strong);
+        background: linear-gradient(180deg, oklch(22% 0.019 158 / 0.98), oklch(17% 0.015 158 / 0.98));
+        transform: translateY(-2px);
       }
 
       .skill:nth-child(3n + 1) .micro-label {
@@ -490,6 +580,13 @@
       .education {
         padding: 1.1rem;
         box-shadow: none;
+        transition: border-color 260ms var(--ease-out-quart), background 260ms var(--ease-out-quart), transform 260ms var(--ease-out-quart);
+      }
+
+      .experience:hover,
+      .education:hover {
+        border-color: var(--rule-strong);
+        transform: translateY(-2px);
       }
 
       .education + .education {
@@ -656,9 +753,242 @@
           padding-top: 2.3rem;
         }
       }
+
+      @keyframes hero-rise {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 28px, 0);
+          filter: blur(8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes hero-board-in {
+        from {
+          opacity: 0;
+          transform: translate3d(18px, 32px, 0) scale(0.985);
+          filter: blur(10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes panel-sweep {
+        0%, 42% {
+          transform: translateX(-70%);
+          opacity: 0;
+        }
+
+        52% {
+          opacity: 1;
+        }
+
+        74%, 100% {
+          transform: translateX(70%);
+          opacity: 0;
+        }
+      }
+
+      @keyframes draw-path {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes map-card-in {
+        from {
+          opacity: 0;
+          transform: translateY(7px) scale(0.98);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes node-pulse {
+        0%, 100% {
+          opacity: 0.62;
+          transform: scale(1);
+        }
+
+        50% {
+          opacity: 1;
+          transform: scale(1.34);
+        }
+      }
+
+      .hero-copy > *,
+      .hero-board {
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+
+      .hero-copy > * {
+        animation: hero-rise 760ms var(--ease-out-expo) forwards;
+        animation-delay: calc(80ms + var(--hero-step, 0) * 115ms);
+      }
+
+      .hero-copy .eyebrow {
+        --hero-step: 0;
+      }
+
+      .hero-copy h1 {
+        --hero-step: 1;
+      }
+
+      .hero-copy .subtitle {
+        --hero-step: 2;
+      }
+
+      .hero-copy .summary {
+        --hero-step: 3;
+      }
+
+      .hero-copy .actions {
+        --hero-step: 4;
+      }
+
+      .hero-copy .contact {
+        --hero-step: 5;
+      }
+
+      .hero-board {
+        animation: hero-board-in 900ms var(--ease-out-expo) 520ms forwards;
+      }
+
+      .flow-map rect,
+      .flow-map text {
+        opacity: 0;
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: map-card-in 560ms var(--ease-out-quint) forwards;
+        animation-delay: calc(1s + var(--map-step, 0) * 70ms);
+      }
+
+      .flow-map rect:nth-of-type(1),
+      .flow-map text:nth-of-type(1) {
+        --map-step: 0;
+      }
+
+      .flow-map rect:nth-of-type(2),
+      .flow-map text:nth-of-type(2) {
+        --map-step: 1;
+      }
+
+      .flow-map rect:nth-of-type(3),
+      .flow-map text:nth-of-type(3) {
+        --map-step: 2;
+      }
+
+      .flow-map rect:nth-of-type(4),
+      .flow-map text:nth-of-type(4) {
+        --map-step: 3;
+      }
+
+      .flow-map rect:nth-of-type(5),
+      .flow-map text:nth-of-type(5) {
+        --map-step: 4;
+      }
+
+      .flow-path {
+        stroke-dasharray: var(--path-len, 520);
+        stroke-dashoffset: var(--path-len, 520);
+        animation: draw-path 1.55s var(--ease-out-expo) 1.34s forwards;
+      }
+
+      .node-pulse {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: node-pulse 2.8s var(--ease-out-quart) infinite;
+        animation-delay: calc(2.5s + var(--i, 1) * 240ms);
+      }
+
+      .js .section-head:not(.visible),
+      .js .proof:not(.visible),
+      .js .project:not(.visible),
+      .js .skill:not(.visible),
+      .js .experience:not(.visible),
+      .js .education:not(.visible),
+      .js .resume-links:not(.visible) {
+        opacity: 0;
+        transform: translate3d(0, 22px, 0);
+        transition: opacity 620ms var(--ease-out-quint), transform 620ms var(--ease-out-quint);
+        transition-delay: var(--reveal-delay, 0ms);
+      }
+
+      .js .section-head.visible,
+      .js .proof.visible,
+      .js .project.visible,
+      .js .skill.visible,
+      .js .experience.visible,
+      .js .education.visible,
+      .js .resume-links.visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .site-header.scrolled {
+        background: oklch(11% 0.012 158 / 0.98);
+        border-bottom-color: var(--rule-strong);
+        box-shadow: 0 18px 58px oklch(8% 0.018 160 / 0.28);
+      }
+
+      .site-header.scrolled .mark::before {
+        box-shadow: 0 0 0 4px oklch(75% 0.105 190 / 0.13);
+      }
+
+      .button:active {
+        transform: translateY(0) scale(0.97);
+      }
+
+      a:active {
+        opacity: 0.78;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .hero-copy > *,
+        .hero-board,
+        .flow-map rect,
+        .flow-map text,
+        .flow-path,
+        .node-pulse,
+        .js .section-head:not(.visible),
+        .js .proof:not(.visible),
+        .js .project:not(.visible),
+        .js .skill:not(.visible),
+        .js .experience:not(.visible),
+        .js .education:not(.visible),
+        .js .resume-links:not(.visible) {
+          opacity: 1;
+          transform: none;
+          filter: none;
+          stroke-dashoffset: 0;
+        }
+      }
     </style>
   </head>
   <body>
+    <div class="scroll-meter" aria-hidden="true"></div>
     <header class="site-header">
       <nav class="shell nav" aria-label="Primary navigation">
         <a class="mark" href="#top">Parth Thakre</a>
@@ -707,10 +1037,10 @@
               <rect x="372" y="24" width="130" height="52" rx="6" fill="oklch(24% 0.025 158)" stroke="oklch(45% 0.035 155)"></rect>
               <rect x="66" y="144" width="130" height="52" rx="6" fill="oklch(21% 0.024 158)" stroke="oklch(75% 0.105 190)"></rect>
               <rect x="278" y="144" width="176" height="52" rx="6" fill="oklch(21% 0.024 158)" stroke="oklch(76% 0.145 72)"></rect>
-              <path d="M148 50 H198 M328 50 H372 M260 76 V116 H131 V144 M260 116 H366 V144" fill="none" stroke="oklch(62% 0.024 145)" stroke-width="2"></path>
-              <circle cx="148" cy="50" r="4" fill="oklch(76% 0.145 72)"></circle>
-              <circle cx="328" cy="50" r="4" fill="oklch(73% 0.135 148)"></circle>
-              <circle cx="260" cy="116" r="4" fill="oklch(75% 0.105 190)"></circle>
+              <path class="flow-path" d="M148 50 H198 M328 50 H372 M260 76 V116 H131 V144 M260 116 H366 V144" fill="none" stroke="oklch(62% 0.024 145)" stroke-width="2"></path>
+              <circle class="node-pulse" style="--i:1" cx="148" cy="50" r="4" fill="oklch(76% 0.145 72)"></circle>
+              <circle class="node-pulse" style="--i:2" cx="328" cy="50" r="4" fill="oklch(73% 0.135 148)"></circle>
+              <circle class="node-pulse" style="--i:3" cx="260" cy="116" r="4" fill="oklch(75% 0.105 190)"></circle>
               <text x="38" y="55" fill="oklch(92% 0.011 118)" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="700">messy data</text>
               <text x="218" y="55" fill="oklch(92% 0.011 118)" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="700">agent loop</text>
               <text x="392" y="55" fill="oklch(92% 0.011 118)" font-family="Source Sans 3, sans-serif" font-size="17" font-weight="700">answers</text>
@@ -919,5 +1249,57 @@
         <span><a href="mailto:parth@masycoda.com">parth@masycoda.com</a> | <a href="https://github.com/parth-thakre">GitHub</a> | <a href="https://www.linkedin.com/in/parthsthakre/">LinkedIn</a></span>
       </div>
     </footer>
+    <script>
+      (function() {
+        'use strict';
+
+        var revealItems = Array.prototype.slice.call(
+          document.querySelectorAll('.section-head, .proof, .project, .skill, .experience, .education, .resume-links')
+        );
+
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: '0px 0px -10% 0px', threshold: 0.14 });
+
+          revealItems.forEach(function(el, index) {
+            el.style.setProperty('--reveal-delay', Math.min(index % 4, 3) * 70 + 'ms');
+            observer.observe(el);
+          });
+        } else {
+          revealItems.forEach(function(el) { el.classList.add('visible'); });
+        }
+
+        var header = document.querySelector('.site-header');
+        var meter = document.querySelector('.scroll-meter');
+        var ticking = false;
+
+        function updateScrollState() {
+          var max = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+          var progress = Math.min(window.scrollY / max, 1);
+          header.classList.toggle('scrolled', window.scrollY > 40);
+          meter.style.setProperty('--scroll-progress', progress.toFixed(4));
+          ticking = false;
+        }
+
+        updateScrollState();
+        window.addEventListener('scroll', function() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(updateScrollState);
+        }, { passive: true });
+
+        var path = document.querySelector('.flow-path');
+        if (path && typeof path.getTotalLength === 'function') {
+          var len = path.getTotalLength();
+          if (len > 0) path.style.setProperty('--path-len', len);
+        }
+      })();
+    </script>
   </body>
 </html>
