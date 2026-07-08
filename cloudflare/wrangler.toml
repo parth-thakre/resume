@@ -1,0 +1,8 @@
+name = "resume-bot-markdown"
+main = "resume-bot-markdown.js"
+compatibility_date = "2025-01-01"
+account_id = "9708aeba18ac0fd35f47c3cddb1aee02"
+
+routes = [
+  { pattern = "resume.psthl.com/*", zone_name = "psthl.com" }
+]
