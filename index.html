@@ -16,7 +16,6 @@
     <meta property="og:description" content="Enterprise AI and LLM systems across Azure AI Foundry, RAG, OCR, tool-calling agents, evaluation, and infrastructure.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resume.psthl.com/">
-    <meta property="og:image" content="/assets/resume-page-1.png">
     <title>Parth Thakre - AI Systems Engineer</title>
     <script type="application/ld+json">
       {
@@ -276,12 +275,11 @@
       }
 
       .system-panel,
-      .resume-tile,
       .proof,
       .skill,
       .experience,
       .education,
-      .page-shot {
+      .resume-links {
         border: 1px solid var(--rule);
         border-radius: 8px;
         background: linear-gradient(180deg, oklch(20% 0.017 158 / 0.96), oklch(16% 0.014 158 / 0.98));
@@ -350,30 +348,6 @@
         background: oklch(15% 0.014 158 / 0.76);
         font-size: 0.94rem;
         font-weight: 650;
-      }
-
-      .resume-tile {
-        display: grid;
-        grid-template-columns: 132px minmax(0, 1fr);
-        gap: 1rem;
-        align-items: start;
-        padding: 0.85rem;
-      }
-
-      .resume-tile img {
-        display: block;
-        width: 132px;
-        height: 188px;
-        object-fit: contain;
-        object-position: top;
-        border: 1px solid var(--rule-strong);
-        border-radius: 4px;
-        background: oklch(92% 0.01 118);
-      }
-
-      .resume-tile p {
-        margin: 0.35rem 0 0;
-        color: var(--muted);
       }
 
       .micro-label {
@@ -527,29 +501,25 @@
         font-weight: 650;
       }
 
-      .document-preview {
+      .resume-links {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1.2rem;
+        align-items: center;
+        padding: 1.1rem;
+        box-shadow: none;
       }
 
-      .page-shot {
-        margin: 0;
-        padding: 0.8rem;
-      }
-
-      .page-shot img {
-        display: block;
-        width: 100%;
-        border: 1px solid var(--rule);
-        border-radius: 4px;
-        background: oklch(92% 0.01 220);
-      }
-
-      .page-shot figcaption {
-        margin-top: 0.65rem;
+      .resume-links p {
+        margin: 0.35rem 0 0;
         color: var(--muted);
-        font-size: 0.92rem;
+      }
+
+      .resume-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        justify-content: flex-end;
       }
 
       footer {
@@ -646,14 +616,12 @@
         .node-list,
         .proof-grid,
         .stack-grid,
-        .document-preview,
-        .resume-tile {
+        .resume-links {
           grid-template-columns: 1fr;
         }
 
-        .resume-tile img {
-          width: min(260px, 100%);
-          height: auto;
+        .resume-actions {
+          justify-content: stretch;
         }
 
         .band {
@@ -757,13 +725,6 @@
             </div>
           </div>
 
-          <figure class="resume-tile">
-            <img src="/assets/resume-page-1.png" width="1191" height="1684" alt="Preview of page one of Parth Thakre's resume">
-            <figcaption>
-              <span class="micro-label">current artifact</span>
-              <p>Two-page resume is still available, but the site now leads with work and proof instead of a document preview.</p>
-            </figcaption>
-          </figure>
         </div>
       </section>
 
@@ -933,21 +894,20 @@
       <section class="band" id="resume" aria-labelledby="resume-title">
         <div class="shell">
           <div class="section-head">
-            <h2 id="resume-title">Resume Artifact</h2>
+            <h2 id="resume-title">Resume Files</h2>
             <p class="section-note">
               The printable source remains available for recruiters and ATS workflows.
-              The portfolio above carries the shape and context that the PDF cannot.
             </p>
           </div>
-          <div class="document-preview">
-            <figure class="page-shot">
-              <img src="/assets/resume-page-1.png" width="1191" height="1684" alt="Page one of Parth Thakre's resume">
-              <figcaption>Page 1</figcaption>
-            </figure>
-            <figure class="page-shot">
-              <img src="/assets/resume-page-2.png" width="1191" height="1684" alt="Page two of Parth Thakre's resume">
-              <figcaption>Page 2</figcaption>
-            </figure>
+          <div class="resume-links">
+            <div>
+              <span class="micro-label">download</span>
+              <p>Use the PDF for human review and the Markdown version for agents, parsers, and quick copying.</p>
+            </div>
+            <div class="resume-actions" aria-label="Resume downloads">
+              <a class="button" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">PDF</a>
+              <a class="button secondary" href="/resume.md" download="Parth_Thakre_Resume.md">Markdown</a>
+            </div>
           </div>
         </div>
       </section>
