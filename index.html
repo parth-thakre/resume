@@ -1,32 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Parth Thakre is a Nagpur-based AI Systems Engineer. Portfolio case studies cover LLM evaluation, retrieval agents, enterprise data access, and private runtime infrastructure.">
+    <meta name="description" content="Parth Thakre is a Nagpur-based AI Systems Engineer building auditable LLM systems, retrieval agents, evaluation rigs, and private runtime infrastructure.">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#fbfdff">
+    <meta name="theme-color" content="#05101b">
     <link rel="canonical" href="https://resume.psthl.com/">
     <link rel="alternate" type="text/markdown" href="/resume.md" title="Parth Thakre resume in Markdown">
     <link rel="alternate" type="application/pdf" href="/assets/Parth_Thakre_Resume.pdf" title="Parth Thakre resume PDF">
+    <link rel="preload" href="/assets/jungfraujoch-hero.jpg" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <meta property="og:title" content="Parth Thakre - AI Systems Engineer Portfolio">
     <meta property="og:description" content="Case studies in enterprise AI: LLM evaluation rigs, retrieval agents, tool-calling, and private runtime infrastructure.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resume.psthl.com/">
-    <title>Parth Thakre · AI Systems Engineer Portfolio</title>
+    <title>Parth Thakre - AI Systems Portfolio</title>
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      const systemLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      document.documentElement.dataset.theme = savedTheme || (systemLight ? "light" : "dark");
+      document.documentElement.classList.add("js");
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Parth Thakre",
         "jobTitle": "AI Systems Engineer",
-        "homeLocation": {
-          "@type": "Place",
-          "name": "Nagpur, Maharashtra, India"
-        },
+        "homeLocation": { "@type": "Place", "name": "Nagpur, Maharashtra, India" },
         "url": "https://resume.psthl.com/",
         "email": "mailto:parth@masycoda.com",
         "sameAs": [
@@ -48,721 +52,587 @@
           "React",
           "Docker",
           "private runtime infrastructure"
-        ],
-        "hasOccupation": {
-          "@type": "Occupation",
-          "name": "AI Systems Engineer",
-          "skills": "Python, TypeScript, JavaScript, Azure AI Foundry, Azure OpenAI, RAG, OCR, tool calling, MCP, FastAPI, Electron, React, Docker, Linux"
-        }
+        ]
       }
     </script>
-    <script>document.documentElement.classList.add("js");</script>
     <style>
       :root {
-        color-scheme: light;
-        --sky: #5BCEFA;
-        --rose: #F5A9B8;
-        --paper: #fbfdff;
-        --paper-tint: #f4f8fd;
-        --white: #ffffff;
-        --ink: #16222f;
-        --ink-soft: #3a4c61;
-        --muted: #5c7088;
-        --quiet: #4d647b;
-        --line: #dce5f0;
-        --line-strong: #c2d0e0;
-        --sky-text: #1d6fa8;
-        --sky-dark: #155684;
-        --rose-text: #9c4a5b;
-        --rose-dark: #7d3a48;
-        --radius: 10px;
-        --radius-sm: 7px;
+        color-scheme: dark;
+        --font-display: "Libre Baskerville", Georgia, serif;
+        --font-body: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+        --trans-blue: oklch(0.73 0.15 235);
+        --trans-pink: oklch(0.78 0.14 8);
+        --trans-white: oklch(0.98 0.008 240);
+        --sky: var(--trans-blue);
+        --rose: var(--trans-pink);
+        --snow: var(--trans-white);
+        --summit-violet: oklch(0.48 0.12 286);
+        --bg: oklch(0.14 0.035 248);
+        --bg-strong: oklch(0.10 0.035 250);
+        --surface: oklch(0.18 0.035 248);
+        --surface-2: oklch(0.22 0.035 248);
+        --ink: oklch(0.96 0.01 240);
+        --ink-soft: oklch(0.82 0.025 244);
+        --muted: oklch(0.67 0.03 245);
+        --line: oklch(0.34 0.035 245 / 0.72);
+        --hair: oklch(0.88 0.02 245 / 0.14);
+        --shadow: 0 18px 60px oklch(0.02 0.03 250 / 0.36);
+        --hero-wash: linear-gradient(90deg, oklch(0.07 0.035 252 / 0.93) 0%, oklch(0.09 0.045 258 / 0.7) 34%, oklch(0.12 0.05 245 / 0.12) 68%);
+        --hero-bottom: linear-gradient(180deg, transparent 58%, var(--bg) 100%);
         --ease: cubic-bezier(0.22, 1, 0.36, 1);
       }
 
-      * { box-sizing: border-box; }
-
-      html {
-        scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-        text-size-adjust: 100%;
+      [data-theme="light"] {
+        color-scheme: light;
+        --bg: oklch(0.985 0.006 236);
+        --bg-strong: oklch(1 0 0);
+        --surface: oklch(0.96 0.012 236);
+        --surface-2: oklch(0.925 0.02 236);
+        --ink: oklch(0.19 0.045 248);
+        --ink-soft: oklch(0.33 0.045 246);
+        --muted: oklch(0.47 0.04 245);
+        --line: oklch(0.82 0.028 240);
+        --hair: oklch(0.25 0.04 245 / 0.12);
+        --shadow: 0 16px 42px oklch(0.42 0.04 245 / 0.14);
+        --hero-wash: linear-gradient(90deg, oklch(0.99 0.006 235 / 0.98) 0%, oklch(0.98 0.018 250 / 0.82) 38%, oklch(0.98 0.018 250 / 0.16) 78%);
+        --hero-bottom: linear-gradient(180deg, transparent 62%, var(--bg) 100%);
       }
 
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
       body {
         margin: 0;
         min-width: 320px;
-        background: var(--paper);
+        background: var(--bg);
         color: var(--ink);
-        font: 400 17px/1.65 "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+        font: 400 16px/1.62 var(--font-body);
+        letter-spacing: 0;
       }
-
+      img, svg { display: block; max-width: 100%; }
       a {
-        color: var(--sky-text);
-        text-decoration-color: color-mix(in srgb, var(--sky) 65%, transparent);
-        text-underline-offset: 0.24em;
-        transition: color 180ms var(--ease), text-decoration-color 180ms var(--ease), background 180ms var(--ease);
+        color: var(--sky);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.28em;
       }
-
-      a:hover {
-        color: var(--sky-dark);
-        text-decoration-color: var(--rose-text);
-      }
-
-      a:focus-visible {
+      a:hover { color: var(--rose); }
+      a:focus-visible, button:focus-visible {
         outline: 3px solid var(--rose);
-        outline-offset: 3px;
-        border-radius: 2px;
+        outline-offset: 4px;
       }
-
+      button { font: inherit; }
+      h1, h2, h3, p { margin: 0; }
+      h1, h2, h3 { text-wrap: balance; }
+      p { text-wrap: pretty; }
       .skip {
         position: fixed;
-        top: -100px;
+        top: -120px;
         left: 1rem;
         z-index: 100;
+        padding: 0.65rem 0.9rem;
         background: var(--ink);
-        color: var(--white);
-        padding: 0.6rem 0.9rem;
-        border-radius: var(--radius-sm);
-        text-decoration: none;
+        color: var(--bg);
+        border-radius: 8px;
       }
       .skip:focus { top: 1rem; }
-
-      h1, h2, h3, h4 {
-        margin: 0;
-        font-family: "Newsreader", Georgia, serif;
-        font-weight: 600;
-        line-height: 1.05;
+      .shell {
+        width: min(100% - clamp(1.25rem, 5vw, 4.8rem), 1440px);
+        margin: 0 auto;
       }
-
-      h1 { font-size: 4.6rem; }
-      h2 { font-size: 2.8rem; }
-      h3 { font-size: 1.7rem; }
-
-      p { margin: 0; }
-
-      ul {
-        margin: 0;
-        padding-left: 1.1rem;
-      }
-
-      li + li { margin-top: 0.4rem; }
-
-      .bar {
+      .site-nav {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 40;
-        height: 3px;
-        background: linear-gradient(90deg, var(--sky), var(--rose));
-        transform: scaleX(var(--scroll-progress, 0));
-        transform-origin: left center;
-        pointer-events: none;
-      }
-
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 30;
+        inset: 0 0 auto;
+        z-index: 50;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
-        padding: 0.85rem 1.4rem;
-        background: color-mix(in srgb, var(--paper) 88%, transparent);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--line);
+        padding: 1.25rem clamp(1.25rem, 5vw, 4rem);
+        background: linear-gradient(180deg, color-mix(in oklch, var(--bg) 88%, transparent), transparent);
       }
-
       .brand {
-        font-family: "Newsreader", Georgia, serif;
-        font-weight: 600;
-        font-size: 1.12rem;
+        font-family: var(--font-display);
+        font-weight: 700;
         color: var(--ink);
+        font-size: clamp(1.05rem, 2vw, 1.45rem);
         text-decoration: none;
-        letter-spacing: 0;
       }
-      .brand span {
-        color: var(--rose-text);
-      }
-
       .nav-links {
         display: flex;
-        gap: 0.2rem;
-      }
-
-      .nav-links a {
-        padding: 0.45rem 0.7rem;
-        border-radius: var(--radius-sm);
-        color: var(--ink-soft);
-        font-size: 0.92rem;
-        font-weight: 500;
-        text-decoration: none;
-      }
-      .nav-links a:hover {
-        background: color-mix(in srgb, var(--sky) 22%, transparent);
-        color: var(--sky-dark);
-      }
-      .nav-links a.active {
-        background: color-mix(in srgb, var(--sky) 30%, transparent);
-        color: var(--sky-dark);
-        font-weight: 600;
-      }
-
-      .nav-files {
-        display: flex;
-        gap: 0.4rem;
         align-items: center;
+        gap: clamp(0.6rem, 2vw, 2.6rem);
       }
-      .nav-files a {
-        padding: 0.45rem 0.7rem;
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
-        background: var(--white);
+      .nav-links a {
+        position: relative;
         color: var(--ink-soft);
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         font-weight: 600;
         text-decoration: none;
       }
-      .nav-files a:hover {
-        border-color: var(--sky);
-        color: var(--sky-dark);
-      }
-      .nav-files .gh {
-        border-color: transparent;
-        background: transparent;
-      }
-
-      main { display: block; }
-
-      .sr-only {
+      .nav-links a.active::after,
+      .nav-links a:hover::after {
+        content: "";
         position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        white-space: nowrap;
-        border: 0;
+        left: 0;
+        right: 0;
+        bottom: -0.55rem;
+        height: 2px;
+        background: linear-gradient(90deg, var(--sky), var(--snow), var(--rose));
       }
-
-      .wrap {
-        width: min(100% - 56px, 1180px);
-        margin: 0 auto;
-      }
-
-      .intro {
-        padding: 8rem 0 3rem;
-        scroll-margin-top: 1rem;
-      }
-
-      .intro-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
-        gap: 3rem;
-        align-items: end;
-      }
-
-      .role {
-        display: inline-flex;
+      .nav-actions {
+        display: flex;
         align-items: center;
         gap: 0.6rem;
-        margin-bottom: 1.4rem;
-        color: var(--sky-text);
-        font-weight: 600;
-        font-size: 0.95rem;
       }
-      .role::before {
-        content: "";
-        width: 14px;
-        height: 14px;
+      .icon-btn {
+        width: 2.45rem;
+        height: 2.45rem;
+        display: inline-grid;
+        place-items: center;
+        border: 1px solid var(--line);
         border-radius: 999px;
-        background: var(--rose);
-        box-shadow: 0 0 0 4px color-mix(in srgb, var(--rose) 30%, transparent);
-      }
-
-      .lede {
-        margin-top: 1.4rem;
-        max-width: 38ch;
-        font-family: "Newsreader", Georgia, serif;
-        font-size: 1.55rem;
-        font-weight: 500;
-        line-height: 1.35;
         color: var(--ink);
+        background: color-mix(in oklch, var(--surface) 74%, transparent);
+        cursor: pointer;
       }
-
-      .lede em {
-        font-style: italic;
-        color: var(--rose-text);
+      .icon-btn:hover { border-color: var(--sky); color: var(--sky); }
+      .resume-link {
+        color: var(--ink);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.54rem 0.85rem;
+        text-decoration: none;
+        font-size: 0.88rem;
+        font-weight: 700;
+        background: color-mix(in oklch, var(--surface) 74%, transparent);
       }
-
-      .intro-actions {
+      .hero {
+        position: relative;
+        min-height: 86vh;
+        overflow: hidden;
+        isolation: isolate;
+        border-bottom: 1px solid var(--hair);
+      }
+      .hero-photo {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 44%;
+        filter: saturate(1.08) contrast(1.04);
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-image: var(--hero-wash), var(--hero-bottom);
+        background-size: cover, cover;
+        background-position: center, center;
+        pointer-events: none;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: var(--stars-opacity, 0.62);
+        background-image:
+          radial-gradient(circle at 68% 9%, oklch(0.98 0.01 240 / 0.9) 0 1px, transparent 1.4px),
+          radial-gradient(circle at 76% 18%, oklch(0.98 0.01 240 / 0.85) 0 1px, transparent 1.4px),
+          radial-gradient(circle at 83% 6%, oklch(0.98 0.01 240 / 0.75) 0 1px, transparent 1.4px),
+          radial-gradient(circle at 91% 21%, oklch(0.98 0.01 240 / 0.65) 0 1px, transparent 1.4px);
+        pointer-events: none;
+      }
+      [data-theme="light"] .hero::after { --stars-opacity: 0; }
+      .hero-grid {
+        position: relative;
+        z-index: 3;
+        min-height: 86vh;
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 1.1fr);
+        align-items: center;
+        padding: 6.4rem 0 3rem;
+      }
+      .coords {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.7rem;
-        margin-top: 1.8rem;
+        gap: 1.1rem;
+        margin-bottom: 1.2rem;
+        color: var(--sky);
+        font-size: 0.83rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
       }
-
+      .coords span + span { color: var(--rose); }
+      .coords .height {
+        color: var(--snow);
+      }
+      [data-theme="light"] .coords .height { color: var(--ink); }
+      h1 {
+        max-width: 10ch;
+        font: 700 clamp(3.35rem, 8.2vw, 7.8rem)/1.02 var(--font-display);
+        letter-spacing: -0.025em;
+      }
+      .rule {
+        width: 2.3rem;
+        height: 2px;
+        margin: 1.65rem 0 1rem;
+        background: linear-gradient(90deg, var(--sky), var(--snow), var(--rose));
+      }
+      .hero-copy {
+        max-width: 33rem;
+        color: var(--ink-soft);
+        font-size: clamp(1.06rem, 1.55vw, 1.32rem);
+      }
+      .scroll-tip {
+        position: absolute;
+        left: clamp(1.25rem, 5vw, 4.8rem);
+        bottom: clamp(0.7rem, 1.6vh, 1.25rem);
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+      }
+      .scroll-tip::after {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-2px);
+        animation: nudgeDown 1.6s var(--ease) infinite;
+      }
+      .section {
+        padding: clamp(4rem, 9vw, 8rem) 0;
+        border-bottom: 1px solid var(--hair);
+      }
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+        gap: clamp(1.6rem, 5vw, 5rem);
+        align-items: end;
+        margin-bottom: clamp(2.2rem, 5vw, 4rem);
+      }
+      .section-label {
+        color: var(--sky);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+      }
+      h2 {
+        font: 700 clamp(2rem, 4.2vw, 4.5rem)/1.08 var(--font-display);
+        letter-spacing: -0.02em;
+      }
+      .section-head p {
+        color: var(--ink-soft);
+        max-width: 56ch;
+        font-size: clamp(1rem, 1.4vw, 1.18rem);
+      }
+      .work-list {
+        display: grid;
+        gap: 0;
+        border-top: 1px solid var(--line);
+      }
+      .work-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(14rem, 0.78fr) minmax(0, 1.22fr) auto;
+        gap: clamp(1.25rem, 3vw, 3.2rem);
+        align-items: start;
+        padding: clamp(1.45rem, 3.4vw, 2.5rem) 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .work-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -1px;
+        width: clamp(4rem, 10vw, 9rem);
+        height: 1px;
+        background: linear-gradient(90deg, var(--sky), var(--snow), var(--rose));
+        opacity: 0;
+        transform: scaleX(0.35);
+        transform-origin: left;
+        transition: opacity 240ms var(--ease), transform 340ms var(--ease);
+      }
+      .work-card:hover::before {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+      .work-title {
+        display: grid;
+        gap: 0.55rem;
+      }
+      .work-index {
+        color: var(--rose);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+      }
+      .project-name {
+        font: 700 clamp(1.65rem, 3.2vw, 3rem)/1.05 var(--font-display);
+        letter-spacing: -0.015em;
+      }
+      .work-kind {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+      .work-main {
+        display: grid;
+        gap: 1rem;
+      }
+      .work-main p {
+        max-width: 65ch;
+        color: var(--ink-soft);
+        font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+      }
+      .work-main strong {
+        color: var(--ink);
+        font-weight: 800;
+      }
+      .work-excerpt {
+        position: relative;
+        padding-left: 1rem;
+        border-left: 1px solid color-mix(in oklch, var(--sky) 64%, var(--line));
+      }
+      .work-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+      .work-tags span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 1.75rem;
+        padding: 0.32rem 0.58rem;
+        border: 1px solid color-mix(in oklch, var(--line) 80%, transparent);
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        background: color-mix(in oklch, var(--surface) 72%, transparent);
+      }
+      .work-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        justify-self: end;
+        min-width: max-content;
+        color: var(--sky);
+        text-decoration: none;
+        font-weight: 900;
+      }
+      .work-link::after {
+        content: "->";
+        transition: transform 180ms var(--ease);
+      }
+      .work-link:hover::after {
+        transform: translateX(4px);
+      }
+      .work-status {
+        justify-self: end;
+        min-width: max-content;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+      }
+      .systems-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .system-block {
+        min-height: 18rem;
+        padding: clamp(1.25rem, 2.5vw, 2rem);
+        background: var(--surface);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .system-block h3 {
+        font: 700 clamp(1.4rem, 2.2vw, 2.1rem)/1.12 var(--font-display);
+      }
+      .system-block p {
+        color: var(--ink-soft);
+        max-width: 33ch;
+      }
+      .system-block code {
+        color: var(--sky);
+        font: 800 0.78rem var(--font-body);
+      }
+      .proof-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: start;
+      }
+      .proof-copy {
+        position: sticky;
+        top: 7rem;
+      }
+      .proof-copy p {
+        margin-top: 1.2rem;
+        color: var(--ink-soft);
+        max-width: 50ch;
+        font-size: 1.08rem;
+      }
+      .proof-list {
+        border-top: 1px solid var(--line);
+      }
+      .proof-item {
+        display: grid;
+        grid-template-columns: 6rem minmax(0, 1fr);
+        gap: 1.5rem;
+        padding: 1.4rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .proof-item strong {
+        font: 700 1.7rem/1 var(--font-display);
+        color: var(--rose);
+      }
+      .proof-item h3 {
+        font: 800 1rem/1.25 var(--font-body);
+        margin-bottom: 0.35rem;
+      }
+      .proof-item p { color: var(--ink-soft); }
+      .contact {
+        padding: clamp(4rem, 9vw, 8rem) 0;
+        background:
+          linear-gradient(180deg, color-mix(in oklch, var(--surface) 42%, transparent), transparent),
+          var(--bg);
+      }
+      .contact-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 2rem;
+        align-items: end;
+      }
+      .contact h2 { max-width: 11ch; }
+      .contact p {
+        margin-top: 1.1rem;
+        color: var(--ink-soft);
+        max-width: 50ch;
+        font-size: 1.1rem;
+      }
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        justify-content: flex-end;
+      }
       .btn {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        padding: 0.7rem 1.15rem;
-        border-radius: var(--radius-sm);
-        border: 1px solid var(--line-strong);
-        background: var(--white);
+        justify-content: center;
+        min-height: 2.75rem;
+        padding: 0.72rem 1rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
         color: var(--ink);
-        font-weight: 600;
-        font-size: 0.96rem;
         text-decoration: none;
+        font-weight: 800;
+        background: var(--surface);
       }
-      .btn:hover {
-        border-color: var(--sky);
-        color: var(--sky-dark);
-        transform: translateY(-1px);
-      }
-      .btn--solid {
+      .btn.primary {
         background: var(--ink);
-        color: var(--white);
+        color: var(--bg);
         border-color: var(--ink);
       }
-      .btn--solid:hover {
-        background: var(--sky-dark);
-        border-color: var(--sky-dark);
-        color: var(--white);
-      }
-
-      .index {
-        align-self: end;
-        padding: 1.3rem 1.4rem;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--white);
-      }
-      .index-label {
-        font-size: 0.78rem;
-        font-weight: 600;
-        color: var(--quiet);
-      }
-      .index ol {
-        list-style: none;
-        margin: 0.7rem 0 0;
-        padding: 0;
-        display: grid;
-        gap: 0.5rem;
-      }
-      .index li a {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        gap: 0.6rem;
-        color: var(--ink);
-        text-decoration: none;
-        font-weight: 500;
-        border-bottom: 1px dashed transparent;
-      }
-      .index li a:hover {
-        color: var(--sky-dark);
-        border-bottom-color: var(--rose);
-      }
-      .index li a small {
-        color: var(--quiet);
-        font-size: 0.8rem;
-        font-weight: 400;
-      }
-
-      .cases {
-        padding: 3rem 0 0;
-      }
-
-      .case {
-        padding: 5rem 0;
-        border-top: 1px solid var(--line);
-        scroll-margin-top: 5rem;
-      }
-
-      .case-head {
-        display: grid;
-        grid-template-columns: minmax(0, 0.32fr) minmax(0, 1fr);
-        gap: 2.4rem;
-        margin-bottom: 2.4rem;
-        align-items: start;
-      }
-
-      .tag {
-        width: max-content;
-        padding: 0.3rem 0.7rem;
-        border-radius: 999px;
-        background: color-mix(in srgb, var(--rose) 32%, var(--white));
-        color: var(--rose-dark);
-        font-size: 0.8rem;
-        font-weight: 600;
-      }
-
-      .case-kicker {
-        margin-top: 0.8rem;
-        color: var(--sky-text);
-        font-weight: 600;
-        font-size: 0.95rem;
-      }
-
-      .case-note {
-        color: var(--muted);
-        font-size: 1.02rem;
-      }
-
-      .case-body {
-        display: grid;
-        gap: 1.4rem;
-      }
-
-      .case-title a {
-        color: var(--ink);
-        text-decoration-color: color-mix(in srgb, var(--sky) 55%, transparent);
-      }
-      .case-title a:hover { color: var(--sky-dark); }
-
-      .case-summary {
-        max-width: 62ch;
-        color: var(--ink-soft);
-        font-size: 1.12rem;
-      }
-
-      .stack {
-        color: var(--muted);
-        font-weight: 600;
-        font-size: 0.92rem;
-      }
-
-      .case ul.outcomes {
-        max-width: 62ch;
-      }
-      .case ul.outcomes li::marker { color: var(--rose); }
-
-      /* Case 1: Threads: artifact panel with supported input chips */
-      .panel {
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--white);
-        overflow: hidden;
-      }
-      .panel-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.7rem 0.9rem;
-        border-bottom: 1px solid var(--line);
-        font-size: 0.82rem;
-        font-weight: 600;
-        color: var(--quiet);
-      }
-      .panel-top strong { color: var(--ink); }
-
-      .threads {
-        display: grid;
-        grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
-        gap: 2.4rem;
-        align-items: start;
-      }
-
-      .inputs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-        padding: 1.1rem;
-      }
-      .chip {
-        padding: 0.3rem 0.62rem;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: var(--paper-tint);
-        color: var(--ink-soft);
-        font-size: 0.82rem;
-        font-weight: 600;
-      }
-
-      .flow-row {
-        display: grid;
-        grid-template-columns: minmax(5rem, 0.3fr) minmax(0, 1fr);
-        gap: 0.7rem;
-        align-items: center;
-        padding: 0.8rem 1.1rem;
-        border-bottom: 1px solid var(--line);
-      }
-      .flow-row:last-child { border-bottom: 0; }
-      .flow-row span {
-        color: var(--quiet);
-        font-size: 0.8rem;
-        font-weight: 700;
-      }
-      .flow-row .bar-fill {
-        height: 0.66rem;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--sky), var(--rose));
-      }
-      .flow-row p { color: var(--ink-soft); }
-
-      /* Case 2: Story Tourney: phase strip */
-      .story {
-        display: grid;
-        gap: 1.6rem;
-      }
-      .phases {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--white);
-        overflow: hidden;
-      }
-      .phase {
-        padding: 1.1rem 1rem;
-        border-right: 1px solid var(--line);
-      }
-      .phase:last-child { border-right: 0; background: color-mix(in srgb, var(--rose) 16%, var(--white)); }
-      .phase-name {
-        font-family: "Newsreader", Georgia, serif;
-        font-weight: 600;
-        font-size: 1.05rem;
-        color: var(--ink);
-      }
-      .phase-desc {
-        margin-top: 0.3rem;
-        color: var(--muted);
-        font-size: 0.85rem;
-      }
-      .story-copy {
-        display: grid;
-        grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
-        gap: 2.4rem;
-        align-items: start;
-      }
-
-      /* Case 3: SemKerBot: cited evidence table */
-      .semker {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
-        gap: 2.4rem;
-        align-items: start;
-      }
-      .cite {
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--white);
-      }
-      .cite-q {
-        padding: 1rem 1.1rem;
-        border-bottom: 1px solid var(--line);
-        font-family: "Newsreader", Georgia, serif;
-        font-weight: 500;
-        font-size: 1.02rem;
-        color: var(--ink);
-      }
-      .cite-rows {
-        display: grid;
-      }
-      .cite-row {
-        display: grid;
-        grid-template-columns: minmax(7rem, 0.34fr) minmax(0, 1fr);
-        gap: 0.7rem;
-        padding: 0.7rem 1.1rem;
-        border-bottom: 1px solid var(--line);
-      }
-      .cite-row:last-child { border-bottom: 0; }
-      .cite-row span {
-        color: var(--quiet);
-        font-size: 0.78rem;
-        font-weight: 700;
-      }
-      .cite-row strong { color: var(--sky-text); font-weight: 600; }
-      .cite-row p { color: var(--ink-soft); font-size: 0.94rem; }
-
-      /* Case 4: AISB: scorecard */
-      .aisb {
-        display: grid;
-        gap: 1.6rem;
-      }
-      .scorecard {
-        display: grid;
-        gap: 1rem;
-        padding: 1.4rem;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--white);
-      }
-      .axis {
-        display: grid;
-        grid-template-columns: minmax(9rem, 0.28fr) minmax(0, 1fr);
-        gap: 0.9rem;
-        align-items: center;
-      }
-      .axis-label {
-        font-weight: 600;
-        color: var(--ink);
-        font-size: 0.95rem;
-      }
-      .axis-track {
-        height: 0.72rem;
-        border-radius: 999px;
-        background: var(--paper-tint);
-        border: 1px solid var(--line);
-        overflow: hidden;
-      }
-      .axis-fill {
-        display: block;
-        height: 100%;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--sky), var(--rose));
-      }
-      .scorehead {
-        font-family: "Newsreader", Georgia, serif;
-        font-size: 1.02rem;
-        color: var(--quiet);
-        font-weight: 500;
-      }
-
-      .about {
-        padding: 5rem 0 4rem;
-        border-top: 1px solid var(--line);
-        scroll-margin-top: 5rem;
-      }
-      .about-head {
-        margin-bottom: 2rem;
-      }
-      .about-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 0.36fr) minmax(0, 1fr);
-        gap: 2.4rem;
-        align-items: start;
-      }
-      .bio { color: var(--ink-soft); font-size: 1.05rem; max-width: 58ch; }
-
-      .stack-list {
-        margin-top: 1.3rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-      }
-
-      .work-history {
-        margin-top: 2rem;
-      }
-      .work-history h3 {
-        font-family: "Hanken Grotesk", system-ui, sans-serif;
-        font-weight: 600;
-        font-size: 1.05rem;
-        color: var(--ink);
-      }
-      .work-meta {
-        color: var(--sky-text);
-        font-weight: 600;
-        font-size: 0.92rem;
-        margin: 0.2rem 0 0.5rem;
-      }
-      .work-history p { color: var(--muted); }
-      .work-block + .work-block { margin-top: 1.4rem; }
-
-      .files {
-        margin-top: 2rem;
-        padding: 1.3rem 1.4rem;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--white);
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
-      .files p { color: var(--ink-soft); }
-
+      .btn:hover { border-color: var(--rose); color: var(--rose); }
+      .btn.primary:hover { background: var(--rose); color: var(--bg); }
       footer {
-        border-top: 1px solid var(--line);
-        padding: 2.2rem 0 3rem;
-      }
-      footer .wrap {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem 1rem;
-        align-items: center;
-        justify-content: space-between;
+        border-top: 1px solid var(--hair);
+        padding: 1.6rem 0 2.3rem;
         color: var(--muted);
         font-size: 0.9rem;
       }
-      footer a { color: var(--ink-soft); }
-      footer .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
-
-      @keyframes enter {
-        from { opacity: 0; transform: translate3d(0, 16px, 0); }
-        to { opacity: 1; transform: translate3d(0, 0, 0); }
+      footer .shell {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
       }
-      .intro-grid > * {
-        opacity: 0;
-        animation: enter 700ms var(--ease) forwards;
-        animation-delay: calc(var(--step, 0) * 90ms);
-      }
-      .intro-grid .intro-copy { --step: 0; }
-      .intro-grid .index { --step: 1; }
-
-      .js .reveal:not(.visible) {
-        opacity: 0.7;
-        transform: translate3d(0, 14px, 0);
-        transition: opacity 600ms var(--ease), transform 600ms var(--ease);
-      }
-      .js .reveal.visible {
+      .reveal {
         opacity: 1;
-        transform: translate3d(0, 0, 0);
+        transform: none;
       }
-
-      @media (max-width: 980px) {
-        h1 { font-size: 3.5rem; }
-        h2 { font-size: 2.3rem; }
-        .nav-links { display: none; }
-        .intro-grid,
-        .case-head,
-        .threads,
-        .story-copy,
-        .semker,
-        .about-grid {
+      .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+      }
+      .js .reveal:not(.visible) {
+        opacity: 0.96;
+        transform: translate3d(0, 8px, 0);
+      }
+      @keyframes drawRoute {
+        from { stroke-dashoffset: 760; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes nudgeDown {
+        0%, 100% { transform: rotate(45deg) translate(0, -2px); opacity: 0.55; }
+        50% { transform: rotate(45deg) translate(5px, 3px); opacity: 1; }
+      }
+      @media (max-width: 1050px) {
+        .hero-grid,
+        .section-head,
+        .proof-grid,
+        .contact-panel {
           grid-template-columns: 1fr;
-          gap: 1.6rem;
         }
+        .systems-grid { grid-template-columns: 1fr; }
+        .proof-copy { position: static; }
       }
-
-      @media (max-width: 720px) {
-        body { font-size: 16px; }
-        h1 { font-size: 2.7rem; }
-        h2 { font-size: 1.9rem; }
-        h3 { font-size: 1.4rem; }
-        .nav { padding: 0.7rem 0.9rem; }
-        .nav-files a { font-size: 0.78rem; padding: 0.4rem 0.55rem; }
-        .intro { padding: 6.5rem 0 2rem; }
-        .lede { font-size: 1.25rem; }
-        .case { padding: 3.4rem 0; }
-        .phases { grid-template-columns: 1fr 1fr; }
-        .phase { border-right: 0; border-bottom: 1px solid var(--line); }
-        .phase:nth-child(odd) { border-right: 1px solid var(--line); }
-        .phase:last-child { border-bottom: 0; }
-        .cite-row,
-        .flow-row,
-        .axis { grid-template-columns: 1fr; gap: 0.35rem; }
-        .files { flex-direction: column; align-items: stretch; text-align: left; }
+      @media (max-width: 760px) {
+        .site-nav {
+          padding: 0.9rem 1rem;
+          background: color-mix(in oklch, var(--bg) 88%, transparent);
+          backdrop-filter: blur(12px);
+          border-bottom: 1px solid var(--hair);
+        }
+        .nav-links { display: none; }
+        .resume-link { display: none; }
+        .hero { min-height: auto; }
+        .hero-grid {
+          min-height: 39rem;
+          padding: 5.8rem 0 1.8rem;
+        }
+        h1 { font-size: clamp(2.9rem, 17vw, 4.6rem); }
+        .coords { flex-wrap: wrap; font-size: 0.74rem; }
+        .scroll-tip {
+          left: 1rem;
+          bottom: 0.85rem;
+          font-size: 0.68rem;
+        }
+        .work-card {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .work-link,
+        .work-status { justify-self: start; }
+        .proof-item { grid-template-columns: 1fr; gap: 0.5rem; }
+        .contact-links { justify-content: flex-start; }
+        footer .shell { display: grid; }
       }
-
       @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
           animation-duration: 0.01ms !important;
           animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
           scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
         }
-        .intro-grid > *,
-        .js .reveal:not(.visible) {
+        .js .reveal {
           opacity: 1;
           transform: none;
         }
@@ -771,303 +641,220 @@
   </head>
   <body>
     <a class="skip" href="#work">Skip to work</a>
-    <div class="bar" aria-hidden="true"></div>
-
-    <header class="nav">
-      <a class="brand" href="#top">Parth Thakre <span>·</span> AI Systems</a>
-      <nav class="nav-links" aria-label="Page sections">
-        <a href="#top">Overview</a>
+    <header class="site-nav">
+      <a class="brand" href="#top">Parth Thakre</a>
+      <nav class="nav-links" aria-label="Portfolio sections">
         <a href="#work">Work</a>
-        <a href="#about">Background</a>
-        <a href="#files">Files</a>
+        <a href="#systems">Systems</a>
+        <a href="#proof">Proof</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <div class="nav-files">
-        <a href="/resume.md" download="Parth_Thakre_Resume.md">MD</a>
-        <a href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">PDF</a>
-        <a class="gh" href="https://github.com/parth-thakre">GitHub ↗</a>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" id="theme-toggle" aria-label="Switch color theme" title="Switch color theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3v2.2M12 18.8V21M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M3 12h2.2M18.8 12H21M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </button>
+        <a class="resume-link" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Resume</a>
       </div>
     </header>
 
-    <main>
-      <section class="intro" id="top" aria-labelledby="intro-title">
-        <div class="wrap">
-          <div class="intro-grid">
-            <div class="intro-copy">
-              <p class="role">AI Systems Engineer · Nagpur, India</p>
-              <h1 id="intro-title">I build AI systems with an audit trail.</h1>
-              <p class="lede">
-                Selected case studies from shipped LLM work: evaluation rigs,
-                retrieval agents, enterprise data access, and <em>private runtime
-                infrastructure</em>, with outputs that can be inspected after the demo.
-              </p>
-              <div class="intro-actions">
-                <a class="btn btn--solid" href="#work">Read the work</a>
-                <a class="btn" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Resume PDF</a>
-                <a class="btn" href="https://github.com/parth-thakre">GitHub</a>
-              </div>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-photo" src="/assets/jungfraujoch-hero.jpg" alt="" aria-hidden="true" decoding="async">
+        <div class="shell hero-grid">
+          <div>
+            <div class="coords" aria-label="Location coordinates">
+              <span>46.7725 N</span>
+              <span>8.4372 E</span>
+              <span class="height">3,238 M / 10,623 FT</span>
             </div>
+            <h1 id="hero-title">AI systems with an audit trail</h1>
+            <div class="rule" aria-hidden="true"></div>
+        <p class="hero-copy">I work across retrieval agents, LLM evaluation rigs, enterprise data access, and private runtime infrastructure. I care about systems that are inspectable after they answer.</p>
+          </div>
+        </div>
+        <a class="scroll-tip" href="#work">SCROLL</a>
+      </section>
 
-            <aside class="index" aria-label="Selected work index">
-              <span class="index-label">Four case studies</span>
-              <ol>
-                <li><a href="#threads">Threads <small>local-first AI workspace</small></a></li>
-                <li><a href="#story">Story Tourney <small>blind model evaluation</small></a></li>
-                <li><a href="#semkerbot">SemKerBot <small>supply-chain Q&amp;A agent</small></a></li>
-                <li><a href="#aisb">AISB <small>simulation benchmark</small></a></li>
-              </ol>
-            </aside>
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="shell">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-label">SELECTED WORK</p>
+              <h2 id="work-title">Projects I have built and tested.</h2>
+            </div>
+            <p>I use these projects to explore the parts of AI systems that usually break first: files, tools, evals, latency, privacy, and output quality.</p>
+          </div>
+          <div class="work-list reveal">
+            <article class="work-card">
+              <div class="work-title">
+                <span class="work-index">01</span>
+                <h3 class="project-name">Threads</h3>
+                <span class="work-kind">internal desktop AI workspace</span>
+              </div>
+              <div class="work-main">
+                <p class="work-excerpt"><strong>Internal desktop chat app</strong> for working with Azure AI models in a fast, focused, local-first workspace.</p>
+                <div class="work-tags" aria-label="Threads stack and proof points">
+                  <span>Electron</span><span>React</span><span>Azure models</span><span>OCR</span><span>local memory</span>
+                </div>
+              </div>
+              <span class="work-status">INTERNAL</span>
+            </article>
+            <article class="work-card">
+              <div class="work-title">
+                <span class="work-index">02</span>
+                <h3 class="project-name">Story Tourney</h3>
+                <span class="work-kind">blind model evaluation</span>
+              </div>
+              <div class="work-main">
+                <p class="work-excerpt"><strong>Blind story tournaments</strong> run the same prompt through multiple models, anonymize outputs, review each other, revise, then rank the final stories.</p>
+                <div class="work-tags" aria-label="Story Tourney stack and proof points">
+                  <span>Node.js</span><span>TypeScript</span><span>SQLite</span><span>OpenRouter</span>
+                </div>
+              </div>
+              <a class="work-link" href="https://github.com/parth-thakre/story-tourney">View project</a>
+            </article>
+            <article class="work-card">
+              <div class="work-title">
+                <span class="work-index">03</span>
+                <h3 class="project-name">Planning Copilot</h3>
+                <span class="work-kind">internal supply-chain assistant</span>
+              </div>
+              <div class="work-main">
+                <p class="work-excerpt"><strong>Local-only bot</strong> for querying Kinaxis in plain English: chat or bot to agent, agent to API, API to Kinaxis.</p>
+                <div class="work-tags" aria-label="Planning Copilot stack and proof points">
+                  <span>Python</span><span>FastAPI</span><span>Semantic Kernel</span><span>Kinaxis</span><span>local LLM option</span>
+                </div>
+              </div>
+              <span class="work-status">INTERNAL</span>
+            </article>
+            <article class="work-card">
+              <div class="work-title">
+                <span class="work-index">04</span>
+                <h3 class="project-name">AISB</h3>
+                <span class="work-kind">simulation benchmark</span>
+              </div>
+              <div class="work-main">
+                <p class="work-excerpt"><strong>Benchmarking LLMs by the societies they create,</strong> not the answers they give: economic, social, and political dynamics across repeated simulations.</p>
+                <div class="work-tags" aria-label="AISB stack and proof points">
+                  <span>Python</span><span>CLI</span><span>simulation</span><span>scorecards</span><span>typed artifacts</span>
+                </div>
+              </div>
+              <a class="work-link" href="https://github.com/parth-thakre/project3">View project</a>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="cases" id="work" aria-labelledby="work-title">
-        <h2 id="work-title" class="sr-only">Selected work</h2>
-        <div class="wrap">
-
-          <!-- Case 1: Threads -->
-          <article class="case reveal" id="threads">
-            <header class="case-head">
-              <div>
-                <span class="tag">workspace</span>
-                <p class="case-kicker">Local-first desktop AI workspace</p>
-              </div>
-              <p class="case-note">
-                Production-style desktop surface: an Electron app for ongoing AI
-                work, not a one-off notebook.
-              </p>
-            </header>
-            <div class="threads">
-              <div class="case-body">
-                <h3 class="case-title"><a href="https://github.com/parth-thakre/threads">Threads</a></h3>
-                <p class="case-summary">
-                  An Azure-backed Electron workspace for day-to-day AI work: searchable
-                  history, document extraction, OCR, memory, retrieval, MCP tools,
-                  and model routing across Azure OpenAI and Claude Foundry.
-                </p>
-                <p class="stack">Electron · React · TypeScript · Azure AI Foundry · MCP</p>
-                <ul class="outcomes">
-                  <li>Ingests PDFs, DOCX, PPTX, XLSX, CSV, Markdown, code, and scanned images with OCR.</li>
-                  <li>MCP tool discovery, Azure web-search grounding, image generation/editing flows, and multi-model routing.</li>
-                  <li>Keeps local history searchable across hundreds of conversations.</li>
-                </ul>
-              </div>
-              <div class="panel" aria-label="Threads artifact preview">
-                <div class="panel-top"><strong>Threads workspace</strong><span>retrieval + tools</span></div>
-                <div class="inputs">
-                  <span class="chip">PDF</span><span class="chip">DOCX</span><span class="chip">PPTX</span>
-                  <span class="chip">XLSX</span><span class="chip">CSV</span><span class="chip">MD</span>
-                  <span class="chip">code</span><span class="chip">OCR image</span>
-                </div>
-                <div class="flow-row"><span>pipeline</span><div class="bar-fill" aria-hidden="true"></div></div>
-                <div class="flow-row"><span>output</span><p>answers with source context, tool traces, and preserved conversation history</p></div>
-              </div>
+      <section class="section" id="systems" aria-labelledby="systems-title">
+        <div class="shell">
+          <div class="section-head reveal">
+            <div>
+              <p class="section-label">SYSTEMS</p>
+              <h2 id="systems-title">What I work across.</h2>
             </div>
-          </article>
-
-          <!-- Case 2: Story Tourney -->
-          <article class="case reveal" id="story">
-            <header class="case-head">
-              <div>
-                <span class="tag">evaluation</span>
-                <p class="case-kicker">Blind multi-model LLM evaluation</p>
-              </div>
-              <p class="case-note">
-                Inspectable orchestration: every provider call is archived, and
-                rankings are reproducible.
-              </p>
-            </header>
-            <div class="story">
-              <div class="phases" role="img" aria-label="Story Tourney phases: generate, review, revise, rank">
-                <div class="phase"><div class="phase-name">Generate</div><div class="phase-desc">Entries produced without model labels.</div></div>
-                <div class="phase"><div class="phase-name">Review</div><div class="phase-desc">Blind peer critique across providers.</div></div>
-                <div class="phase"><div class="phase-name">Revise</div><div class="phase-desc">Re-generation with feedback folded in.</div></div>
-                <div class="phase"><div class="phase-name">Rank</div><div class="phase-desc">Borda count with tie-breakers.</div></div>
-              </div>
-              <div class="story-copy">
-                <div class="case-body">
-                  <h3 class="case-title"><a href="https://github.com/parth-thakre/story-tourney">Story Tourney</a></h3>
-                  <p class="stack">Node.js · TypeScript · Next.js · SQLite · OpenRouter</p>
-                </div>
-                <div class="case-body">
-                  <p class="case-summary">
-                    A tournament platform that makes model comparison inspectable:
-                    two to four OpenRouter models run through generation, review,
-                    revision, and ranking phases with Zod-validated contracts,
-                    archived provider calls, and deterministic fallback behavior.
-                  </p>
-                </div>
-              </div>
+            <p>I work across agent runtimes, retrieval pipelines, desktop apps, APIs, containers, and local model setups. The common thread is making model behavior easier to inspect and debug.</p>
+          </div>
+          <div class="systems-grid reveal">
+            <div class="system-block">
+              <code>agent runtime</code>
+              <h3>Agent runtimes</h3>
+              <p>I build with Azure AI Foundry, Azure OpenAI, Semantic Kernel, MCP, prompt contracts, and guarded function calls.</p>
             </div>
-          </article>
-
-          <!-- Case 3: SemKerBot -->
-          <article class="case reveal" id="semkerbot">
-            <header class="case-head">
-              <div>
-                <span class="tag">enterprise data</span>
-                <p class="case-kicker">Supply-chain query agent for Kinaxis</p>
-              </div>
-              <p class="case-note">
-                Enterprise data path: every answer has to cite workbook, row,
-                column, and exact value.
-              </p>
-            </header>
-            <div class="semker">
-              <div class="case-body">
-                <h3 class="case-title"><a href="https://github.com/parth-thakre/SemKerBot-updated-teams">SemKerBot</a></h3>
-                <p class="case-summary">
-                  A local-only agent/API split for Kinaxis RapidResponse worksheet
-                  data, designed around citations, diagnostic playbooks, and exact
-                  values instead of unsupported natural-language summaries.
-                </p>
-                <p class="stack">Python · FastAPI · Semantic Kernel · Docker</p>
-                <ul class="outcomes">
-                  <li>Wrapped workbook data with FastAPI and Semantic Kernel tools.</li>
-                  <li>Catalog-aware planning, column-ID filter guidance, per-call debug metrics.</li>
-                  <li>Required workbook, worksheet, column, row, filter, and exact-value citations.</li>
-                </ul>
-              </div>
-              <div class="cite" aria-label="SemKerBot cited answer preview">
-                <div class="cite-q">“Where is the supply-chain exception coming from?”</div>
-                <div class="cite-rows">
-                  <div class="cite-row"><span>workbook</span><strong>Supply-Exceptions</strong></div>
-                  <div class="cite-row"><span>worksheet</span><p>planner_alerts</p></div>
-                  <div class="cite-row"><span>column · row</span><p>source_id · R-1142</p></div>
-                  <div class="cite-row"><span>filter</span><p>region = APAC, status = open</p></div>
-                  <div class="cite-row"><span>exact value</span><strong>delay = 6 days</strong></div>
-                </div>
-              </div>
+            <div class="system-block">
+              <code>retrieval layer</code>
+              <h3>Retrieval and files</h3>
+              <p>I handle OCR, PDF/DOCX/PPTX/XLSX extraction, Azure AI Search, workbook lookups, and exact-value citations.</p>
             </div>
-          </article>
-
-          <!-- Case 4: AISB -->
-          <article class="case reveal" id="aisb">
-            <header class="case-head">
-              <div>
-                <span class="tag">benchmark</span>
-                <p class="case-kicker">Artificial society simulation benchmark</p>
-              </div>
-              <p class="case-note">
-                Benchmark design. Replaces single-metric judging with a typed artifact
-                schema and a multi-axis scorecard.
-              </p>
-            </header>
-            <div class="aisb">
-              <div class="case-body">
-                <h3 class="case-title"><a href="https://github.com/parth-thakre/project3">AISB</a></h3>
-                <p class="case-summary">
-                  An AI society benchmark for five-role simulations with resources, trust,
-                  influence, resentment, typed artifact schemas, and multi-axis
-                  scorecards. Refactored toward an 18-module package CLI with a canonical
-                  data layout.
-                </p>
-                <p class="stack">Python · CLI · simulation · benchmarking</p>
-              </div>
-              <div class="scorecard" aria-label="AISB scorecard preview">
-                <p class="scorehead">Society: roles, resources, trust, influence, resentment</p>
-                <div class="axis"><span class="axis-label">welfare</span><div class="axis-track"><i class="axis-fill" style="width:78%" aria-hidden="true"></i></div></div>
-                <div class="axis"><span class="axis-label">economy</span><div class="axis-track"><i class="axis-fill" style="width:64%" aria-hidden="true"></i></div></div>
-                <div class="axis"><span class="axis-label">cohesion</span><div class="axis-track"><i class="axis-fill" style="width:71%" aria-hidden="true"></i></div></div>
-                <div class="axis"><span class="axis-label">institutions</span><div class="axis-track"><i class="axis-fill" style="width:58%" aria-hidden="true"></i></div></div>
-                <div class="axis"><span class="axis-label">anti-degeneracy</span><div class="axis-track"><i class="axis-fill" style="width:83%" aria-hidden="true"></i></div></div>
-              </div>
+            <div class="system-block">
+              <code>delivery surface</code>
+              <h3>Delivery surfaces</h3>
+              <p>I ship Electron apps, React/Next.js frontends, FastAPI services, Docker Compose stacks, CLIs, and rendered reports.</p>
             </div>
-          </article>
+          </div>
         </div>
       </section>
 
-      <section class="about reveal" id="about" aria-labelledby="about-title">
-        <div class="wrap">
-          <div class="case-head about-head">
-            <h2 id="about-title">About the builder</h2>
-            <p class="case-note">
-              The common thread is not AI for its own sake. It is the discipline
-              around messy inputs, auditable outputs, and tools you can check after
-              the first run.
-            </p>
+      <section class="section" id="proof" aria-labelledby="proof-title">
+        <div class="shell proof-grid">
+          <div class="proof-copy reveal">
+            <p class="section-label">PROOF</p>
+            <h2 id="proof-title">Current context.</h2>
+            <p>I am an AI Systems Engineer at MaSyCoDa Solutions in Nagpur. I am finishing a B.Tech in CSE with Honors in AI and Data Science, final CGPA 7.7, graduating June 2026.</p>
           </div>
-          <div class="about-grid">
-            <div class="bio">
-              <p>
-                I am a Nagpur-based AI Systems Engineer at MaSyCoDa Solutions,
-                building enterprise AI prototypes across Azure Portal, AI Foundry, Azure
-                OpenAI, AI Search, and Microsoft Fabric. I connect Foundry agents
-                to Copilot Studio and Power Apps surfaces, and led a Kinaxis
-                RapidResponse pilot with evidence-backed Q&amp;A and debug traces.
-              </p>
-              <div class="stack-list" aria-label="Implementation stack">
-                <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span>
-                <span class="chip">C/C++</span><span class="chip">Java</span><span class="chip">Bash</span>
-                <span class="chip">FastAPI</span><span class="chip">Flask</span><span class="chip">Express</span>
-                <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Electron</span>
-                <span class="chip">Docker</span><span class="chip">Linux</span><span class="chip">Azure AI Foundry</span>
-                <span class="chip">RAG</span><span class="chip">OCR</span><span class="chip">MCP</span>
-              </div>
+          <div class="proof-list reveal">
+            <div class="proof-item">
+              <strong>8+</strong>
+              <div><h3>file families ingested</h3><p>PDF, DOCX, PPTX, XLSX, CSV, Markdown, source files, and scanned images with OCR.</p></div>
             </div>
-            <div class="work-history">
-              <div class="work-block">
-                <h3>MaSyCoDa Solutions Pvt. Ltd.</h3>
-                <p class="work-meta">AI Systems Engineer · Nagpur, India · Dec 2025 – Present</p>
-                <ul>
-                  <li>Built enterprise AI prototypes across Azure Portal, AI Foundry, Azure OpenAI, AI Search, and Fabric.</li>
-                  <li>Connected AI Foundry agents with Copilot Studio and Power Apps surfaces.</li>
-                  <li>Deployed a Kinaxis RapidResponse pilot with evidence-backed Q&amp;A and debug traces.</li>
-                </ul>
-              </div>
-              <div class="work-block">
-                <h3>Shri Ramdeobaba College of Engineering and Management</h3>
-                <p class="work-meta">B.Tech, Computer Science &amp; Engineering · Honors in AI and Data Science · 2022 – June 2026</p>
-                <p>Final CGPA: 7.7</p>
-              </div>
+            <div class="proof-item">
+              <strong>4</strong>
+              <div><h3>evaluation phases</h3><p>Generation, blind peer review, revision, and ranking with archived provider calls.</p></div>
+            </div>
+            <div class="proof-item">
+              <strong>5</strong>
+              <div><h3>benchmark axes</h3><p>Welfare, economy, cohesion, institutions, and anti-degeneracy for simulation scoring.</p></div>
+            </div>
+            <div class="proof-item">
+              <strong>20+</strong>
+              <div><h3>private infrastructure services</h3><p>Container operations, routing, monitoring, service recovery, and privacy-aware runtime practice.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div class="files" id="files">
-                <p>The same resume is available as HTML, Markdown, and PDF for people, recruiters, agents, and parsers.</p>
-                <div class="intro-actions">
-                  <a class="btn btn--solid" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Resume PDF</a>
-                  <a class="btn" href="/resume.md" download="Parth_Thakre_Resume.md">Markdown</a>
-                </div>
-              </div>
-            </div>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="shell contact-panel reveal">
+          <div>
+            <p class="section-label">CONTACT</p>
+            <h2 id="contact-title">Reach me here.</h2>
+            <p>I keep this resume available as HTML, Markdown, and PDF so it works for people, recruiters, agents, and parsers.</p>
+          </div>
+          <div class="contact-links" aria-label="Contact links">
+            <a class="btn primary" href="mailto:parth@masycoda.com">Email</a>
+            <a class="btn" href="https://github.com/parth-thakre">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/parthsthakre/">LinkedIn</a>
+            <a class="btn" href="/resume.md" download="Parth_Thakre_Resume.md">Markdown</a>
+            <a class="btn" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">PDF</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="wrap">
+      <div class="shell">
         <span>Portfolio artifacts for AI systems work.</span>
-        <span class="links">
-          <a href="mailto:parth@masycoda.com">parth@masycoda.com</a>
-          <a href="https://github.com/parth-thakre">GitHub</a>
-          <a href="https://www.linkedin.com/in/parthsthakre/">LinkedIn</a>
-          <a href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">PDF</a>
-          <a href="/resume.md" download="Parth_Thakre_Resume.md">MD</a>
-        </span>
+        <span>Nagpur, India · <a href="mailto:parth@masycoda.com">parth@masycoda.com</a></span>
       </div>
     </footer>
 
     <script>
       const root = document.documentElement;
       const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
-      const sections = navLinks
-        .map((link) => document.querySelector(link.getAttribute("href")))
-        .filter(Boolean);
+      const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+      const themeToggle = document.querySelector("#theme-toggle");
 
-      const updateProgress = () => {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = max > 0 ? window.scrollY / max : 0;
-        root.style.setProperty("--scroll-progress", progress.toFixed(4));
+      const syncThemeColor = () => {
+        const color = root.dataset.theme === "light" ? "#fbfdff" : "#05101b";
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", color);
       };
 
+      themeToggle.addEventListener("click", () => {
+        root.dataset.theme = root.dataset.theme === "light" ? "dark" : "light";
+        localStorage.setItem("theme", root.dataset.theme);
+        syncThemeColor();
+      });
+      syncThemeColor();
+
       const setActive = () => {
-        const offset = window.innerHeight * 0.4;
         let current = sections[0];
+        const offset = window.innerHeight * 0.42;
         for (const section of sections) {
           if (section.getBoundingClientRect().top <= offset) current = section;
         }
-        navLinks.forEach((link) => {
-          link.classList.toggle("active", link.getAttribute("href") === `#${current.id}`);
-        });
+        navLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${current.id}`));
       };
 
       const revealItems = Array.from(document.querySelectorAll(".reveal"));
@@ -1085,16 +872,9 @@
         revealItems.forEach((item) => item.classList.add("visible"));
       }
 
-      updateProgress();
       setActive();
-      let ticking = false;
-      window.addEventListener("scroll", () => {
-        if (!ticking) {
-          requestAnimationFrame(() => { updateProgress(); setActive(); ticking = false; });
-          ticking = true;
-        }
-      }, { passive: true });
-      window.addEventListener("resize", updateProgress);
+      window.addEventListener("scroll", setActive, { passive: true });
+      window.addEventListener("resize", setActive);
     </script>
   </body>
 </html>
