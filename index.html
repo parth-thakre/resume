@@ -13,10 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Sans+3:wght@400;500;650;800&display=swap" rel="stylesheet">
     <meta property="og:title" content="Parth Thakre - AI Systems Engineer">
-    <meta property="og:description" content="Enterprise AI and LLM systems across Azure AI Foundry, RAG, OCR, tool-calling agents, evaluation, and infrastructure.">
+    <meta property="og:description" content="Portfolio of enterprise AI systems, LLM evaluation, retrieval, tool-calling agents, and private runtime infrastructure.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resume.psthl.com/">
-    <title>Parth Thakre - AI Systems Engineer</title>
+    <title>Parth Thakre - AI Systems Engineer Portfolio</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -57,20 +57,24 @@
       :root {
         color-scheme: light;
         --white: oklch(99% 0.004 220);
-        --paper: oklch(97.5% 0.012 220);
-        --paper-blue: oklch(95.5% 0.035 220);
-        --paper-pink: oklch(96.5% 0.027 12);
-        --ink: oklch(23% 0.032 235);
-        --ink-soft: oklch(37% 0.035 235);
-        --muted: oklch(52% 0.035 235);
-        --line: oklch(87% 0.025 225);
-        --line-strong: oklch(76% 0.052 220);
-        --blue: oklch(81% 0.115 220);
-        --blue-strong: oklch(67% 0.145 220);
-        --pink: oklch(83% 0.087 11);
-        --pink-strong: oklch(70% 0.12 10);
-        --shadow: 0 24px 70px oklch(46% 0.06 225 / 0.16);
-        --rail-w: 236px;
+        --paper: oklch(97.8% 0.012 220);
+        --paper-blue: oklch(96.3% 0.026 224);
+        --paper-pink: oklch(97.2% 0.022 10);
+        --ink: oklch(22% 0.034 235);
+        --ink-soft: oklch(36% 0.035 235);
+        --muted: oklch(52% 0.034 235);
+        --quiet: oklch(68% 0.028 235);
+        --line: oklch(87% 0.025 224);
+        --line-strong: oklch(74% 0.05 224);
+        --blue: oklch(81.76% 0.103 224.44);
+        --blue-strong: oklch(56% 0.15 225);
+        --blue-text: oklch(43% 0.14 225);
+        --pink: oklch(83.43% 0.082 8.1);
+        --pink-strong: oklch(58% 0.13 8);
+        --pink-text: oklch(45% 0.13 8);
+        --green: oklch(76% 0.10 164);
+        --shadow: 0 24px 60px oklch(42% 0.055 235 / 0.14);
+        --rail-w: 214px;
         --radius: 8px;
         --radius-sm: 6px;
         --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -92,12 +96,10 @@
       body {
         min-width: 320px;
         margin: 0;
-        overflow-x: hidden;
         background:
-          linear-gradient(90deg, oklch(86% 0.035 220 / 0.42) 1px, transparent 1px),
-          linear-gradient(0deg, oklch(90% 0.027 12 / 0.45) 1px, transparent 1px),
-          linear-gradient(180deg, var(--white), var(--paper-blue) 46%, var(--paper-pink));
-        background-size: 72px 72px, 72px 72px, auto;
+          radial-gradient(circle at 88% 12%, oklch(83.43% 0.082 8.1 / 0.28), transparent 28rem),
+          linear-gradient(135deg, oklch(81.76% 0.103 224.44 / 0.16), transparent 34rem),
+          linear-gradient(180deg, var(--white), var(--paper-blue) 48%, var(--paper-pink));
         color: var(--ink);
         font: 400 17px/1.62 "Source Sans 3", "Aptos", "Segoe UI", system-ui, sans-serif;
         letter-spacing: 0;
@@ -105,14 +107,20 @@
 
       a {
         color: inherit;
-        text-decoration-color: oklch(67% 0.145 220 / 0.45);
+        text-decoration-color: oklch(62% 0.14 225 / 0.42);
         text-underline-offset: 0.22em;
         transition: color 180ms var(--ease-out-quart), text-decoration-color 180ms var(--ease-out-quart), border-color 180ms var(--ease-out-quart), background 180ms var(--ease-out-quart), transform 180ms var(--ease-out-quart), box-shadow 180ms var(--ease-out-quart);
       }
 
       a:hover {
-        color: var(--blue-strong);
-        text-decoration-color: var(--pink-strong);
+        color: var(--blue-text);
+        text-decoration-color: var(--pink-text);
+      }
+
+      a:focus-visible,
+      .button:focus-visible {
+        outline: 3px solid color-mix(in oklch, var(--pink) 68%, var(--ink));
+        outline-offset: 3px;
       }
 
       h1,
@@ -125,19 +133,19 @@
       }
 
       h1 {
-        max-width: 12ch;
-        font-size: 5.8rem;
-        line-height: 0.88;
+        max-width: 11ch;
+        font-size: 5.55rem;
+        line-height: 0.9;
       }
 
       h2 {
-        font-size: 2.45rem;
-        line-height: 1;
+        font-size: 2.55rem;
+        line-height: 0.98;
       }
 
       h3 {
-        font-size: 1.12rem;
-        line-height: 1.18;
+        font-size: 1.34rem;
+        line-height: 1.12;
       }
 
       p {
@@ -146,11 +154,11 @@
 
       ul {
         margin: 0;
-        padding-left: 1.08rem;
+        padding-left: 1.05rem;
       }
 
       li + li {
-        margin-top: 0.42rem;
+        margin-top: 0.44rem;
       }
 
       .progress {
@@ -160,7 +168,7 @@
         right: 0;
         z-index: 30;
         height: 3px;
-        background: linear-gradient(90deg, var(--blue), var(--pink), var(--white));
+        background: linear-gradient(90deg, var(--blue), var(--pink), var(--green));
         transform: scaleX(var(--scroll-progress, 0));
         transform-origin: left center;
         pointer-events: none;
@@ -176,29 +184,28 @@
         display: grid;
         grid-template-rows: auto 1fr auto;
         gap: 1rem;
-        padding: 1.05rem;
+        padding: 1rem;
         border-right: 1px solid var(--line);
         background: color-mix(in oklch, var(--white) 88%, var(--blue) 12%);
-        box-shadow: 16px 0 46px oklch(54% 0.07 220 / 0.13);
+        box-shadow: 16px 0 42px oklch(48% 0.055 224 / 0.12);
       }
 
       .rail-heading {
-        min-height: 3rem;
         display: grid;
-        gap: 0.25rem;
-        align-content: center;
+        gap: 0.28rem;
       }
 
       .rail-kicker {
-        color: var(--blue-strong);
-        font-size: 0.82rem;
+        color: var(--blue-text);
+        font-size: 0.84rem;
         font-weight: 800;
       }
 
       .rail-note {
+        max-width: 18ch;
         color: var(--muted);
-        font-size: 0.88rem;
-        line-height: 1.22;
+        font-size: 0.9rem;
+        line-height: 1.2;
       }
 
       .rail-nav {
@@ -209,24 +216,24 @@
 
       .rail-nav a,
       .rail-downloads a {
-        min-height: 2.8rem;
+        min-height: 2.7rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 0.62rem 0.72rem;
-        background: var(--white);
+        padding: 0.58rem 0.7rem;
+        background: color-mix(in oklch, var(--white) 92%, var(--paper-blue));
         color: var(--ink-soft);
         font-weight: 800;
         text-decoration: none;
-        box-shadow: 0 8px 20px oklch(54% 0.07 220 / 0.08);
+        box-shadow: 0 8px 18px oklch(48% 0.055 224 / 0.07);
       }
 
       .rail-nav a::after,
       .rail-downloads a::after {
         content: ">";
-        color: var(--pink-strong);
+        color: var(--pink-text);
         font-weight: 800;
         transform: translateX(0);
         transition: transform 180ms var(--ease-out-quart), color 180ms var(--ease-out-quart);
@@ -235,8 +242,8 @@
       .rail-nav a:hover,
       .rail-nav a.active,
       .rail-downloads a:hover {
-        border-color: var(--blue-strong);
-        background: color-mix(in oklch, var(--blue) 19%, var(--white));
+        border-color: var(--blue-text);
+        background: color-mix(in oklch, var(--blue) 18%, var(--white));
         color: var(--ink);
         transform: translateX(3px);
       }
@@ -244,7 +251,7 @@
       .rail-nav a.active::after,
       .rail-nav a:hover::after,
       .rail-downloads a:hover::after {
-        color: var(--blue-strong);
+        color: var(--blue-text);
         transform: translateX(3px);
       }
 
@@ -253,16 +260,12 @@
         gap: 0.46rem;
       }
 
-      .rail-downloads a:first-child {
-        background: color-mix(in oklch, var(--pink) 32%, var(--white));
-      }
-
       .content {
         margin-left: var(--rail-w);
       }
 
       .wrap {
-        width: min(100% - 72px, 1080px);
+        width: min(100% - 72px, 1120px);
         margin: 0 auto;
       }
 
@@ -270,56 +273,56 @@
         min-height: 100svh;
         display: grid;
         align-items: center;
-        padding: 5rem 0 4rem;
+        padding: 4.6rem 0 4.2rem;
       }
 
       .hero-grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.94fr) minmax(310px, 0.56fr);
-        gap: 3.2rem;
+        grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.68fr);
+        gap: 3.3rem;
         align-items: center;
       }
 
       .eyebrow {
         display: inline-flex;
         align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 1.2rem;
-        color: var(--pink-strong);
+        gap: 0.72rem;
+        margin-bottom: 1.1rem;
+        color: var(--pink-text);
         font-weight: 800;
       }
 
       .eyebrow::before {
         content: "";
         width: 3rem;
-        height: 0.5rem;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--blue), var(--pink), var(--white));
+        height: 0.48rem;
         border: 1px solid var(--line);
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--blue) 0 46%, var(--pink) 46% 78%, var(--white) 78% 100%);
       }
 
       .subtitle {
-        max-width: 22ch;
+        max-width: 23ch;
         margin-top: 1.05rem;
-        color: var(--blue-strong);
+        color: var(--blue-text);
         font-family: "Archivo", "Source Sans 3", system-ui, sans-serif;
-        font-size: 1.65rem;
-        font-weight: 700;
-        line-height: 1.08;
+        font-size: 1.72rem;
+        font-weight: 800;
+        line-height: 1.3;
       }
 
       .summary {
-        max-width: 68ch;
-        margin-top: 1.35rem;
+        max-width: 65ch;
+        margin-top: 1.25rem;
         color: var(--ink-soft);
-        font-size: 1.13rem;
+        font-size: 1.12rem;
       }
 
       .actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-top: 1.85rem;
+        gap: 0.72rem;
+        margin-top: 1.75rem;
       }
 
       .button {
@@ -329,7 +332,7 @@
         justify-content: center;
         border: 1px solid var(--line-strong);
         border-radius: var(--radius);
-        padding: 0.66rem 1rem;
+        padding: 0.64rem 1rem;
         background: var(--ink);
         color: var(--white);
         font-weight: 800;
@@ -339,8 +342,8 @@
       }
 
       .button:hover {
-        border-color: var(--blue-strong);
-        background: var(--blue-strong);
+        border-color: var(--blue-text);
+        background: var(--blue-text);
         color: var(--white);
         transform: translateY(-2px);
       }
@@ -352,7 +355,7 @@
       }
 
       .button.secondary:hover {
-        background: color-mix(in oklch, var(--pink) 30%, var(--white));
+        background: color-mix(in oklch, var(--pink) 32%, var(--white));
         color: var(--ink);
       }
 
@@ -360,7 +363,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.55rem 1rem;
-        margin-top: 1.15rem;
+        margin-top: 1.05rem;
         color: var(--muted);
         font-size: 0.96rem;
       }
@@ -371,51 +374,127 @@
         overflow-wrap: anywhere;
       }
 
-      .profile-panel {
+      .work-board {
         position: relative;
-        overflow: hidden;
+        display: grid;
+        gap: 0.78rem;
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        background: var(--white);
+        padding: 0.95rem;
+        background:
+          linear-gradient(180deg, oklch(99% 0.004 220 / 0.94), oklch(96.3% 0.026 224 / 0.92)),
+          var(--white);
         box-shadow: var(--shadow);
       }
 
-      .profile-panel::before {
+      .work-board::before {
         content: "";
-        display: block;
-        height: 0.82rem;
-        background: linear-gradient(90deg, var(--blue) 0 42%, var(--pink) 42% 76%, var(--white) 76% 100%);
-        border-bottom: 1px solid var(--line);
+        position: absolute;
+        inset: 0.85rem 0.85rem auto 0.85rem;
+        height: 0.7rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--blue) 0 38%, var(--pink) 38% 72%, var(--green) 72% 100%);
       }
 
-      .profile-panel-inner {
-        display: grid;
+      .board-title {
+        margin-top: 1.55rem;
+        display: flex;
+        justify-content: space-between;
         gap: 1rem;
-        padding: 1.1rem;
-      }
-
-      .panel-row {
-        display: grid;
-        grid-template-columns: 8.8rem 1fr;
-        gap: 0.9rem;
-        align-items: start;
-        border-bottom: 1px solid var(--line);
-        padding-bottom: 0.85rem;
-      }
-
-      .panel-row:last-child {
-        border-bottom: 0;
-        padding-bottom: 0;
-      }
-
-      .panel-row span {
         color: var(--muted);
+        font-size: 0.88rem;
         font-weight: 800;
       }
 
-      .panel-row strong,
-      .panel-row p {
+      .board-title strong {
         color: var(--ink);
+      }
+
+      .board-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .board-item {
+        min-height: 8.1rem;
+        display: grid;
+        align-content: space-between;
+        gap: 0.68rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 0.78rem;
+        background: var(--white);
+      }
+
+      .board-item strong {
+        color: var(--ink);
+        font-family: "Archivo", "Source Sans 3", system-ui, sans-serif;
+        font-size: 1rem;
+      }
+
+      .board-item span {
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.35;
+      }
+
+      .trace {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.28rem;
+        align-items: end;
+      }
+
+      .trace i {
+        display: block;
+        min-height: 0.44rem;
+        border-radius: 999px;
+        background: color-mix(in oklch, var(--blue) 50%, var(--white));
+      }
+
+      .trace i:nth-child(2) {
+        min-height: 1.15rem;
+        background: color-mix(in oklch, var(--pink) 58%, var(--white));
+      }
+
+      .trace i:nth-child(3) {
+        min-height: 0.72rem;
+        background: color-mix(in oklch, var(--green) 54%, var(--white));
+      }
+
+      .trace i:nth-child(4) {
+        min-height: 1.55rem;
+        background: var(--ink);
+      }
+
+      .system-map {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.56rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 0.78rem;
+        background: color-mix(in oklch, var(--blue) 10%, var(--white));
+      }
+
+      .map-node {
+        min-height: 3.1rem;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+        color: var(--ink-soft);
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .map-node:last-child {
+        background: var(--ink);
+        color: var(--white);
       }
 
       .section {
@@ -426,149 +505,250 @@
 
       .section-head {
         display: grid;
-        grid-template-columns: minmax(210px, 0.36fr) minmax(0, 1fr);
-        gap: 2.7rem;
+        grid-template-columns: minmax(210px, 0.34fr) minmax(0, 1fr);
+        gap: 2.8rem;
         align-items: start;
-        margin-bottom: 2.2rem;
+        margin-bottom: 2.4rem;
       }
 
       .section-note {
-        max-width: 68ch;
+        max-width: 66ch;
         color: var(--muted);
         font-size: 1.05rem;
       }
 
-      .proof-list {
-        display: grid;
-        gap: 0.85rem;
-      }
-
-      .proof-item {
-        display: grid;
-        grid-template-columns: minmax(150px, 0.28fr) minmax(0, 1fr);
-        gap: 1.3rem;
-        align-items: start;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 1rem;
-        background: color-mix(in oklch, var(--white) 82%, var(--paper-blue));
-        transition: transform 220ms var(--ease-out-quart), border-color 220ms var(--ease-out-quart), box-shadow 220ms var(--ease-out-quart);
-      }
-
-      .proof-item:hover {
-        border-color: var(--blue-strong);
-        box-shadow: 0 14px 30px oklch(54% 0.07 220 / 0.12);
-        transform: translateY(-2px);
-      }
-
-      .proof-item strong {
-        color: var(--pink-strong);
-        font-family: "Archivo", "Source Sans 3", system-ui, sans-serif;
-        line-height: 1.12;
-      }
-
-      .proof-item p {
-        color: var(--ink-soft);
-      }
-
-      .projects {
+      .project-list {
         display: grid;
         border-top: 1px solid var(--line);
       }
 
       .project {
         display: grid;
-        grid-template-columns: minmax(0, 0.36fr) minmax(0, 1fr);
-        gap: 2.2rem;
-        padding: 1.65rem 0;
+        grid-template-columns: minmax(300px, 0.46fr) minmax(0, 0.54fr);
+        gap: 2.4rem;
+        align-items: stretch;
+        padding: 2.4rem 0;
         border-bottom: 1px solid var(--line);
-        transition: transform 220ms var(--ease-out-quart), border-color 220ms var(--ease-out-quart);
       }
 
-      .project:hover {
-        border-bottom-color: var(--blue-strong);
-        transform: translateX(4px);
+      .project:nth-child(even) {
+        grid-template-columns: minmax(0, 0.54fr) minmax(300px, 0.46fr);
       }
 
-      .project-index {
+      .project:nth-child(even) .project-copy {
+        order: 2;
+      }
+
+      .project-copy {
+        display: grid;
+        gap: 0.95rem;
+        align-content: start;
+      }
+
+      .project-tag {
+        width: max-content;
         display: inline-flex;
-        min-width: 2.2rem;
-        min-height: 2.2rem;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.78rem;
         border: 1px solid var(--line);
-        border-radius: 50%;
+        border-radius: 999px;
         background: color-mix(in oklch, var(--pink) 28%, var(--white));
         color: var(--ink);
+        padding: 0.28rem 0.62rem;
+        font-size: 0.82rem;
         font-weight: 800;
       }
 
-      .project p {
-        margin-top: 0.42rem;
+      .project-kicker {
+        color: var(--blue-text);
+        font-weight: 800;
+      }
+
+      .project-summary {
+        color: var(--ink-soft);
+        font-size: 1.05rem;
+      }
+
+      .project-stack {
         color: var(--muted);
-      }
-
-      .stack {
-        color: var(--blue-strong);
         font-weight: 800;
       }
 
-      .skills {
+      .artifact {
+        min-height: 20rem;
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
-      .skill {
+        grid-template-rows: auto 1fr auto;
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: var(--white);
-        padding: 1.05rem;
-        transition: transform 220ms var(--ease-out-quart), border-color 220ms var(--ease-out-quart), box-shadow 220ms var(--ease-out-quart);
+        box-shadow: 0 16px 36px oklch(48% 0.055 224 / 0.11);
+        overflow: hidden;
       }
 
-      .skill:hover {
-        border-color: var(--pink-strong);
-        box-shadow: 0 14px 30px oklch(58% 0.07 12 / 0.12);
-        transform: translateY(-2px);
-      }
-
-      .skill span {
-        display: block;
-        margin-bottom: 0.35rem;
-        color: var(--blue-strong);
+      .artifact-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px solid var(--line);
+        padding: 0.72rem 0.82rem;
+        color: var(--muted);
+        font-size: 0.82rem;
         font-weight: 800;
       }
 
-      .skill p {
+      .artifact-top span:first-child {
+        color: var(--ink);
+      }
+
+      .artifact-body {
+        display: grid;
+        gap: 0.74rem;
+        align-content: start;
+        padding: 1rem;
+      }
+
+      .artifact-row {
+        display: grid;
+        grid-template-columns: minmax(6rem, 0.32fr) minmax(0, 1fr);
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .artifact-row span {
+        color: var(--quiet);
+        font-size: 0.85rem;
+        font-weight: 800;
+      }
+
+      .artifact-row strong,
+      .artifact-row p {
         color: var(--ink-soft);
       }
 
-      .split {
+      .artifact-bar {
+        height: 0.72rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--blue), var(--pink));
+      }
+
+      .artifact-lines {
         display: grid;
-        grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+        gap: 0.34rem;
+      }
+
+      .artifact-lines i {
+        display: block;
+        height: 0.48rem;
+        border-radius: 999px;
+        background: color-mix(in oklch, var(--line) 70%, var(--blue));
+      }
+
+      .artifact-lines i:nth-child(2) {
+        width: 84%;
+      }
+
+      .artifact-lines i:nth-child(3) {
+        width: 62%;
+        background: color-mix(in oklch, var(--line) 70%, var(--pink));
+      }
+
+      .artifact-foot {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.42rem;
+        border-top: 1px solid var(--line);
+        padding: 0.74rem 0.82rem;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.26rem 0.56rem;
+        background: color-mix(in oklch, var(--paper-blue) 72%, var(--white));
+        color: var(--ink-soft);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .evidence {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+        overflow: hidden;
+      }
+
+      .evidence-item {
+        min-height: 11rem;
+        display: grid;
+        align-content: start;
+        gap: 0.65rem;
+        border-right: 1px solid var(--line);
+        padding: 1rem;
+      }
+
+      .evidence-item:last-child {
+        border-right: 0;
+      }
+
+      .evidence-item strong {
+        color: var(--pink-text);
+        font-family: "Archivo", "Source Sans 3", system-ui, sans-serif;
+        line-height: 1.3;
+      }
+
+      .evidence-item p {
+        color: var(--ink-soft);
+      }
+
+      .range {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(290px, 0.95fr);
         gap: 1rem;
       }
 
       .experience,
       .education,
-      .resume-files {
+      .resume-files,
+      .range-panel {
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: var(--white);
-        padding: 1.1rem;
-        box-shadow: 0 12px 28px oklch(54% 0.07 220 / 0.08);
+        padding: 1.12rem;
+        box-shadow: 0 12px 28px oklch(48% 0.055 224 / 0.08);
       }
 
+      .range-panel {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .range-line {
+        display: grid;
+        grid-template-columns: minmax(8rem, 0.35fr) minmax(0, 1fr);
+        gap: 0.9rem;
+      }
+
+      .range-line + .range-line {
+        border-top: 1px solid var(--line);
+        padding-top: 0.9rem;
+      }
+
+      .range-line strong {
+        color: var(--blue-text);
+      }
+
+      .range-line p,
       .experience p,
       .education p {
-        margin-top: 0.45rem;
         color: var(--muted);
       }
 
       .meta {
-        color: var(--blue-strong);
+        color: var(--blue-text);
         font-weight: 800;
       }
 
@@ -613,18 +793,16 @@
         from {
           opacity: 0;
           transform: translate3d(0, 18px, 0);
-          filter: blur(6px);
         }
 
         to {
           opacity: 1;
           transform: translate3d(0, 0, 0);
-          filter: blur(0);
         }
       }
 
       .hero-copy > *,
-      .profile-panel {
+      .work-board {
         opacity: 0;
         animation: enter 680ms var(--ease-out-expo) forwards;
         animation-delay: calc(80ms + var(--step, 0) * 80ms);
@@ -654,7 +832,7 @@
         --step: 5;
       }
 
-      .profile-panel {
+      .work-board {
         --step: 3;
       }
 
@@ -670,31 +848,47 @@
         transform: translate3d(0, 0, 0);
       }
 
-      @media (max-width: 1080px) {
+      @media (max-width: 1120px) {
         :root {
-          --rail-w: 196px;
+          --rail-w: 184px;
         }
 
         .hero-grid,
         .section-head,
         .project,
-        .split {
+        .project:nth-child(even),
+        .range {
           grid-template-columns: 1fr;
         }
 
+        .project:nth-child(even) .project-copy {
+          order: 0;
+        }
+
         h1 {
-          font-size: 4.45rem;
+          font-size: 4.55rem;
+        }
+
+        .evidence {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .evidence-item:nth-child(2) {
+          border-right: 0;
+        }
+
+        .evidence-item:nth-child(-n + 2) {
+          border-bottom: 1px solid var(--line);
         }
       }
 
       @media (max-width: 760px) {
         :root {
-          --rail-w: 86px;
+          --rail-w: 82px;
         }
 
         body {
           font-size: 16px;
-          background-size: 52px 52px, 52px 52px, auto;
         }
 
         .progress {
@@ -702,16 +896,12 @@
         }
 
         .rail {
-          gap: 0.65rem;
-          padding: 0.62rem;
-        }
-
-        .rail-heading {
-          min-height: 2.35rem;
+          gap: 0.62rem;
+          padding: 0.58rem;
         }
 
         .rail-kicker {
-          font-size: 0.74rem;
+          font-size: 0.72rem;
           line-height: 1.08;
         }
 
@@ -725,11 +915,11 @@
 
         .rail-nav a,
         .rail-downloads a {
-          min-height: 2.42rem;
+          min-height: 2.34rem;
           justify-content: center;
-          padding: 0.4rem 0.34rem;
-          font-size: 0.72rem;
-          line-height: 1.05;
+          padding: 0.36rem 0.28rem;
+          font-size: 0.7rem;
+          line-height: 1.25;
           text-align: center;
         }
 
@@ -749,16 +939,16 @@
         }
 
         .wrap {
-          width: min(100% - 24px, 1080px);
+          width: min(100% - 24px, 1120px);
         }
 
         .hero {
           min-height: auto;
-          padding: 2.7rem 0 3.1rem;
+          padding: 2.6rem 0 3rem;
         }
 
         .hero-grid {
-          gap: 1.4rem;
+          gap: 1.45rem;
         }
 
         h1 {
@@ -766,11 +956,15 @@
         }
 
         h2 {
-          font-size: 1.82rem;
+          font-size: 1.9rem;
+        }
+
+        h3 {
+          font-size: 1.14rem;
         }
 
         .subtitle {
-          font-size: 1.25rem;
+          font-size: 1.22rem;
         }
 
         .summary {
@@ -787,16 +981,26 @@
           width: 100%;
         }
 
-        .profile-panel-inner,
-        .panel-row,
-        .proof-item,
-        .skills,
+        .board-grid,
+        .artifact-row,
+        .evidence,
+        .range-line,
         .resume-files {
           grid-template-columns: 1fr;
         }
 
-        .panel-row {
-          gap: 0.22rem;
+        .artifact {
+          min-height: auto;
+        }
+
+        .evidence-item {
+          min-height: auto;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .evidence-item:last-child {
+          border-bottom: 0;
         }
 
         .section {
@@ -806,20 +1010,20 @@
 
       @media (max-width: 390px) {
         :root {
-          --rail-w: 78px;
+          --rail-w: 76px;
         }
 
         .rail {
-          padding: 0.5rem;
+          padding: 0.48rem;
         }
 
         .rail-nav a,
         .rail-downloads a {
-          font-size: 0.68rem;
+          font-size: 0.66rem;
         }
 
         h1 {
-          font-size: 2.55rem;
+          font-size: 2.52rem;
         }
       }
 
@@ -834,7 +1038,7 @@
         }
 
         .hero-copy > *,
-        .profile-panel,
+        .work-board,
         .js .reveal:not(.visible) {
           opacity: 1;
           transform: none;
@@ -846,18 +1050,19 @@
   <body>
     <div class="progress" aria-hidden="true"></div>
 
-    <aside class="rail" aria-label="Site navigation">
+    <aside class="rail" aria-label="Portfolio navigation">
       <div class="rail-heading">
-        <span class="rail-kicker">Resume site</span>
-        <span class="rail-note">Fixed navigation. Human-readable, parser-friendly.</span>
+        <span class="rail-kicker">Portfolio</span>
+        <span class="rail-note">AI systems, shipped artifacts, and resume files.</span>
       </div>
 
       <nav class="rail-nav" aria-label="Section links">
-        <a href="#top">Overview</a>
-        <a href="#proof">Proof</a>
-        <a href="#systems">Systems</a>
-        <a href="#stack">Stack</a>
-        <a href="#experience">Experience</a>
+        <a href="#top">Intro</a>
+        <a href="#work">Work</a>
+        <a href="#threads">Threads</a>
+        <a href="#story">Story</a>
+        <a href="#semkerbot">SemKerBot</a>
+        <a href="#aisb">AISB</a>
         <a href="#resume">Files</a>
       </nav>
 
@@ -873,17 +1078,17 @@
           <div class="wrap">
             <div class="hero-grid">
               <div class="hero-copy">
-                <p class="eyebrow">AI systems engineer</p>
+                <p class="eyebrow">AI systems portfolio</p>
                 <h1 id="hero-title">Parth Thakre</h1>
-                <p class="subtitle">Enterprise AI, retrieval, agents, evaluation, and private runtime infrastructure.</p>
+                <p class="subtitle">LLM products, evaluation rigs, retrieval agents, and private runtime infrastructure.</p>
                 <p class="summary">
-                  I build practical LLM systems that can be checked after the demo ends:
-                  cited answers, structured logs, repeatable artifacts, model evaluation,
-                  and deployment paths that respect messy business data.
+                  I build AI systems that leave a trail: citations, logs, structured contracts,
+                  scorecards, deployed services, and source-controlled artifacts that survive
+                  past the demo.
                 </p>
                 <div class="actions" aria-label="Primary links">
-                  <a class="button" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Download PDF</a>
-                  <a class="button secondary" href="/resume.md" download="Parth_Thakre_Resume.md">Download Markdown</a>
+                  <a class="button" href="#work">View selected work</a>
+                  <a class="button secondary" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Download PDF</a>
                   <a class="button secondary" href="https://github.com/parth-thakre">GitHub</a>
                 </div>
                 <div class="contact" aria-label="Contact links">
@@ -893,22 +1098,238 @@
                 </div>
               </div>
 
-              <aside class="profile-panel" aria-label="Portfolio snapshot">
-                <div class="profile-panel-inner">
-                  <div class="panel-row">
-                    <span>Current focus</span>
-                    <strong>Client-facing AI systems with evidence and repeatable outputs.</strong>
+              <aside class="work-board" aria-label="Selected work preview">
+                <div class="board-title">
+                  <strong>Selected work</strong>
+                  <span>4 systems</span>
+                </div>
+                <div class="board-grid">
+                  <div class="board-item">
+                    <strong>Threads</strong>
+                    <span>Desktop AI workspace with retrieval, OCR, MCP tools, and Azure model routing.</span>
+                    <div class="trace" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
                   </div>
-                  <div class="panel-row">
-                    <span>Core surfaces</span>
-                    <p>Azure AI Foundry, Azure OpenAI, RAG, OCR, MCP tools, FastAPI, Electron, React, Docker.</p>
+                  <div class="board-item">
+                    <strong>Story Tourney</strong>
+                    <span>Blind multi-model generation, review, revision, and ranking loops.</span>
+                    <div class="trace" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
                   </div>
-                  <div class="panel-row">
-                    <span>Working style</span>
-                    <p>Prototype fast, keep source control honest, verify behavior with logs, schemas, citations, and scorecards.</p>
+                  <div class="board-item">
+                    <strong>SemKerBot</strong>
+                    <span>Kinaxis RapidResponse Q&amp;A with workbook, worksheet, row, and value citations.</span>
+                    <div class="trace" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="board-item">
+                    <strong>AISB</strong>
+                    <span>Artificial society benchmark with typed artifacts and multi-axis scorecards.</span>
+                    <div class="trace" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
                   </div>
                 </div>
+                <div class="system-map" role="img" aria-label="AI system flow from source material to retrieval, tools, evaluation, and cited output">
+                  <span class="map-node">sources</span>
+                  <span class="map-node">retrieval</span>
+                  <span class="map-node">tools</span>
+                  <span class="map-node">eval</span>
+                  <span class="map-node">proof</span>
+                </div>
               </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="work" aria-labelledby="work-title">
+          <div class="wrap">
+            <div class="section-head reveal">
+              <h2 id="work-title">Selected Work</h2>
+              <p class="section-note">
+                Four projects, each chosen for a different signal: product surface, orchestration,
+                enterprise data access, and benchmark design.
+              </p>
+            </div>
+
+            <div class="project-list">
+              <article class="project reveal" id="threads">
+                <div class="project-copy">
+                  <span class="project-tag">workspace</span>
+                  <p class="project-kicker">Local-first desktop AI workspace</p>
+                  <h3><a href="https://github.com/parth-thakre/threads">Threads</a></h3>
+                  <p class="project-summary">
+                    An Azure-backed Electron workspace for real AI work: searchable history,
+                    document extraction, OCR, memory, retrieval, MCP tools, and model routing.
+                  </p>
+                  <p class="project-stack">Electron, React, TypeScript, Azure AI Foundry</p>
+                  <ul>
+                    <li>Handled PDFs, DOCX, PPTX, XLSX, CSV, Markdown, code, and scanned images.</li>
+                    <li>Added MCP tool discovery, Azure web-search grounding, Claude Foundry routing, and image generation/editing flows.</li>
+                    <li>Kept local history searchable across hundreds of conversations.</li>
+                  </ul>
+                </div>
+                <div class="artifact" aria-label="Threads artifact preview">
+                  <div class="artifact-top">
+                    <span>Threads workspace</span>
+                    <span>retrieval + tools</span>
+                  </div>
+                  <div class="artifact-body">
+                    <div class="artifact-row">
+                      <span>input</span>
+                      <strong>mixed documents, chats, memory, web grounding</strong>
+                    </div>
+                    <div class="artifact-row">
+                      <span>pipeline</span>
+                      <div class="artifact-bar" aria-hidden="true"></div>
+                    </div>
+                    <div class="artifact-row">
+                      <span>output</span>
+                      <p>answers with source context, tool traces, and preserved conversation history</p>
+                    </div>
+                    <div class="artifact-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="artifact-foot">
+                    <span class="pill">OCR</span>
+                    <span class="pill">MCP</span>
+                    <span class="pill">Azure</span>
+                    <span class="pill">Electron</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project reveal" id="story">
+                <div class="project-copy">
+                  <span class="project-tag">evaluation</span>
+                  <p class="project-kicker">Blind multi-model LLM evaluation</p>
+                  <h3><a href="https://github.com/parth-thakre/story-tourney">Story Tourney</a></h3>
+                  <p class="project-summary">
+                    A tournament platform that makes model comparison inspectable:
+                    generation, blind peer review, revision, final ranking, archived calls,
+                    and deterministic fallback behavior.
+                  </p>
+                  <p class="project-stack">Node.js, TypeScript, Next.js, SQLite</p>
+                  <ul>
+                    <li>Orchestrated 2-4 OpenRouter models through four structured phases.</li>
+                    <li>Validated JSON contracts with Zod and preserved provider-call archives.</li>
+                    <li>Used Borda-count scoring with first-place and peer-review tie-breakers.</li>
+                  </ul>
+                </div>
+                <div class="artifact" aria-label="Story Tourney artifact preview">
+                  <div class="artifact-top">
+                    <span>Story Tourney</span>
+                    <span>blind ranking</span>
+                  </div>
+                  <div class="artifact-body">
+                    <div class="artifact-row">
+                      <span>phase 1</span>
+                      <strong>generate entries without model labels</strong>
+                    </div>
+                    <div class="artifact-row">
+                      <span>phase 2</span>
+                      <p>peer review, revision, final score, archived provider calls</p>
+                    </div>
+                    <div class="artifact-row">
+                      <span>score</span>
+                      <div class="artifact-bar" aria-hidden="true"></div>
+                    </div>
+                    <div class="artifact-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="artifact-foot">
+                    <span class="pill">OpenRouter</span>
+                    <span class="pill">Zod</span>
+                    <span class="pill">SQLite</span>
+                    <span class="pill">Borda</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project reveal" id="semkerbot">
+                <div class="project-copy">
+                  <span class="project-tag">enterprise data</span>
+                  <p class="project-kicker">Supply-chain query agent</p>
+                  <h3><a href="https://github.com/parth-thakre/SemKerBot-updated-teams">SemKerBot</a></h3>
+                  <p class="project-summary">
+                    A local-only agent/API split for Kinaxis RapidResponse worksheet data,
+                    designed around citations, diagnostic playbooks, and exact values instead
+                    of vague natural-language summaries.
+                  </p>
+                  <p class="project-stack">Python, FastAPI, Semantic Kernel, Docker</p>
+                  <ul>
+                    <li>Wrapped workbook data with FastAPI and Semantic Kernel tools.</li>
+                    <li>Added catalog-aware planning, column-ID filter guidance, and per-call debug metrics.</li>
+                    <li>Required workbook, worksheet, column, row, filter, and exact-value citations.</li>
+                  </ul>
+                </div>
+                <div class="artifact" aria-label="SemKerBot artifact preview">
+                  <div class="artifact-top">
+                    <span>SemKerBot answer</span>
+                    <span>cited values</span>
+                  </div>
+                  <div class="artifact-body">
+                    <div class="artifact-row">
+                      <span>question</span>
+                      <strong>where is the supply-chain exception coming from?</strong>
+                    </div>
+                    <div class="artifact-row">
+                      <span>evidence</span>
+                      <p>workbook, worksheet, row, column, filter, exact value</p>
+                    </div>
+                    <div class="artifact-row">
+                      <span>trace</span>
+                      <div class="artifact-bar" aria-hidden="true"></div>
+                    </div>
+                    <div class="artifact-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="artifact-foot">
+                    <span class="pill">FastAPI</span>
+                    <span class="pill">SK</span>
+                    <span class="pill">Kinaxis</span>
+                    <span class="pill">Docker</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project reveal" id="aisb">
+                <div class="project-copy">
+                  <span class="project-tag">simulation</span>
+                  <p class="project-kicker">Simulation benchmark</p>
+                  <h3><a href="https://github.com/parth-thakre/project3">AISB</a></h3>
+                  <p class="project-summary">
+                    An AI society benchmark for running 5-role simulations with resources,
+                    trust, influence, resentment, typed artifact schemas, and multi-axis
+                    scorecards.
+                  </p>
+                  <p class="project-stack">Python, CLI, simulation, benchmarking</p>
+                  <ul>
+                    <li>Modeled artificial societies with role-specific actions and structured event logs.</li>
+                    <li>Refactored toward an 18-module package CLI and canonical data layout.</li>
+                    <li>Replaced single-metric judging with welfare, economy, cohesion, institutions, and anti-degeneracy scoring.</li>
+                  </ul>
+                </div>
+                <div class="artifact" aria-label="AISB artifact preview">
+                  <div class="artifact-top">
+                    <span>AISB scorecard</span>
+                    <span>5 axes</span>
+                  </div>
+                  <div class="artifact-body">
+                    <div class="artifact-row">
+                      <span>society</span>
+                      <strong>roles, resources, trust, influence, resentment</strong>
+                    </div>
+                    <div class="artifact-row">
+                      <span>metrics</span>
+                      <p>welfare, economy, cohesion, institutions, anti-degeneracy</p>
+                    </div>
+                    <div class="artifact-row">
+                      <span>run</span>
+                      <div class="artifact-bar" aria-hidden="true"></div>
+                    </div>
+                    <div class="artifact-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="artifact-foot">
+                    <span class="pill">CLI</span>
+                    <span class="pill">schemas</span>
+                    <span class="pill">logs</span>
+                    <span class="pill">scorecards</span>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -916,156 +1337,83 @@
         <section class="section" id="proof" aria-labelledby="proof-title">
           <div class="wrap">
             <div class="section-head reveal">
-              <h2 id="proof-title">Delivery Proof</h2>
+              <h2 id="proof-title">What The Work Proves</h2>
               <p class="section-note">
-                The portfolio is strongest where implementation and verification meet. These are the patterns that show up across the work.
+                The common thread is not "uses AI." It is the discipline around messy inputs,
+                auditable outputs, and tools that can be checked after the first run.
               </p>
             </div>
-            <div class="proof-list">
-              <article class="proof-item reveal">
-                <strong>Shipped artifacts</strong>
-                <p>Electron apps, FastAPI services, Dockerized agents, CLI packages, rendered reports, and public code repositories.</p>
+            <div class="evidence">
+              <article class="evidence-item reveal">
+                <strong>Shipped surfaces</strong>
+                <p>Electron apps, FastAPI services, Dockerized agents, CLI packages, rendered reports, and public repositories.</p>
               </article>
-              <article class="proof-item reveal">
+              <article class="evidence-item reveal">
                 <strong>Inspectable outputs</strong>
-                <p>Citations, structured JSON contracts, debug traces, scorecards, exact values, and repeatable run artifacts.</p>
+                <p>Citations, structured JSON contracts, debug traces, scorecards, exact values, and preserved run artifacts.</p>
               </article>
-              <article class="proof-item reveal">
+              <article class="evidence-item reveal">
                 <strong>Enterprise data paths</strong>
-                <p>Kinaxis RapidResponse Q&amp;A, Azure-backed prototypes, local-first AI workspaces, and private Linux runtime infrastructure.</p>
+                <p>Kinaxis RapidResponse Q&amp;A, Azure-backed prototypes, local-first AI workspaces, and private Linux runtimes.</p>
               </article>
-              <article class="proof-item reveal">
+              <article class="evidence-item reveal">
                 <strong>Tool-aware AI</strong>
-                <p>Retrieval, OCR, MCP tool discovery, function calling, web-search grounding, multi-model routing, and fallback behavior.</p>
+                <p>Retrieval, OCR, MCP discovery, function calling, web-search grounding, multi-model routing, and fallback behavior.</p>
               </article>
             </div>
           </div>
         </section>
 
-        <section class="section" id="systems" aria-labelledby="systems-title">
+        <section class="section" id="range" aria-labelledby="range-title">
           <div class="wrap">
             <div class="section-head reveal">
-              <h2 id="systems-title">Selected Systems</h2>
+              <h2 id="range-title">Operating Range</h2>
               <p class="section-note">
-                Four projects that cover product surfaces, evaluation, enterprise query agents, and simulation benchmarks.
+                Practical stack breadth for moving from prototype to usable artifact.
               </p>
             </div>
-
-            <div class="projects">
-              <article class="project reveal">
-                <div>
-                  <div class="project-index">01</div>
-                  <h3><a href="https://github.com/parth-thakre/threads">Threads</a></h3>
-                  <p>Local-first desktop AI workspace</p>
-                  <p class="stack">Electron, React, TypeScript, Azure AI Foundry</p>
+            <div class="range">
+              <div class="range-panel reveal">
+                <div class="range-line">
+                  <strong>Implementation</strong>
+                  <p>Python, TypeScript, JavaScript, C/C++, Java, Bash</p>
                 </div>
-                <ul>
-                  <li>Built an Azure-backed desktop AI workspace with Entra/API-key auth, searchable local history for hundreds of conversations, memory, and retrieval.</li>
-                  <li>Implemented extraction/OCR for PDFs, DOCX, PPTX, XLSX, CSV, Markdown, text/code files, and scanned images.</li>
-                  <li>Added MCP tool discovery/selection, Azure web-search grounding, Claude Foundry routing, and GPT-image generation/editing flows.</li>
-                </ul>
-              </article>
-
-              <article class="project reveal">
-                <div>
-                  <div class="project-index">02</div>
-                  <h3><a href="https://github.com/parth-thakre/story-tourney">Story Tourney</a></h3>
-                  <p>Blind multi-model LLM evaluation platform</p>
-                  <p class="stack">Node.js, TypeScript, Next.js, SQLite</p>
+                <div class="range-line">
+                  <strong>AI systems</strong>
+                  <p>Azure AI Foundry, Azure OpenAI, RAG, OCR, tool/function calling, MCP, prompt/schema design</p>
                 </div>
-                <ul>
-                  <li>Orchestrated 2-4 OpenRouter models through generation, blind peer review, revision, and final ranking.</li>
-                  <li>Added Zod-validated JSON contracts, provider-call archives, encrypted key storage, and deterministic mock fallback.</li>
-                  <li>Implemented Borda-count scoring with first-place and peer-review tie-breakers for repeatable outcomes.</li>
-                </ul>
-              </article>
-
-              <article class="project reveal">
-                <div>
-                  <div class="project-index">03</div>
-                  <h3><a href="https://github.com/parth-thakre/SemKerBot-updated-teams">SemKerBot</a></h3>
-                  <p>Kinaxis supply-chain query agent</p>
-                  <p class="stack">Python, FastAPI, Semantic Kernel, Docker</p>
+                <div class="range-line">
+                  <strong>Evaluation</strong>
+                  <p>LLM benchmarks, multi-model orchestration, structured rubrics, simulation metrics, artifact schemas</p>
                 </div>
-                <ul>
-                  <li>Built a local-only agent/API split where Semantic Kernel tools query a FastAPI wrapper around Kinaxis RapidResponse worksheet data.</li>
-                  <li>Added diagnostic playbooks, catalog-aware query planning, column-ID filter guidance, and per-call debug traces.</li>
-                  <li>Enforced evidence-backed answers with workbook, worksheet, column, row, filter, and exact-value citations.</li>
-                </ul>
-              </article>
-
-              <article class="project reveal">
-                <div>
-                  <div class="project-index">04</div>
-                  <h3><a href="https://github.com/parth-thakre/project3">AISB</a></h3>
-                  <p>AI Society Benchmark</p>
-                  <p class="stack">Python, CLI, Simulation, Benchmarking</p>
+                <div class="range-line">
+                  <strong>Product</strong>
+                  <p>FastAPI, Flask, Express, Node.js, REST APIs, SQLite, Pydantic, Zod, React, Next.js, Vite, Electron</p>
                 </div>
-                <ul>
-                  <li>Created an LLM benchmark that runs 5-role artificial societies with resources, trust, influence, resentment, and role-specific actions.</li>
-                  <li>Refactored toward an 18-module package CLI, canonical data layout, typed artifact schemas, and structured event logs.</li>
-                  <li>Replaced single-score judging with 5-axis scorecards for welfare, economy, cohesion, institutions, and anti-degeneracy.</li>
-                </ul>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="stack" aria-labelledby="stack-title">
-          <div class="wrap">
-            <div class="section-head reveal">
-              <h2 id="stack-title">Operating Stack</h2>
-              <p class="section-note">
-                A practical stack for building AI systems that move from prototype to usable artifact.
-              </p>
-            </div>
-            <div class="skills">
-              <article class="skill reveal"><span>Implementation</span><p>Python, TypeScript, JavaScript, C/C++, Java, Bash</p></article>
-              <article class="skill reveal"><span>AI/LLM systems</span><p>Azure AI Foundry, Azure OpenAI, RAG, OCR, tool/function calling, MCP, prompt/schema design</p></article>
-              <article class="skill reveal"><span>Evaluation</span><p>LLM benchmarks, multi-model orchestration, structured rubrics, simulation signals, artifact schemas</p></article>
-              <article class="skill reveal"><span>Product services</span><p>FastAPI, Flask, Express, Node.js, REST APIs, SQLite, Pydantic, Zod</p></article>
-              <article class="skill reveal"><span>User surfaces</span><p>React, Next.js, Vite, Electron, HTML, CSS</p></article>
-              <article class="skill reveal"><span>Runtime</span><p>Docker, Docker Compose, Linux, reverse proxies, Microsoft Azure, Azure AI Search, Microsoft Fabric</p></article>
-              <article class="skill reveal"><span>Coding loop</span><p>Codex, OpenCode, OpenClaw, agentic coding workflows</p></article>
-              <article class="skill reveal"><span>Automation</span><p>Copilot Studio, Power Apps</p></article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="experience" aria-labelledby="experience-title">
-          <div class="wrap split">
-            <div>
-              <div class="section-head reveal">
-                <h2 id="experience-title">Experience</h2>
-                <p class="section-note">Enterprise AI prototypes across Microsoft and Azure surfaces.</p>
+                <div class="range-line">
+                  <strong>Runtime</strong>
+                  <p>Docker, Docker Compose, Linux, reverse proxies, Azure, Azure AI Search, Microsoft Fabric</p>
+                </div>
               </div>
-              <article class="experience reveal">
-                <h3>MaSyCoDa Solutions Pvt. Ltd.</h3>
-                <p class="meta">AI Systems Engineer | Pune | Dec 2025 - Present</p>
-                <ul>
-                  <li>Built enterprise AI prototypes across Azure Portal, AI Foundry, Azure OpenAI, AI Search, and Fabric.</li>
-                  <li>Connected Azure AI Foundry agents with Copilot Studio and Power Apps integration surfaces.</li>
-                  <li>Deployed a Kinaxis RapidResponse supply-chain agent pilot with evidence-backed Q&amp;A.</li>
-                  <li>Added diagnostic playbooks, citation requirements, and per-call debug traces for auditable answers.</li>
-                </ul>
-              </article>
-            </div>
 
-            <aside aria-labelledby="education-title">
-              <h2 id="education-title">Education</h2>
-              <article class="education reveal">
-                <h3>Shri Ramdeobaba College of Engineering and Management</h3>
-                <p>B.Tech in Computer Science and Engineering<br>Honors in AI and Data Science<br>Final CGPA: 7.7 | 2022 - June 2026</p>
-              </article>
-              <article class="education reveal">
-                <h3>Taywade College</h3>
-                <p>Higher Secondary Certificate | 2022</p>
-              </article>
-              <article class="education reveal">
-                <h3>Bhavan's Trimurti Nagar School</h3>
-                <p>CBSE | 2020</p>
-              </article>
-            </aside>
+              <div>
+                <article class="experience reveal">
+                  <h3>MaSyCoDa Solutions Pvt. Ltd.</h3>
+                  <p class="meta">AI Systems Engineer | Pune | Dec 2025 - Present</p>
+                  <ul>
+                    <li>Built enterprise AI prototypes across Azure Portal, AI Foundry, Azure OpenAI, AI Search, and Fabric.</li>
+                    <li>Connected AI Foundry agents with Copilot Studio and Power Apps surfaces.</li>
+                    <li>Deployed a Kinaxis RapidResponse pilot with evidence-backed Q&amp;A and debug traces.</li>
+                  </ul>
+                </article>
+
+                <article class="education reveal">
+                  <h3>Shri Ramdeobaba College of Engineering and Management</h3>
+                  <p>B.Tech in Computer Science and Engineering, Honors in AI and Data Science</p>
+                  <p class="meta">Final CGPA: 7.7 | 2022 - June 2026</p>
+                </article>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -1074,12 +1422,13 @@
             <div class="section-head reveal">
               <h2 id="resume-title">Resume Files</h2>
               <p class="section-note">
-                Use the PDF for review and the Markdown version for agents, parsers, and quick copying.
+                The same resume is exposed as HTML, Markdown, and PDF for humans, recruiters,
+                agents, and parsers.
               </p>
             </div>
             <div class="resume-files reveal">
-              <p>The same resume is exposed as HTML, Markdown, and PDF so humans and bots can read the cleanest format for their workflow.</p>
-              <div class="resume-actions" aria-label="Resume downloads">
+              <p>Download the compact resume, or use the Markdown version for clean copying and automated review.</p>
+              <div class="resume-actions">
                 <a class="button" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">PDF</a>
                 <a class="button secondary" href="/resume.md" download="Parth_Thakre_Resume.md">Markdown</a>
               </div>
@@ -1090,73 +1439,66 @@
 
       <footer>
         <div class="wrap">
-          <span>Resume artifacts for humans, agents, and parsers.</span>
+          <span>Portfolio artifacts for AI systems work.</span>
           <span><a href="mailto:parth@masycoda.com">parth@masycoda.com</a> | <a href="https://github.com/parth-thakre">GitHub</a> | <a href="https://www.linkedin.com/in/parthsthakre/">LinkedIn</a></span>
         </div>
       </footer>
     </div>
 
     <script>
-      (function() {
-        "use strict";
+      const root = document.documentElement;
+      const navLinks = Array.from(document.querySelectorAll(".rail-nav a"));
+      const sections = navLinks
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
 
-        var revealItems = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-        if ("IntersectionObserver" in window) {
-          var revealObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                revealObserver.unobserve(entry.target);
-              }
-            });
-          }, { rootMargin: "0px 0px -10% 0px", threshold: 0.14 });
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = max > 0 ? window.scrollY / max : 0;
+        root.style.setProperty("--scroll-progress", progress.toFixed(4));
+      };
 
-          revealItems.forEach(function(el, index) {
-            el.style.setProperty("--reveal-delay", Math.min(index % 3, 2) * 55 + "ms");
-            revealObserver.observe(el);
-          });
-        } else {
-          revealItems.forEach(function(el) { el.classList.add("visible"); });
+      const setActive = () => {
+        const offset = window.innerHeight * 0.38;
+        let current = sections[0];
+
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top <= offset) {
+            current = section;
+          }
         }
 
-        var meter = document.querySelector(".progress");
-        var links = Array.prototype.slice.call(document.querySelectorAll(".rail-nav a"));
-        var sections = links.map(function(link) {
-          var target = document.querySelector(link.getAttribute("href"));
-          return { link: link, target: target };
-        }).filter(function(item) { return item.target; });
-        var ticking = false;
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${current.id}`);
+        });
+      };
 
-        function setActiveSection() {
-          var current = sections[0];
-          var threshold = window.innerHeight * 0.34;
-          sections.forEach(function(item) {
-            if (item.target.getBoundingClientRect().top <= threshold) current = item;
+      const revealItems = Array.from(document.querySelectorAll(".reveal"));
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
           });
-          links.forEach(function(link) {
-            var active = current && link === current.link;
-            link.classList.toggle("active", active);
-            if (active) link.setAttribute("aria-current", "true");
-            else link.removeAttribute("aria-current");
-          });
-        }
+        }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
 
-        function updateScrollState() {
-          var max = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-          var progress = Math.min(window.scrollY / max, 1);
-          meter.style.setProperty("--scroll-progress", progress.toFixed(4));
-          setActiveSection();
-          ticking = false;
-        }
+        revealItems.forEach((item, index) => {
+          item.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 55}ms`);
+          observer.observe(item);
+        });
+      } else {
+        revealItems.forEach((item) => item.classList.add("visible"));
+      }
 
-        updateScrollState();
-        window.addEventListener("scroll", function() {
-          if (ticking) return;
-          ticking = true;
-          window.requestAnimationFrame(updateScrollState);
-        }, { passive: true });
-        window.addEventListener("resize", updateScrollState);
-      })();
+      updateProgress();
+      setActive();
+      window.addEventListener("scroll", () => {
+        updateProgress();
+        setActive();
+      }, { passive: true });
+      window.addEventListener("resize", updateProgress);
     </script>
   </body>
 </html>
