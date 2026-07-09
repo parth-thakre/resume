@@ -1,6 +1,6 @@
 # Parth Thakre Resume
 
-> Parth Thakre is an AI Systems Engineer building enterprise AI and LLM systems across Azure AI Foundry, retrieval/OCR, tool-calling agents, multi-model evaluation, and private runtime infrastructure.
+> Parth Thakre is a Nagpur-based AI Systems Engineer building enterprise AI and LLM systems across Azure AI Foundry, retrieval/OCR, tool-calling agents, multi-model evaluation, and private runtime infrastructure.
 
 This site intentionally exposes machine-readable resume artifacts for AI agents, search crawlers, recruiter tools, and retrieval systems.
 
@@ -15,7 +15,7 @@ This site intentionally exposes machine-readable resume artifacts for AI agents,
 
 ## Profile Summary
 
-AI Systems Engineer focused on enterprise AI and LLM systems: Azure AI Foundry, Azure OpenAI, RAG, OCR, tool/function calling, MCP, evaluation platforms, FastAPI services, Electron/React applications, Dockerized private runtimes, and auditable outputs with citations, logs, schemas, and repeatable artifacts.
+Nagpur-based AI Systems Engineer focused on enterprise AI and LLM systems: Azure AI Foundry, Azure OpenAI, RAG, OCR, tool/function calling, MCP, evaluation platforms, FastAPI services, Electron/React applications, Dockerized private runtimes, and auditable outputs with citations, logs, schemas, and repeatable artifacts.
 
 ## Selected Projects
 

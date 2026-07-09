@@ -6,9 +6,9 @@
 
 ## Professional Summary
 
-AI Systems Engineer building enterprise AI and LLM systems across Azure AI Foundry, retrieval/OCR, tool-calling agents, multi-model evaluation, and private runtime infrastructure. Delivers client-facing automation around messy business data: Kinaxis RapidResponse Q&A, local-first AI workspaces, Azure-backed prototypes, and auditable outputs with citations, logs, schemas, and repeatable artifacts.
+Nagpur-based AI Systems Engineer building enterprise AI and LLM systems across Azure AI Foundry, retrieval/OCR, tool-calling agents, multi-model evaluation, and private runtime infrastructure. Delivers client-facing automation around messy business data: Kinaxis RapidResponse Q&A, local-first AI workspaces, Azure-backed prototypes, and auditable outputs with citations, logs, schemas, and repeatable artifacts.
 
-## Technical Skillsets
+## Technical Skills
 
 - **Languages:** Python, TypeScript, JavaScript, C/C++, Java, Bash
 - **AI/LLM Systems:** Azure AI Foundry, Azure OpenAI, RAG, OCR, tool/function calling, MCP, prompt/schema design
@@ -40,7 +40,7 @@ AI Systems Engineer building enterprise AI and LLM systems across Azure AI Found
 **Electron, React, TypeScript, Azure AI Foundry**  
 Local-first desktop AI workspace
 
-- Built an Azure-backed desktop AI workspace with Entra/API-key auth, searchable local history for hundreds of conversations, memory, and retrieval.
+- Built an Azure-backed desktop AI workspace with Entra/API-key auth, searchable local history across hundreds of conversations, memory, and retrieval.
 - Implemented extraction/OCR for 8+ file families: PDFs, DOCX, PPTX, XLSX, CSV, Markdown, text/code files, and scanned images.
 - Added MCP tool discovery/selection, Azure web-search grounding, Claude Foundry routing, and GPT-image generation/editing flows.
 
@@ -49,8 +49,8 @@ Local-first desktop AI workspace
 **Node.js, TypeScript, Next.js, SQLite**  
 Blind multi-model LLM evaluation platform
 
-- Orchestrated 2-4 OpenRouter models through 4 structured phases: generation, blind peer review, revision, and final ranking.
-- Added 4 Zod-validated JSON contracts, provider-call archives, encrypted OpenRouter key storage, and deterministic mock fallback.
+- Orchestrated two to four OpenRouter models through four structured phases: generation, blind peer review, revision, and final ranking.
+- Added four Zod-validated JSON contracts, provider-call archives, encrypted OpenRouter key storage, and deterministic mock fallback.
 - Implemented Borda-count scoring with first-place and peer-review tie-breakers for repeatable tournament outcomes.
 
 ### [SemKerBot | GitHub](https://github.com/parth-thakre/SemKerBot-updated-teams)
@@ -68,7 +68,7 @@ Kinaxis supply-chain query agent
 **Python, CLI, Simulation, Benchmarking**  
 AI Society Benchmark
 
-- Created an LLM benchmark that runs 5-role artificial societies with resources, trust, influence, resentment, and role-specific actions.
+- Created an LLM benchmark that runs five-role artificial societies with resources, trust, influence, resentment, and role-specific actions.
 - Refactored toward an 18-module package CLI, canonical data layout, typed artifact schemas, and structured event logs.
 - Replaced single-metric judging with 5-axis scorecards for welfare, economy, cohesion, institutions, and anti-degeneracy.
 
@@ -76,10 +76,11 @@ AI Society Benchmark
 
 ### MaSyCoDa Solutions Pvt. Ltd.
 
-**AI Systems Engineer | Pune**  
+**AI Systems Engineer | Nagpur, India**
+
 Dec 2025 - Present
 
-- Built enterprise AI prototypes across 5 Microsoft/Azure surfaces: Azure Portal, AI Foundry, Azure OpenAI, AI Search, and Fabric.
+- Built enterprise AI prototypes across five Microsoft/Azure surfaces: Azure Portal, AI Foundry, Azure OpenAI, AI Search, and Fabric.
 - Connected Azure AI Foundry agents with Copilot Studio and Power Apps integration surfaces for client-facing automation demos.
 - Deployed a Kinaxis RapidResponse supply-chain agent pilot that reduced manual worksheet lookup through evidence-backed Q&A.
 - Added 8 diagnostic playbooks, citation requirements, and per-call debug traces to make supply-chain answers repeatable and auditable.

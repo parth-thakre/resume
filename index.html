@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Parth Thakre, AI Systems Engineer. A portfolio of shipped AI products and case studies: LLM evaluation, retrieval agents, enterprise data access, and private runtime infrastructure.">
+    <meta name="description" content="Parth Thakre is a Nagpur-based AI Systems Engineer. Portfolio case studies cover LLM evaluation, retrieval agents, enterprise data access, and private runtime infrastructure.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#fbfdff">
     <link rel="canonical" href="https://resume.psthl.com/">
@@ -23,6 +23,10 @@
         "@type": "Person",
         "name": "Parth Thakre",
         "jobTitle": "AI Systems Engineer",
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Nagpur, Maharashtra, India"
+        },
         "url": "https://resume.psthl.com/",
         "email": "mailto:parth@masycoda.com",
         "sameAs": [
@@ -766,17 +770,16 @@
     </style>
   </head>
   <body>
-    <a class="skip" href="#work">Skip to selected work</a>
+    <a class="skip" href="#work">Skip to work</a>
     <div class="bar" aria-hidden="true"></div>
 
     <header class="nav">
       <a class="brand" href="#top">Parth Thakre <span>·</span> AI Systems</a>
-      <nav class="nav-links" aria-label="Case study navigation">
-        <a href="#threads">Threads</a>
-        <a href="#story">Story Tourney</a>
-        <a href="#semkerbot">SemKerBot</a>
-        <a href="#aisb">AISB</a>
-        <a href="#about">About</a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#top">Overview</a>
+        <a href="#work">Work</a>
+        <a href="#about">Background</a>
+        <a href="#files">Files</a>
       </nav>
       <div class="nav-files">
         <a href="/resume.md" download="Parth_Thakre_Resume.md">MD</a>
@@ -790,21 +793,21 @@
         <div class="wrap">
           <div class="intro-grid">
             <div class="intro-copy">
-              <p class="role">AI Systems Engineer · Pune, India</p>
-              <h1 id="intro-title">I build AI systems that leave a trail.</h1>
+              <p class="role">AI Systems Engineer · Nagpur, India</p>
+              <h1 id="intro-title">I build AI systems with an audit trail.</h1>
               <p class="lede">
-                Selected case studies in shipped LLM products: evaluation rigs,
+                Selected case studies from shipped LLM work: evaluation rigs,
                 retrieval agents, enterprise data access, and <em>private runtime
-                infrastructure</em>, each one built to be inspected after the demo.
+                infrastructure</em>, with outputs that can be inspected after the demo.
               </p>
               <div class="intro-actions">
-                <a class="btn btn--solid" href="#work">Read the case studies</a>
-                <a class="btn" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Résumé PDF</a>
+                <a class="btn btn--solid" href="#work">Read the work</a>
+                <a class="btn" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Resume PDF</a>
                 <a class="btn" href="https://github.com/parth-thakre">GitHub</a>
               </div>
             </div>
 
-            <aside class="index" aria-label="Case study index">
+            <aside class="index" aria-label="Selected work index">
               <span class="index-label">Four case studies</span>
               <ol>
                 <li><a href="#threads">Threads <small>local-first AI workspace</small></a></li>
@@ -829,15 +832,15 @@
                 <p class="case-kicker">Local-first desktop AI workspace</p>
               </div>
               <p class="case-note">
-                Shipped surface. A real Electron app people open to do work, not
-                a Colab notebook.
+                Production-style desktop surface: an Electron app for ongoing AI
+                work, not a one-off notebook.
               </p>
             </header>
             <div class="threads">
               <div class="case-body">
                 <h3 class="case-title"><a href="https://github.com/parth-thakre/threads">Threads</a></h3>
                 <p class="case-summary">
-                  An Azure-backed Electron workspace for real AI work: searchable
+                  An Azure-backed Electron workspace for day-to-day AI work: searchable
                   history, document extraction, OCR, memory, retrieval, MCP tools,
                   and model routing across Azure OpenAI and Claude Foundry.
                 </p>
@@ -845,7 +848,7 @@
                 <ul class="outcomes">
                   <li>Ingests PDFs, DOCX, PPTX, XLSX, CSV, Markdown, code, and scanned images with OCR.</li>
                   <li>MCP tool discovery, Azure web-search grounding, image generation/editing flows, and multi-model routing.</li>
-                  <li>Local history kept searchable across hundreds of conversations.</li>
+                  <li>Keeps local history searchable across hundreds of conversations.</li>
                 </ul>
               </div>
               <div class="panel" aria-label="Threads artifact preview">
@@ -869,7 +872,7 @@
                 <p class="case-kicker">Blind multi-model LLM evaluation</p>
               </div>
               <p class="case-note">
-                Inspectable orchestration. Every provider call is archived;
+                Inspectable orchestration: every provider call is archived, and
                 rankings are reproducible.
               </p>
             </header>
@@ -888,9 +891,9 @@
                 <div class="case-body">
                   <p class="case-summary">
                     A tournament platform that makes model comparison inspectable:
-                    2–4 OpenRouter models run through four structured phases, validated
-                    with Zod, with every provider call archived and a deterministic
-                    fallback behavior when contracts fail.
+                    two to four OpenRouter models run through generation, review,
+                    revision, and ranking phases with Zod-validated contracts,
+                    archived provider calls, and deterministic fallback behavior.
                   </p>
                 </div>
               </div>
@@ -905,8 +908,8 @@
                 <p class="case-kicker">Supply-chain query agent for Kinaxis</p>
               </div>
               <p class="case-note">
-                Enterprise data path. Citations over vibes: every answer points at
-                workbook, row, column, and exact value.
+                Enterprise data path: every answer has to cite workbook, row,
+                column, and exact value.
               </p>
             </header>
             <div class="semker">
@@ -915,7 +918,7 @@
                 <p class="case-summary">
                   A local-only agent/API split for Kinaxis RapidResponse worksheet
                   data, designed around citations, diagnostic playbooks, and exact
-                  values instead of vague natural-language summaries.
+                  values instead of unsupported natural-language summaries.
                 </p>
                 <p class="stack">Python · FastAPI · Semantic Kernel · Docker</p>
                 <ul class="outcomes">
@@ -953,9 +956,9 @@
               <div class="case-body">
                 <h3 class="case-title"><a href="https://github.com/parth-thakre/project3">AISB</a></h3>
                 <p class="case-summary">
-                  An AI society benchmark for 5-role simulations with resources, trust,
+                  An AI society benchmark for five-role simulations with resources, trust,
                   influence, resentment, typed artifact schemas, and multi-axis
-                  scorecards. Refactored toward an 18-module CLI with a canonical
+                  scorecards. Refactored toward an 18-module package CLI with a canonical
                   data layout.
                 </p>
                 <p class="stack">Python · CLI · simulation · benchmarking</p>
@@ -978,19 +981,19 @@
           <div class="case-head about-head">
             <h2 id="about-title">About the builder</h2>
             <p class="case-note">
-              The common thread is not “uses AI.” It is the discipline around messy
-              inputs, auditable outputs, and tools you can check after the first run.
+              The common thread is not AI for its own sake. It is the discipline
+              around messy inputs, auditable outputs, and tools you can check after
+              the first run.
             </p>
           </div>
           <div class="about-grid">
             <div class="bio">
               <p>
-                I work as an AI Systems Engineer at MaSyCoDa Solutions, building
-                enterprise AI prototypes across Azure Portal, AI Foundry, Azure
-                OpenAI, AI Search, and Microsoft Fabric, and connecting Foundry
-                agents to Copilot Studio and Power Apps surfaces. Previously I led a
-                Kinaxis RapidResponse pilot with evidence-backed Q&amp;A and debug
-                traces.
+                I am a Nagpur-based AI Systems Engineer at MaSyCoDa Solutions,
+                building enterprise AI prototypes across Azure Portal, AI Foundry, Azure
+                OpenAI, AI Search, and Microsoft Fabric. I connect Foundry agents
+                to Copilot Studio and Power Apps surfaces, and led a Kinaxis
+                RapidResponse pilot with evidence-backed Q&amp;A and debug traces.
               </p>
               <div class="stack-list" aria-label="Implementation stack">
                 <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span>
@@ -1004,7 +1007,7 @@
             <div class="work-history">
               <div class="work-block">
                 <h3>MaSyCoDa Solutions Pvt. Ltd.</h3>
-                <p class="work-meta">AI Systems Engineer · Pune · Dec 2025 – Present</p>
+                <p class="work-meta">AI Systems Engineer · Nagpur, India · Dec 2025 – Present</p>
                 <ul>
                   <li>Built enterprise AI prototypes across Azure Portal, AI Foundry, Azure OpenAI, AI Search, and Fabric.</li>
                   <li>Connected AI Foundry agents with Copilot Studio and Power Apps surfaces.</li>
@@ -1017,10 +1020,10 @@
                 <p>Final CGPA: 7.7</p>
               </div>
 
-              <div class="files">
-                <p>The same résumé is exposed as HTML, Markdown, and PDF for humans, recruiters, agents, and parsers.</p>
+              <div class="files" id="files">
+                <p>The same resume is available as HTML, Markdown, and PDF for people, recruiters, agents, and parsers.</p>
                 <div class="intro-actions">
-                  <a class="btn btn--solid" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Résumé PDF</a>
+                  <a class="btn btn--solid" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Resume PDF</a>
                   <a class="btn" href="/resume.md" download="Parth_Thakre_Resume.md">Markdown</a>
                 </div>
               </div>
