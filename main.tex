@@ -1,233 +1,222 @@
-´%---- Required Packages and Functions ----
+\documentclass[a4paper,10pt]{article}
 
-\documentclass[a4paper,11pt]{article}
-\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.96]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[margin=1.15cm]{geometry}
 \usepackage{xcolor}
-\usepackage{float}
-\usepackage{ragged2e}
-\usepackage[empty]{fullpage}
-\usepackage{wrapfig}
-\usepackage{lipsum}
 \usepackage{tabularx}
-\usepackage{titlesec}
-\usepackage{geometry}
-\usepackage{marvosym}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{fontawesome5}
-\usepackage{multicol}
-\usepackage{graphicx}
-\usepackage{cfr-lm}
-\usepackage[T1]{fontenc}
-\setlength{\multicolsep}{0pt} 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
-% Adjust margins
-%\addtolength{\oddsidemargin}{-0.5in}
-%\addtolength{\evensidemargin}{-0.5in}
-%\addtolength{\textwidth}{1in}
 \usepackage[most]{tcolorbox}
-\tcbset{
-	frame code={}
-	center title,
-	left=0pt,
-	right=0pt,
-	top=0pt,
-	bottom=0pt,
-	colback=gray!20,
-	colframe=white,
-	width=\dimexpr\textwidth\relax,
-	enlarge left by=-2mm,
-	boxsep=4pt,
-	arc=0pt,outer arc=0pt,
+
+\definecolor{resumeInk}{HTML}{323B4C}
+\definecolor{resumeMuted}{HTML}{6D7480}
+\definecolor{resumePaper}{HTML}{F7F7F5}
+\definecolor{resumeRule}{HTML}{D8DDE3}
+\definecolor{resumePale}{HTML}{E9EDF1}
+
+\pagecolor{resumePaper}
+\color{resumeInk}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=1.2em, itemsep=1.5pt, topsep=2pt, parsep=0pt, partopsep=0pt}
+\renewcommand{\labelitemi}{\textcolor{resumeInk}{\scriptsize$\bullet$}}
+
+\newcommand{\sectionbar}[1]{%
+  \vspace{7pt}
+  \begin{tcolorbox}[
+    enhanced,
+    colback=resumeInk,
+    colframe=resumeInk,
+    boxrule=0pt,
+    arc=0pt,
+    left=7pt,
+    right=7pt,
+    top=4pt,
+    bottom=4pt,
+    width=\linewidth,
+  ]
+    {\color{white}\bfseries\fontsize{9.5}{11}\selectfont #1}
+  \end{tcolorbox}
+  \vspace{3pt}
 }
 
-\urlstyle{same}
-
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item{
-    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
-  }
+\newcommand{\headingmarker}{%
+  {\setlength{\fboxsep}{0pt}\colorbox{resumeInk}{\rule{8pt}{13pt}}}%
 }
 
-\newcommand{\resumePOR}[3]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
-    \end{tabular*}
-    \vspace{-2mm}
+\newcommand{\project}[4]{%
+  \par\noindent
+  \begin{tabularx}{\linewidth}{@{}p{1.2em}@{}Xr@{}}
+    \raisebox{-1.5pt}{\headingmarker} &
+    \textbf{\href{#2}{#1 | GitHub}} &
+    {\footnotesize\color{resumeMuted}#3} \\
+    & {\footnotesize\color{resumeMuted}#4} &
+  \end{tabularx}
+  \par\vspace{1pt}
 }
 
-\newcommand{\resumeSubheading}[4]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#4}} \\
-        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
-    \end{tabular*}
-    \vspace{-2.4mm}
+\newcommand{\role}[3]{%
+  \par\noindent
+  \begin{tabularx}{\linewidth}{@{}p{1.2em}@{}Xr@{}}
+    \raisebox{-1.5pt}{\headingmarker} &
+    \textbf{#1} &
+    {\footnotesize\color{resumeMuted}#2} \\
+    & {\footnotesize\color{resumeMuted}#3} &
+  \end{tabularx}
 }
 
-\newcommand{\resumeProject}[4]{
-\vspace{0.5mm}\item
-    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
-        \textbf{#1} & \textit{\footnotesize{#3}} \\
-        \footnotesize{\textit{#2}} & \footnotesize{#4}
-    \end{tabular*}
-    \vspace{-2.4mm}
+\newcommand{\skillrow}[2]{%
+  \textbf{#1}\par
+  {\footnotesize #2}\par\vspace{5pt}
 }
-
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
-% \renewcommand{\labelitemii}{$\circ$}
-\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
-\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
-\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
-\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
-\newcommand{\cvsection}[1]{%
-\vspace{2mm}
-\begin{tcolorbox}
-    \textbf{\large #1}
-\end{tcolorbox}
-    \vspace{-4mm}
-}
-\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
-\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
-\newcolumntype{C}{>{\centering\arraybackslash}X}%
-%---- End of Packages and Functions ------
-
-%-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%
-%%%%%% DEFINE ELEMENTS HERE %%%%%%%
-\newcommand{\name}{Parth Thakre} % Your Name
-\newcommand{\course}{Computer Science and Engineering} % Your Program
-\newcommand{\honors}{Honors in Artificial Intelligence and Data Science}
-\newcommand{\phone}{7420903522} % Your Phone Number
-\newcommand{\emaila}{parthsthakre@gmail.com} %Email 1
 
 \begin{document}
-\fontfamily{cmr}\selectfont
-%----------HEADING-----------------
 
-\begin{tabularx}{\linewidth}{X r}
-  \textbf{\Large \name} & \raisebox{0.0\height}~{+91-\phone } {\footnotesize \faPhone}\\
-  Bachelor of Technology & \href{mailto:\emaila}{\raisebox{0.0\height}~{\emaila } }{\footnotesize \faEnvelope} \\
-  Honors in Artificial Intelligence and Data Science & \href{https://github.com/parth-thakre}{\raisebox{0.0\height}~github.com/parth-thakre }{\footnotesize \faGithub} \\  
-  Shri Ramdeobaba College of Engineering and Management & \href{https://www.linkedin.com/parthsthakre/}{\raisebox{0.0\height}~linkedin.com/in/parthsthakre }{\footnotesize \faLinkedin}
-\end{tabularx}
+\noindent
+\begin{minipage}[t]{0.58\linewidth}
+  \vspace{0pt}
+  {\fontsize{24}{26}\selectfont\bfseries PARTH THAKRE}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+  \vspace{0pt}
+  \raggedleft
+  {\footnotesize +91-7420903522}\\
+  {\footnotesize \href{mailto:parth@masycoda.com}{parth@masycoda.com}}\\
+  {\footnotesize \href{https://github.com/parth-thakre}{github.com/parth-thakre}}\\
+  {\footnotesize \href{https://www.linkedin.com/parthsthakre/}{linkedin.com/in/parthsthakre}}
+\end{minipage}
 
-\section{\textbf{Education}}
-\resumeSubHeadingListStart
-    \resumeSubheading
-      {Shri Ramdeobaba College of Engineering and Management}{Nagpur, Maharashtra}
-      {B.Tech in Computer Science and Engineering (Honors in AI and Data Science); CGPA: 7.64}{2022 – Present}
-    \resumeSubheading
-      {Taywade College}{Nagpur, Maharashtra}
-      {Higher Secondary Certificate (HSC)}{Completed: 2022, Percentage: 77.33\%}
-    \resumeSubheading
-      {Bhavan's Trimurti Nagar School}{Nagpur, Maharashtra}
-      {Central Board of Secondary Education (CBSE)}{Completed: 2020, Percentage: 92.2\%}
-\resumeSubHeadingListEnd
-%------------SUMMARY-----------------
-\section{\textbf{Summary}}
-\vspace{1mm}
-{Honors AI \& Data Science B.Tech candidate focused on software engineering and applied machine learning. Designs and trains ML models and end-to-end pipelines for computer vision and NLP (YOLO, U-Net, BART). Skilled in data preprocessing, augmentation, labeling workflows, and rigorous model evaluation/validation. Builds production-ready inference APIs and containerized deployments using Flask, PyTorch, and Docker. Delivers reproducible and maintainable ML solutions with versioned experiments and performance-driven optimization.}
+\vspace{2pt}
+{\Large AI Systems Engineer}\\[-2pt]
+\textcolor{resumeRule}{\rule{\linewidth}{1.2pt}}
+\vspace{2pt}
 
-\vspace{0mm}
+\sectionbar{PROFESSIONAL SUMMARY}
+{\small\raggedright
+AI Systems Engineer building enterprise AI and LLM systems across Azure AI Foundry, retrieval/OCR, tool-calling agents, multi-model evaluation, and private runtime infrastructure. Delivers client-facing automation around messy business data: Kinaxis RapidResponse Q\&A, local-first AI workspaces, Azure-backed prototypes, and auditable outputs with citations, logs, schemas, and repeatable artifacts.
+\par}
 
+\vspace{3pt}
+\begin{minipage}[t]{0.48\linewidth}
+  \vspace{0pt}
+  \raggedright
+  \sectionbar{TECHNICAL SKILLSETS}
+  \skillrow{Languages}{Python, TypeScript, JavaScript, C/C++, Java, Bash}
+  \skillrow{AI/LLM Systems}{Azure AI Foundry, Azure OpenAI, RAG, OCR, tool/function calling, MCP, prompt/schema design}
+  \skillrow{Evaluation}{LLM benchmarks, multi-model orchestration, structured rubrics, simulation metrics, artifact schemas}
+  \skillrow{Backend/Product}{FastAPI, Flask, Express, Node.js, REST APIs, SQLite, Pydantic, Zod}
+  \skillrow{Frontend/Desktop}{React, Next.js, Vite, Electron, HTML, CSS}
+  \skillrow{Infra \& Cloud}{Docker, Docker Compose, Linux, reverse proxies, Microsoft Azure, Azure AI Search, Microsoft Fabric}
+  \skillrow{AI Coding Tools}{Codex, OpenCode, OpenClaw, agentic coding workflows}
+  \skillrow{Microsoft Platforms}{Copilot Studio, Power Apps}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \vspace{0pt}
+  \raggedright
+  \sectionbar{DELIVERY CREDIBILITY}
+  \begin{itemize}
+    \item Converts AI prototypes into shipped artifacts: Electron apps, FastAPI services, Dockerized agents, CLI packages, and rendered reports.
+    \item Designs outputs clients can verify through citations, structured JSON contracts, debug traces, scorecards, and repeatable run artifacts.
+    \item Works across Azure-hosted, local-first, and private infrastructure runtimes to balance integration speed with data-boundary control.
+    \item Treats retrieval, tool use, citations, and failure recovery as baseline product behavior, not demo extras.
+  \end{itemize}
 
+  \sectionbar{DELIVERY PROOF}
+  \begin{itemize}
+    \item Kinaxis work moved worksheet lookup from manual navigation to cited natural-language Q\&A.
+    \item Evaluation projects produce inspectable outputs: 4-phase tournaments, 5-axis scorecards, per-call logs, and structured artifacts.
+    \item Private infrastructure practice covers 20+ container operations: routing, monitoring, service recovery, and day-to-day reliability.
+    \item Agentic coding tools are used as a review/debug loop, not a replacement for source control, logs, and verified behavior.
+  \end{itemize}
+\end{minipage}
 
+\newpage
 
+\noindent
+\begin{minipage}[t]{0.58\linewidth}
+  \vspace{0pt}
+  {\fontsize{20}{22}\selectfont\bfseries PARTH THAKRE}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+  \vspace{0pt}
+  \raggedleft
+  {\footnotesize \href{mailto:parth@masycoda.com}{parth@masycoda.com}}\\
+  {\footnotesize \href{https://github.com/parth-thakre}{github.com/parth-thakre}}
+\end{minipage}
+\textcolor{resumeRule}{\rule{\linewidth}{1.2pt}}
 
+\begin{minipage}[t]{0.66\linewidth}
+  \vspace{0pt}
+  \raggedright
+  \sectionbar{SELECTED AI/LLM PROJECTS}
 
-%-----------PROJECTS-----------------
-\section{\textbf{Projects}}
-\resumeSubHeadingListStart
-    \resumeProject
-        {PatchSense – Deep Learning Based Highway Patch Detector} %Project Name
-        {In-House Project (Internship)} %Project Name, Location Name
-        {} %Event Dates
-    
-    \resumeItemListStart
-        \item {Developed a YOLO segmentation model to detect pothole repair patches from high-resolution highway images.}
-        \item {Containerized the YOLO pipeline with Docker for reliable, repeatable deployments.}
-        \item {Automated dataset ingestion and pre-processing to eliminate manual intervention.}
-        \item {Monitored inference latency and throughput, defining SLIs (frame-processing time) and SLOs (95\% of frames <5s).}
-    \resumeItemListEnd
-    \vspace{-2mm}
-    
-    \resumeProject
-        {\href{https://github.com/parth-thakre/frontend.git}{Intelligent Messaging Summarization and Scheduling App  \faGithub}} %Project Name
-      {Contributor} %Project Name, Location Name
-        {} %Event Dates
-    
-    \resumeItemListStart
-        \item {Built a Flask application leveraging spaCy, NLTK, and Facebook BART to extract key information, summarize content, and auto-schedule events from user emails and WhatsApp notifications.}
-        \item {Integrated Gmail and Google Calendar APIs with secure OAuth 2.0 and RESTful APIs for full functionality.}
-        \item {Reduced manual scheduling time by 25\% through NLP-based automation, calendar syncing, and dynamic event notifications.}
-    \resumeItemListEnd
-    \vspace{-2mm}
+  \project{Threads}{https://github.com/parth-thakre/threads}{Electron, React, TypeScript, Azure AI Foundry}{Local-first desktop AI workspace}
+  \begin{itemize}
+    \item Built an Azure-backed desktop AI workspace with Entra/API-key auth, searchable local history for hundreds of conversations, memory, and retrieval.
+    \item Implemented extraction/OCR for 8+ file families: PDFs, DOCX, PPTX, XLSX, CSV, Markdown, text/code files, and scanned images.
+    \item Added MCP tool discovery/selection, Azure web-search grounding, Claude Foundry routing, and GPT-image generation/editing flows.
+  \end{itemize}
 
-    \resumeProject
-        {Embryo Analysis} %Project Name
-        {Contributor} %Project Name, Location Name
-        {} %Event Dates
-    
-    \resumeItemListStart
-        \item {Designed a U-Net model with 6-channel input for embryo cell boundary detection in multifocal grayscale images.}
-        \item {Trained using PyTorch with Adam optimizer and dice loss, achieving high precision in segmentation tasks.}
-    \resumeItemListEnd
-      
-  \resumeSubHeadingListEnd
-\vspace{-8.5mm}
-%-----------EXPERIENCE-----------------
-\section{\textbf{Internship}}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Masycoda Solutions (AI and Data Science Intern)}{}
-      
-      {May 2025 - July 2025}{}
-      \vspace{-5.0mm}
-    \resumeItemListStart
-        \item{Engineered and optimized a YOLO-based vision pipeline to detect highway patch repairs.}
-        \item{Implemented end-to-end data workflows—including pre-processing, model training, and inference-containerized using Docker for seamless production deployment.}
-        \item{Collaborated cross-functionally with product managers, QA engineers, and field teams to define requirements and establish performance benchmarks.}
-    \resumeItemListEnd
-    \vspace{-3.0mm}
-%-----------Technical skills-----------------
-\section{\textbf{Technical Skills and Interests}}
-\begin{itemize}[leftmargin=0.05in, label={}]
-    \small{\item{
-        \textbf{Languages}{: Python, C/C++, Java, JavaScript, Bash} \\
-        \textbf{Dev Tools \& VCS}{: Git, GitHub, VSCode, Vim} \\
-        \textbf{OS \& Environments}{: Linux (Arch, Ubuntu), Windows} \\
-        \textbf{Cloud \& Containers}{: AWS (EC2, S3 – basics), Docker (image building, containerization)} \\
-        \textbf{Frameworks \& ML}{: PyTorch, TensorFlow, YOLOv8, Flask, ReactJS} \\
-        \textbf{Relevant Coursework}{: Operating Systems, DBMS, Data Structures \& Algorithms} \\
-        \textbf{Techniques}{: Semantic Segmentation, Transfer Learning, Data Augmentation} \\
-        \textbf{Soft Skills}{: Debugging, Problem Solving, Quick Self-learning, Adaptability} \\
-        \textbf{Areas of Interest}{: Data Science Engineering, ML Infrastructure, Cloud AI, Generative AI}
-    }}
-\end{itemize}
+  \project{Story Tourney}{https://github.com/parth-thakre/story-tourney}{Node.js, TypeScript, Next.js, SQLite}{Blind multi-model LLM evaluation platform}
+  \begin{itemize}
+    \item Orchestrated 2-4 OpenRouter models through 4 structured phases: generation, blind peer review, revision, and final ranking.
+    \item Added 4 Zod-validated JSON contracts, provider-call archives, encrypted OpenRouter key storage, and deterministic mock fallback.
+    \item Implemented Borda-count scoring with first-place and peer-review tie-breakers for repeatable tournament outcomes.
+  \end{itemize}
 
- \vspace{-16pt}
+  \project{SemKerBot}{https://github.com/parth-thakre/SemKerBot-updated-teams}{Python, FastAPI, Semantic Kernel, Docker}{Kinaxis supply-chain query agent}
+  \begin{itemize}
+    \item Built a local-only agent/API split where Semantic Kernel tools query a FastAPI wrapper around Kinaxis RapidResponse worksheet data.
+    \item Added 8 diagnostic playbooks, catalog-aware query planning, column-ID filter guidance, and per-call debug metrics.
+    \item Enforced evidence-backed answers with workbook, worksheet, column, row, filter, and exact-value citations.
+    \item Supported Azure OpenAI and local OpenAI-compatible runtimes such as LM Studio/Ollama through configurable deployment settings.
+  \end{itemize}
 
+  \project{AISB}{https://github.com/parth-thakre/project3}{Python, CLI, Simulation, Benchmarking}{AI Society Benchmark}
+  \begin{itemize}
+    \item Created an LLM benchmark that runs 5-role artificial societies with resources, trust, influence, resentment, and role-specific actions.
+    \item Refactored toward an 18-module package CLI, canonical data layout, typed artifact schemas, and structured event logs.
+    \item Replaced single-metric judging with 5-axis scorecards for welfare, economy, cohesion, institutions, and anti-degeneracy.
+  \end{itemize}
+
+  \sectionbar{WORK EXPERIENCE}
+  \role{MaSyCoDa Solutions Pvt. Ltd.}{Dec 2025 - Present}{AI Systems Engineer | Pune}
+  \begin{itemize}
+    \item Built enterprise AI prototypes across 5 Microsoft/Azure surfaces: Azure Portal, AI Foundry, Azure OpenAI, AI Search, and Fabric.
+    \item Connected Azure AI Foundry agents with Copilot Studio and Power Apps integration surfaces for client-facing automation demos.
+    \item Deployed a Kinaxis RapidResponse supply-chain agent pilot that reduced manual worksheet lookup through evidence-backed Q\&A.
+    \item Added 8 diagnostic playbooks, citation requirements, and per-call debug traces to make supply-chain answers repeatable and auditable.
+    \item Used Codex, OpenCode, OpenClaw, and agentic coding harnesses to accelerate implementation, review, debugging, and iteration.
+  \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.30\linewidth}
+  \vspace{0pt}
+  \raggedright
+  \sectionbar{EDUCATION}
+  \textbf{Shri Ramdeobaba College of Engineering and Management}\\
+  {\footnotesize B.Tech in Computer Science and Engineering}\\
+  {\footnotesize Honors in AI and Data Science}\\
+  {\footnotesize Final CGPA: 7.7 \hfill 2022 - June 2026}
+
+  \vspace{6pt}
+  \textbf{Taywade College}\\
+  {\footnotesize Higher Secondary Certificate \hfill 2022}
+
+  \vspace{6pt}
+  \textbf{Bhavan's Trimurti Nagar School}\\
+  {\footnotesize CBSE \hfill 2020}
+
+  \sectionbar{PRIVATE INFRASTRUCTURE}
+  {\footnotesize
+  Operates a private 20+ container Linux infrastructure lab covering self-hosted services, AI tooling, reverse proxy routing, monitoring, and recovery. Uses it to practice deployment discipline, privacy-aware runtime design, and service reliability.
+  }
+\end{minipage}
 
 \end{document}
