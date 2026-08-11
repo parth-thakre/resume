@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Parth Thakre is a Nagpur-based AI Systems Engineer building auditable LLM systems, retrieval agents, evaluation rigs, and private runtime infrastructure.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#05101b">
+    <link rel="canonical" href="https://resume.psthl.com/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305101b'/%3E%3Cpath d='M9 7h8.2c4.4 0 7.3 2.5 7.3 6.5S21.6 20 17.2 20H14v5H9V7Zm5 4v5h2.8c1.8 0 2.8-.8 2.8-2.5S18.6 11 16.8 11H14Z' fill='%23dcecf5'/%3E%3C/svg%3E">
+    <link rel="alternate" type="text/markdown" href="/resume.md" title="Parth Thakre resume in Markdown">
+    <link rel="alternate" type="application/pdf" href="/assets/Parth_Thakre_Resume.pdf" title="Parth Thakre resume PDF">
+    <link rel="preload" href="/assets/titlis-hero-1280.webp" as="image" type="image/webp" imagesrcset="/assets/titlis-hero-640.webp 640w, /assets/titlis-hero-1280.webp 1280w, /assets/titlis-hero-2000.webp 2000w" imagesizes="100vw">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Parth Thakre - AI Systems Portfolio">
+    <meta property="og:description" content="Selected systems: a desktop AI workspace, supply-chain query agent, blind model evaluation, and an AI society benchmark.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resume.psthl.com/">
+    <meta property="og:image" content="https://resume.psthl.com/assets/titlis-hero-2000.jpg">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1452">
+    <meta property="og:image:alt" content="Mount Titlis above the surrounding snow-covered peaks">
+    <title>Parth Thakre - AI Systems Portfolio</title>
+    <script>
+      const readSavedTheme = () => {
+        try { return localStorage.getItem("theme"); } catch { return null; }
+      };
+      const writeSavedTheme = (theme) => {
+        try { localStorage.setItem("theme", theme); } catch { /* Theme persistence is optional. */ }
+      };
+      const savedTheme = readSavedTheme();
+      const systemLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+      document.documentElement.dataset.theme = savedTheme || (systemLight ? "light" : "dark");
+      document.documentElement.classList.add("js");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Parth Thakre",
+        "jobTitle": "AI Systems Engineer",
+        "homeLocation": { "@type": "Place", "name": "Nagpur, Maharashtra, India" },
+        "url": "https://resume.psthl.com/",
+        "email": "mailto:hire@psthl.com",
+        "sameAs": [
+          "https://github.com/parth-thakre",
+          "https://www.linkedin.com/in/parthsthakre/"
+        ],
+        "knowsAbout": [
+          "AI systems engineering",
+          "LLM systems",
+          "Azure AI Foundry",
+          "Azure OpenAI",
+          "retrieval augmented generation",
+          "OCR",
+          "tool-calling agents",
+          "MCP",
+          "LLM evaluation",
+          "FastAPI",
+          "Electron",
+          "React",
+          "Docker",
+          "private runtime infrastructure"
+        ]
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --font-display: "Libre Baskerville", Georgia, serif;
+        --font-body: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+        --trans-blue: oklch(0.73 0.15 235);
+        --trans-pink: oklch(0.78 0.14 8);
+        --trans-white: oklch(0.98 0.008 240);
+        --sky: var(--trans-blue);
+        --rose: var(--trans-pink);
+        --snow: var(--trans-white);
+        --bg: oklch(0.14 0.035 248);
+        --bg-strong: oklch(0.10 0.035 250);
+        --surface: oklch(0.18 0.035 248);
+        --surface-2: oklch(0.22 0.035 248);
+        --ink: oklch(0.96 0.01 240);
+        --ink-soft: oklch(0.82 0.025 244);
+        --muted: oklch(0.67 0.03 245);
+        --line: oklch(0.34 0.035 245 / 0.72);
+        --hair: oklch(0.88 0.02 245 / 0.14);
+        --shadow: 0 18px 60px oklch(0.02 0.03 250 / 0.36);
+        --hero-wash: linear-gradient(90deg, oklch(0.07 0.035 252 / 0.93) 0%, oklch(0.09 0.045 258 / 0.7) 34%, oklch(0.12 0.05 245 / 0.12) 68%);
+        --hero-bottom: linear-gradient(180deg, transparent 58%, var(--bg) 100%);
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --body-field: oklch(0.165 0.037 250);
+        --body-field-deep: oklch(0.105 0.032 252);
+        --body-snow: oklch(0.91 0.018 238);
+        --body-snow-ink: oklch(0.20 0.04 250);
+        --blue-plane: oklch(0.43 0.09 241 / 0.32);
+        --blue-light: oklch(0.69 0.12 236 / 0.18);
+        --pink-light: oklch(0.73 0.11 6 / 0.17);
+        --neutral-rule: oklch(0.70 0.025 245 / 0.28);
+        --body-blue: oklch(0.73 0.15 235);
+        --body-pink: oklch(0.78 0.14 8);
+        --nav-bg: oklch(0.14 0.035 248);
+        --section-space: clamp(5rem, 11vw, 11rem);
+      }
+
+      [data-theme="light"] {
+        color-scheme: light;
+        --bg: oklch(0.985 0.006 236);
+        --bg-strong: oklch(0.995 0.004 236);
+        --surface: oklch(0.96 0.012 236);
+        --surface-2: oklch(0.925 0.02 236);
+        --ink: oklch(0.19 0.045 248);
+        --ink-soft: oklch(0.33 0.045 246);
+        --muted: oklch(0.47 0.04 245);
+        --line: oklch(0.82 0.028 240);
+        --hair: oklch(0.25 0.04 245 / 0.12);
+        --shadow: 0 16px 42px oklch(0.42 0.04 245 / 0.14);
+        --hero-wash: linear-gradient(90deg, oklch(0.99 0.006 235 / 0.98) 0%, oklch(0.98 0.018 250 / 0.82) 38%, oklch(0.98 0.018 250 / 0.16) 78%);
+        --hero-bottom: linear-gradient(180deg, transparent 62%, var(--bg) 100%);
+        --body-field: oklch(0.965 0.012 238);
+        --body-field-deep: oklch(0.91 0.025 239);
+        --body-snow: oklch(0.985 0.009 236);
+        --body-snow-ink: oklch(0.18 0.042 250);
+        --blue-plane: oklch(0.74 0.10 235 / 0.30);
+        --blue-light: oklch(0.70 0.13 236 / 0.19);
+        --pink-light: oklch(0.76 0.12 7 / 0.16);
+        --neutral-rule: oklch(0.39 0.035 246 / 0.24);
+        --body-blue: oklch(0.45 0.14 239);
+        --body-pink: oklch(0.48 0.17 8);
+        --nav-bg: oklch(0.985 0.006 236);
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        min-width: 0;
+        overflow-x: hidden;
+        background: var(--bg);
+        color: var(--ink);
+        font: 400 16px/1.62 var(--font-body);
+        letter-spacing: 0;
+      }
+      img, svg { display: block; max-width: 100%; }
+      a {
+        color: var(--body-blue);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.28em;
+      }
+      a:hover { color: var(--body-pink); }
+      a:focus-visible, button:focus-visible {
+        outline: 3px solid var(--body-pink);
+        outline-offset: 4px;
+      }
+      button { font: inherit; }
+      h1, h2, h3, p { margin: 0; }
+      h1, h2, h3 { text-wrap: balance; }
+      p { text-wrap: pretty; }
+      .skip {
+        position: fixed;
+        top: -120px;
+        left: 1rem;
+        z-index: 100;
+        padding: 0.65rem 0.9rem;
+        background: var(--ink);
+        color: var(--bg);
+        border-radius: 8px;
+      }
+      .skip:focus { top: 1rem; }
+      .shell {
+        width: min(100% - clamp(1.25rem, 5vw, 4.8rem), 1440px);
+        margin: 0 auto;
+      }
+      .site-nav {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.25rem clamp(1.25rem, 5vw, 4rem);
+        background: color-mix(in oklch, var(--nav-bg) 68%, transparent);
+        border-bottom: 1px solid color-mix(in oklch, var(--hair) 72%, transparent);
+        -webkit-backdrop-filter: blur(18px) saturate(125%);
+        backdrop-filter: blur(18px) saturate(125%);
+      }
+      .brand {
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--ink);
+        font-size: clamp(1.05rem, 2vw, 1.45rem);
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.6rem, 2vw, 2.6rem);
+      }
+      .nav-links a {
+        position: relative;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .nav-links a[aria-current="location"]::after,
+      .nav-links a:hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0.2rem;
+        height: 2px;
+        background: linear-gradient(90deg, var(--sky), var(--snow), var(--rose));
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .icon-btn {
+        width: 2.75rem;
+        height: 2.75rem;
+        display: inline-grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--ink);
+        background: color-mix(in oklch, var(--surface) 74%, transparent);
+        cursor: pointer;
+      }
+      .icon-btn:hover { border-color: var(--body-blue); color: var(--body-blue); }
+      .resume-link {
+        min-height: 2.75rem;
+        display: inline-flex;
+        align-items: center;
+        color: var(--ink);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.54rem 0.85rem;
+        text-decoration: none;
+        font-size: 0.88rem;
+        font-weight: 700;
+        background: color-mix(in oklch, var(--surface) 74%, transparent);
+      }
+      .hero {
+        position: relative;
+        min-height: 86vh;
+        overflow: hidden;
+        isolation: isolate;
+        border-bottom: 1px solid var(--hair);
+      }
+      .hero-photo {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 44%;
+        filter: saturate(1.08) contrast(1.04);
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-image: var(--hero-wash), var(--hero-bottom);
+        background-size: cover, cover;
+        background-position: center, center;
+        pointer-events: none;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: var(--stars-opacity, 0.62);
+        background-image:
+          radial-gradient(circle at 68% 9%, oklch(0.98 0.01 240 / 0.9) 0 1px, transparent 1.4px),
+          radial-gradient(circle at 76% 18%, oklch(0.98 0.01 240 / 0.85) 0 1px, transparent 1.4px),
+          radial-gradient(circle at 83% 6%, oklch(0.98 0.01 240 / 0.75) 0 1px, transparent 1.4px),
+          radial-gradient(circle at 91% 21%, oklch(0.98 0.01 240 / 0.65) 0 1px, transparent 1.4px);
+        pointer-events: none;
+      }
+      [data-theme="light"] .hero::after { --stars-opacity: 0; }
+      .hero-grid {
+        position: relative;
+        z-index: 3;
+        min-height: 86vh;
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 1.1fr);
+        align-items: center;
+        padding: 6.4rem 0 3rem;
+      }
+      .coords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.1rem;
+        margin-bottom: 1.2rem;
+        color: var(--sky);
+        font-size: 0.83rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+      .coords span + span { color: var(--rose); }
+      .coords .height {
+        color: var(--snow);
+      }
+      [data-theme="light"] .coords .height { color: var(--ink); }
+      h1 {
+        max-width: 10ch;
+        font: 700 clamp(3.35rem, 8.2vw, 7.8rem)/1.02 var(--font-display);
+        letter-spacing: -0.025em;
+      }
+      .rule {
+        width: 2.3rem;
+        height: 2px;
+        margin: 1.65rem 0 1rem;
+        background: linear-gradient(90deg, var(--sky), var(--snow), var(--rose));
+      }
+      .hero-copy {
+        max-width: 33rem;
+        color: var(--ink-soft);
+        font-size: clamp(1.06rem, 1.55vw, 1.32rem);
+      }
+      .scroll-tip {
+        position: absolute;
+        left: clamp(1.25rem, 5vw, 4.8rem);
+        bottom: clamp(0.7rem, 1.6vh, 1.25rem);
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.75rem;
+        gap: 0.5rem;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+      }
+      .scroll-tip::after {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg) translateY(-2px);
+        animation: nudgeDown 1.6s var(--ease) infinite;
+      }
+
+      main { overflow: clip; }
+      .body-shell {
+        width: min(calc(100% - clamp(2rem, 7vw, 7rem)), 1440px);
+        margin-inline: auto;
+      }
+      .body-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: clamp(1rem, 2vw, 2rem);
+      }
+      .body-section { scroll-margin-top: 6.5rem; }
+      .body-section h2,
+      .body-section h3,
+      .contact h2 {
+        font-family: var(--font-body);
+        letter-spacing: -0.045em;
+      }
+      .body-section h2,
+      .contact h2 {
+        font-size: clamp(3rem, 7vw, 7.8rem);
+        font-weight: 600;
+        line-height: 0.9;
+      }
+      .body-section h3 {
+        font-size: clamp(2.3rem, 5vw, 6.4rem);
+        font-weight: 600;
+        line-height: 0.94;
+      }
+      .descriptor {
+        color: var(--ink);
+        font-size: clamp(1.02rem, 1.45vw, 1.25rem);
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      .body-copy {
+        max-width: 68ch;
+        color: var(--ink-soft);
+        font-size: clamp(1rem, 1.25vw, 1.16rem);
+      }
+      .source-link {
+        width: fit-content;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        color: var(--body-blue);
+        font-weight: 700;
+        text-decoration-line: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.35em;
+        transition: color 180ms var(--ease), text-decoration-thickness 180ms var(--ease);
+      }
+      .source-link:hover,
+      .source-link:focus-visible {
+        color: var(--body-pink);
+        text-decoration-thickness: 3px;
+      }
+      .source-status {
+        width: fit-content;
+        color: var(--muted);
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+      .atmosphere {
+        position: relative;
+        isolation: isolate;
+      }
+      .atmosphere::before,
+      .atmosphere::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+      }
+      .js .atmosphere::before,
+      .js .atmosphere::after {
+        opacity: 0.5;
+        transform: translate3d(-2.5%, 0, 0);
+        transition: opacity 900ms var(--ease), transform 1200ms var(--ease);
+      }
+      .js .atmosphere.in-view::before,
+      .js .atmosphere.in-view::after {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .selected {
+        position: relative;
+        scroll-margin-top: 0;
+        padding-top: max(5rem, 10svh);
+        background: var(--body-field);
+      }
+      .selected-intro {
+        min-height: clamp(18rem, 32vw, 30rem);
+        align-items: end;
+        padding-bottom: clamp(4rem, 8vw, 8rem);
+      }
+      .selected-intro h2 { grid-column: 1 / span 8; }
+      .selected-intro p {
+        grid-column: 10 / -1;
+        max-width: 28ch;
+        padding-bottom: 0.45rem;
+        color: var(--ink-soft);
+        font-size: clamp(1rem, 1.4vw, 1.22rem);
+      }
+      .selected-plane::before {
+        inset: 5% -12% auto 14%;
+        height: 32rem;
+        background: linear-gradient(105deg, var(--blue-plane), oklch(0.44 0.075 239 / 0.08));
+        clip-path: polygon(0 22%, 100% 0, 91% 75%, 6% 100%);
+      }
+
+      .project {
+        position: relative;
+        scroll-margin-top: 6rem;
+        isolation: isolate;
+      }
+      .threads {
+        padding: clamp(6rem, 13vw, 13rem) 0 clamp(7rem, 15vw, 15rem);
+      }
+      .threads::before {
+        inset: 17% -7% 43% 35%;
+        background: linear-gradient(118deg, var(--body-snow), color-mix(in oklch, var(--body-snow) 72%, transparent));
+        clip-path: polygon(8% 0, 100% 15%, 90% 94%, 0 76%);
+      }
+      .threads::after {
+        inset: 60% -10% 5% 56%;
+        background: linear-gradient(120deg, transparent, var(--pink-light));
+        clip-path: polygon(0 36%, 100% 0, 100% 100%, 18% 82%);
+      }
+      .threads h3 { grid-column: 1 / span 6; }
+      .threads-copy {
+        grid-column: 8 / -1;
+        display: grid;
+        gap: 1.4rem;
+        padding: 1.1rem clamp(0rem, 1.4vw, 1.25rem) 1rem 0;
+      }
+      .threads-copy .descriptor,
+      .threads-copy .body-copy { color: var(--body-snow-ink); }
+      .process-line {
+        grid-column: 2 / -1;
+        margin-top: clamp(4rem, 9vw, 9rem);
+        padding: clamp(1.25rem, 2.5vw, 2rem) 0;
+        border-top: 1px solid var(--neutral-rule);
+        border-bottom: 1px solid var(--neutral-rule);
+        color: var(--ink);
+        font-size: clamp(1.05rem, 1.65vw, 1.42rem);
+        font-weight: 500;
+        line-height: 1.55;
+      }
+      .supply-docket {
+        padding: var(--section-space) 0;
+        overflow: clip;
+        background: var(--body-field-deep);
+      }
+      .supply-docket::before {
+        inset: 8% 7% 50% 42%;
+        background: linear-gradient(90deg, transparent, var(--blue-light));
+        clip-path: polygon(0 23%, 100% 0, 91% 100%, 5% 75%);
+      }
+      .supply-docket::after {
+        inset: 58% 0 4% 61%;
+        background: linear-gradient(110deg, transparent, var(--pink-light));
+        clip-path: polygon(0 30%, 100% 0, 100% 85%, 17% 100%);
+      }
+      .sem-title { grid-column: 1 / span 3; }
+      .sem-title h3 { font-size: clamp(2.5rem, 4.6vw, 5.4rem); }
+      .sem-title .descriptor { margin-top: 1.2rem; color: var(--ink-soft); }
+      .sem-mechanism { grid-column: 5 / -1; }
+      .sem-mechanism > .body-copy { color: var(--ink); font-size: clamp(1.2rem, 1.9vw, 1.65rem); }
+      .system-flow {
+        position: relative;
+        z-index: 1;
+        list-style: none;
+        counter-reset: mechanism;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0;
+        margin: clamp(3rem, 6vw, 6rem) 0;
+        padding: 0;
+      }
+      .system-flow::before {
+        content: "";
+        position: absolute;
+        left: 4%;
+        right: 4%;
+        top: 50%;
+        z-index: -1;
+        height: 1px;
+        background: var(--neutral-rule);
+      }
+      .system-flow li {
+        counter-increment: mechanism;
+        min-height: 7.5rem;
+        display: flex;
+        align-items: end;
+        padding: 1rem 0.75rem;
+        border-top: 1px solid var(--neutral-rule);
+        background: color-mix(in oklch, var(--body-field-deep) 93%, transparent);
+        font-weight: 600;
+      }
+      .system-flow li:nth-child(even) { transform: translateY(1.6rem); }
+      .system-flow li::before {
+        content: counter(mechanism, decimal-leading-zero);
+        align-self: start;
+        margin-right: auto;
+        color: var(--muted);
+        font-size: 0.75rem;
+        font-variant-numeric: tabular-nums;
+      }
+      .evidence-line {
+        max-width: 68ch;
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .sem-detail { margin-top: 1rem; }
+      .story {
+        padding: clamp(5rem, 10vw, 9rem) 0;
+        background: oklch(0.30 0.075 240);
+        color: oklch(0.965 0.012 238);
+      }
+      [data-theme="light"] .story { background: oklch(0.77 0.075 235); color: oklch(0.18 0.045 249); }
+      .story::before {
+        inset: 34% -8% 30% 36%;
+        background: linear-gradient(100deg, transparent, oklch(0.79 0.11 5 / 0.2), transparent);
+        clip-path: polygon(0 28%, 100% 0, 92% 100%, 8% 78%);
+      }
+      .story::after { display: none; }
+      .story-heading { grid-column: 1 / span 5; }
+      .story-heading .descriptor { margin-top: 1.2rem; color: inherit; }
+      .story-copy { grid-column: 8 / -1; color: inherit; padding-top: 0.6rem; }
+      .phase-list {
+        grid-column: 1 / -1;
+        list-style: none;
+        counter-reset: phase;
+        color: oklch(0.20 0.04 249);
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        margin: clamp(4rem, 7vw, 7rem) 0 2rem;
+        padding: clamp(2.4rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3rem);
+        background: oklch(0.90 0.028 236);
+        clip-path: polygon(0 8%, 100% 0, 98% 92%, 2% 100%);
+      }
+      .phase-list li {
+        counter-increment: phase;
+        min-height: 8rem;
+        display: flex;
+        align-items: end;
+        padding: 1rem clamp(0.75rem, 1.5vw, 1.5rem);
+        border-top: 1px solid currentColor;
+        font-size: clamp(1.45rem, 2.4vw, 2.4rem);
+        font-weight: 600;
+      }
+      .phase-list li::before {
+        content: counter(phase, decimal-leading-zero);
+        align-self: start;
+        margin-right: auto;
+        font-size: 0.78rem;
+        font-variant-numeric: tabular-nums;
+      }
+      .story-method { grid-column: 3 / span 7; margin-top: 2.2rem; color: inherit; }
+      .story .source-link { grid-column: 10 / -1; justify-self: end; margin-top: 2rem; color: inherit; }
+      .story .source-link:hover,
+      .story .source-link:focus-visible { color: oklch(0.84 0.11 4); }
+      [data-theme="light"] .story .source-link:hover,
+      [data-theme="light"] .story .source-link:focus-visible { color: oklch(0.43 0.17 8); }
+
+      .aisb {
+        --section-link-pink: oklch(0.45 0.17 8);
+        padding: clamp(6rem, 13vw, 13rem) 0;
+        background: oklch(0.92 0.025 232);
+        color: oklch(0.19 0.045 249);
+      }
+      [data-theme="light"] .aisb {
+        --section-link-pink: oklch(0.80 0.12 5);
+        background: oklch(0.17 0.047 250);
+        color: oklch(0.95 0.015 238);
+      }
+      .aisb::before {
+        inset: 0 58% 0 -10%;
+        background: linear-gradient(115deg, var(--blue-light), transparent);
+        clip-path: polygon(0 0, 100% 15%, 78% 100%, 0 87%);
+      }
+      .aisb::after {
+        inset: 60% -5% 0 52%;
+        background: linear-gradient(100deg, transparent, var(--pink-light));
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 7% 76%);
+      }
+      .aisb-title { grid-column: 9 / -1; text-align: right; }
+      .aisb-title .descriptor { margin-top: 1.2rem; color: inherit; }
+      .roles-note {
+        grid-column: 1 / span 3;
+        align-self: end;
+        margin-top: clamp(4rem, 8vw, 8rem);
+      }
+      .roles-note strong {
+        display: block;
+        margin-bottom: 0.8rem;
+        font-size: clamp(2rem, 4vw, 4.5rem);
+        font-weight: 600;
+        line-height: 1;
+      }
+      .roles-note p { max-width: 29ch; color: inherit; }
+      .criteria {
+        grid-column: 5 / -1;
+        list-style: none;
+        margin: clamp(4rem, 8vw, 8rem) 0 0;
+        padding: 0;
+      }
+      .criteria li {
+        display: grid;
+        grid-template-columns: minmax(9rem, 0.8fr) minmax(0, 2fr);
+        gap: clamp(1.25rem, 3vw, 3rem);
+        align-items: baseline;
+        padding: 1.2rem 0;
+        border-top: 1px solid currentColor;
+      }
+      .criteria strong { font-weight: 700; }
+      .criteria span {
+        max-width: 58ch;
+        font-size: 0.96rem;
+        line-height: 1.5;
+        opacity: 0.78;
+      }
+      .criteria li:last-child { border-bottom: 1px solid currentColor; }
+      .aisb-implementation { grid-column: 5 / span 6; margin-top: 2.2rem; color: inherit; }
+      .aisb a:focus-visible { outline-color: var(--section-link-pink); }
+
+      .connections {
+        padding: var(--section-space) 0;
+        background: var(--body-field);
+      }
+      .connections-heading { grid-column: 1 / span 8; }
+      .connections-heading h2 { font-size: clamp(2.8rem, 6vw, 6.6rem); }
+      .connection-figure {
+        grid-column: 1 / -1;
+        margin: clamp(4rem, 8vw, 8rem) 0 0;
+      }
+      .connection-figure figcaption {
+        grid-column: 8 / -1;
+        color: var(--ink-soft);
+        font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      }
+      .connection-plot {
+        position: relative;
+        grid-column: 1 / -1;
+        margin-top: clamp(3rem, 6vw, 6rem);
+        isolation: isolate;
+      }
+      .connector-layer {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        pointer-events: none;
+      }
+      .connection-line-group {
+        opacity: 0.38;
+        transition: opacity 280ms var(--ease);
+      }
+      .connection-line-group path {
+        fill: none;
+        stroke: var(--neutral-rule);
+        stroke-width: 1.5;
+        vector-effect: non-scaling-stroke;
+      }
+      .connection-line-group circle { fill: var(--ink-soft); opacity: 0.62; }
+      .connection-line-group.is-strong { opacity: 1; }
+      .connection-line-group.is-strong path { stroke: var(--sky); stroke-width: 3; }
+      .connection-line-group.is-quiet { opacity: 0.1; }
+      .js .connections .connection-line-group path {
+        stroke-dasharray: 900;
+        stroke-dashoffset: 900;
+        transition: stroke-dashoffset 1100ms var(--ease), stroke 280ms var(--ease), stroke-width 280ms var(--ease);
+      }
+      .js .connections.in-view .connection-line-group path { stroke-dashoffset: 0; }
+      .concern-band {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: clamp(1rem, 2vw, 2rem);
+        min-height: 10rem;
+        padding: 1.5rem 0;
+        border-top: 1px solid var(--neutral-rule);
+      }
+      .concern-band:last-child { border-bottom: 1px solid var(--neutral-rule); }
+      .concern-band h3 {
+        grid-column: 1 / span 3;
+        font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+        letter-spacing: -0.025em;
+      }
+      .concern-band dl {
+        grid-column: 4 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+        margin: 0;
+      }
+      .concern-band dl div { min-width: 0; }
+      .concern-band dt { margin-bottom: 0.3rem; font-weight: 700; }
+      .concern-band dd { margin: 0; color: var(--muted); font-size: 0.93rem; line-height: 1.45; }
+      .project-focus-link {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        color: var(--ink);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.3em;
+      }
+      .project-focus-link:hover,
+      .project-focus-link:focus-visible { color: var(--body-pink); text-decoration-thickness: 3px; }
+      .blank-note {
+        grid-column: 8 / -1;
+        margin-top: 1.5rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .record {
+        padding: var(--section-space) 0;
+        background: var(--bg);
+      }
+      .record h2 { grid-column: 1 / span 7; }
+      .record-list {
+        position: relative;
+        grid-column: 1 / -1;
+        margin-top: clamp(4rem, 8vw, 8rem);
+      }
+      .record-entry {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: clamp(1rem, 2vw, 2rem);
+        padding: clamp(2.5rem, 5vw, 5.5rem) 0;
+        border-top: 1px solid var(--neutral-rule);
+      }
+      .record-entry:nth-child(2) { width: 91.666%; margin-left: 8.334%; }
+      .record-entry:nth-child(3) { width: 83.333%; }
+      .record-date {
+        grid-column: 1 / span 2;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        line-height: 1.45;
+      }
+      .record-name { grid-column: 3 / span 4; }
+      .record-entry:nth-child(2) .record-name { grid-column: 4 / span 5; }
+      .record-entry:nth-child(2) .record-note { grid-column: 9 / -1; }
+      .record-entry:nth-child(3) .record-name { grid-column: 4 / span 4; }
+      .record-entry:nth-child(3) .record-note { grid-column: 8 / -1; }
+      .record-name h3 { font-size: clamp(1.35rem, 2.2vw, 2.2rem); letter-spacing: -0.025em; }
+      .record-name p { margin-top: 0.45rem; color: var(--ink-soft); }
+      .record-note { grid-column: 7 / -1; max-width: 68ch; color: var(--ink-soft); }
+
+      .contact {
+        position: relative;
+        isolation: isolate;
+        overflow: clip;
+        padding: clamp(6rem, 13vw, 13rem) 0 3rem;
+        background: var(--body-field-deep);
+      }
+      .contact::before,
+      .contact::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+      }
+      .contact::before {
+        inset: 48% 28% -22% -12%;
+        background: linear-gradient(112deg, transparent, var(--blue-light));
+        clip-path: polygon(0 30%, 100% 0, 88% 100%, 9% 82%);
+      }
+      .contact::after {
+        inset: 53% -12% -16% 40%;
+        background: linear-gradient(103deg, transparent, var(--pink-light));
+        clip-path: polygon(0 18%, 100% 0, 100% 88%, 12% 100%);
+      }
+      .contact h2 { grid-column: 1 / -1; }
+      .contact address {
+        grid-column: 1 / -1;
+        margin-top: clamp(3rem, 7vw, 7rem);
+        font-style: normal;
+      }
+      .email-link {
+        display: inline;
+        color: var(--ink);
+        font-size: clamp(2.1rem, 7.5vw, 8.4rem);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.055em;
+        overflow-wrap: anywhere;
+        text-decoration-line: underline;
+        text-decoration-thickness: 0.045em;
+        text-underline-offset: 0.12em;
+      }
+      .email-link:hover,
+      .email-link:focus-visible { color: var(--body-pink); text-decoration-thickness: 0.07em; }
+      .contact-lines {
+        grid-column: 7 / -1;
+        display: grid;
+        gap: 0.7rem;
+        margin-top: clamp(4rem, 8vw, 8rem);
+        font-size: 1.04rem;
+      }
+      .contact-lines p { color: var(--ink-soft); }
+      .contact-lines a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.28em; }
+      .contact-lines a:hover,
+      .contact-lines a:focus-visible { color: var(--body-pink); text-decoration-thickness: 3px; }
+      footer {
+        background: var(--body-field-deep);
+        color: var(--muted);
+        padding: 1.5rem 0 2.2rem;
+        font-size: 0.9rem;
+      }
+      footer .body-shell {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        border-top: 1px solid var(--hair);
+        padding-top: 1.5rem;
+      }
+
+      @keyframes nudgeDown {
+        0%, 100% { transform: rotate(45deg) translate(0, -2px); opacity: 0.55; }
+        50% { transform: rotate(45deg) translate(5px, 3px); opacity: 1; }
+      }
+      @media (max-width: 1050px) {
+        .hero-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 960px) {
+        /* The connector paths are drawn against the four-column desktop plot.
+           Narrower layouts reflow the bands, so the lines no longer join
+           anything and would only stretch. */
+        .connector-layer { display: none; }
+      }
+      @media (min-width: 641px) and (max-width: 960px) {
+        .body-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+        .selected-intro h2 { grid-column: 1 / span 4; }
+        .selected-intro p { grid-column: 5 / -1; }
+        .threads h3 { grid-column: 1 / span 3; }
+        .threads-copy { grid-column: 4 / -1; }
+        .process-line { grid-column: 1 / -1; }
+        .sem-title { grid-column: 1 / span 2; }
+        .sem-mechanism { grid-column: 3 / -1; }
+        .story-heading { grid-column: 1 / span 3; }
+        .story-copy { grid-column: 4 / -1; }
+        .phase-list, .story-method { grid-column: 1 / -1; }
+        .story .source-link { grid-column: 4 / -1; }
+        .aisb-title { grid-column: 4 / -1; }
+        .roles-note { grid-column: 1 / span 2; }
+        .criteria, .aisb-implementation { grid-column: 3 / -1; }
+        .connections-heading { grid-column: 1 / -1; }
+        .connection-figure figcaption { grid-column: 3 / -1; }
+        .connection-plot { grid-column: 1 / -1; }
+        .concern-band { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+        .concern-band h3 { grid-column: 1 / span 2; }
+        .concern-band dl { grid-column: 3 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .blank-note { grid-column: 3 / -1; }
+        .record h2, .record-list { grid-column: 1 / -1; }
+        .record-entry { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+        .record-date { grid-column: 1 / span 1; }
+        .record-name { grid-column: 2 / span 3; }
+        .record-note { grid-column: 5 / -1; }
+        .record-entry:nth-child(2) .record-name { grid-column: 2 / span 3; }
+        .record-entry:nth-child(2) .record-note { grid-column: 5 / -1; }
+        .record-entry:nth-child(3) .record-name { grid-column: 3 / span 2; }
+        .record-entry:nth-child(3) .record-note { grid-column: 5 / -1; }
+        .contact h2, .contact address { grid-column: 1 / -1; }
+        .contact-lines { grid-column: 3 / -1; }
+      }
+      @media (max-width: 760px) {
+        .site-nav {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 0.2rem 0.75rem;
+          padding: 0.55rem 1rem 0;
+          background: color-mix(in oklch, var(--nav-bg) 68%, transparent);
+          border-bottom: 1px solid color-mix(in oklch, var(--hair) 72%, transparent);
+        }
+        .brand { align-self: center; }
+        .nav-actions { justify-self: end; }
+        .nav-links {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          width: 100%;
+          min-width: 0;
+          gap: 1.35rem;
+          overflow-x: auto;
+          overscroll-behavior-inline: contain;
+          scrollbar-width: none;
+        }
+        .nav-links::-webkit-scrollbar { display: none; }
+        .nav-links a { flex: 0 0 auto; }
+        .resume-link { min-height: 2.75rem; padding-inline: 0.72rem; }
+        .icon-btn { width: 2.75rem; height: 2.75rem; }
+        .hero { min-height: auto; }
+        .hero-grid {
+          min-height: 39rem;
+          padding: 5.8rem 0 1.8rem;
+        }
+        h1 { font-size: clamp(2.9rem, 16vw, 4.6rem); }
+        .coords { flex-wrap: wrap; font-size: 0.74rem; }
+        .scroll-tip {
+          left: 1rem;
+          bottom: 0.85rem;
+          font-size: 0.68rem;
+        }
+      }
+      @media (max-width: 640px) {
+        .body-shell { width: calc(100% - 2rem); }
+        .body-grid { grid-template-columns: minmax(0, 1fr); }
+        .body-section { scroll-margin-top: 7.5rem; }
+        .selected { scroll-margin-top: 0; padding-top: 5rem; }
+        .threads::before { inset: 17% -25% 43% -8%; }
+        .selected-intro { min-height: 19rem; padding-bottom: 4rem; }
+        .selected-intro h2,
+        .selected-intro p,
+        .threads h3,
+        .threads-copy,
+        .process-line,
+        .sem-title,
+        .sem-mechanism,
+        .story-heading,
+        .story-copy,
+        .phase-list,
+        .story-method,
+        .story .source-link,
+        .aisb-title,
+        .roles-note,
+        .criteria,
+        .aisb-implementation,
+        .connections-heading,
+        .connection-figure figcaption,
+        .connection-plot,
+        .blank-note,
+        .record h2,
+        .record-list,
+        .contact h2,
+        .contact address,
+        .contact-lines { grid-column: 1; }
+        .selected-intro p { margin-top: 2rem; }
+        .selected-plane::before { inset: 18% -40% auto 7%; height: 20rem; }
+        .threads { padding: 6rem 0 7rem; }
+        .threads-copy { margin-top: 2.5rem; }
+        .process-line { margin-top: 4rem; }
+        .sem-title .descriptor { max-width: 26ch; }
+        .sem-mechanism { margin-top: 3rem; }
+        .system-flow {
+          grid-template-columns: 1fr;
+          gap: 0;
+          margin: 3rem 0;
+        }
+        .system-flow::before { display: none; }
+        .system-flow li,
+        .system-flow li:nth-child(even) {
+          min-height: 4.8rem;
+          transform: none;
+        }
+        .story-heading .descriptor { max-width: 24ch; }
+        .story-copy { margin-top: 2rem; }
+        .phase-list {
+          grid-template-columns: 1fr;
+          gap: 0;
+          margin-top: 3rem;
+          padding: 1rem;
+          background: var(--body-snow);
+          clip-path: none;
+        }
+        .phase-list li,
+        .phase-list li:nth-child(2),
+        .phase-list li:nth-child(3) {
+          min-height: 5rem;
+          transform: none;
+        }
+        .story-method { margin-top: 2.5rem; }
+        .story .source-link { justify-self: start; }
+        .aisb-title { text-align: left; }
+        .roles-note { margin-top: 4rem; }
+        .criteria { margin-top: 3rem; }
+        .criteria li {
+          grid-template-columns: 1fr;
+          gap: 0.4rem;
+          padding-block: 1rem;
+        }
+        .connection-figure figcaption { margin-top: 2rem; }
+        .concern-band {
+          position: relative;
+          z-index: 1;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          min-height: 0;
+          padding: 2.4rem 0;
+        }
+        .concern-band h3 {
+          grid-column: 1 / -1;
+          margin-bottom: 1.5rem;
+        }
+        .concern-band dl {
+          position: relative;
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 1.25rem 0;
+        }
+        .concern-band dl div,
+        .concern-band dl div:nth-child(odd) { grid-column: 1 / span 3; }
+        .concern-band dl div:nth-child(even),
+        .concern-band dl div:has([data-project="supply-docket"]),
+        .concern-band dl div:has([data-project="aisb"]) { grid-column: 2 / -1; }
+        .concern-band dl div + div { margin-top: 0; }
+        .concern-band dt {
+          position: relative;
+          width: fit-content;
+          padding-left: 1.1rem;
+        }
+        .concern-band dt::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0.72em;
+          width: 0.42rem;
+          height: 0.42rem;
+          border-radius: 50%;
+          background: var(--sky);
+          box-shadow: 0 0 0 4px var(--body-field);
+        }
+        .concern-band dd { padding-left: 1.1rem; }
+        .blank-note { margin-top: 1.5rem; }
+        .project { scroll-margin-top: 7.5rem; }
+        .record-entry,
+        .record-entry:nth-child(2),
+        .record-entry:nth-child(3) {
+          width: 100%;
+          margin-left: 0;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          padding: 2.8rem 0;
+        }
+        .record-date,
+        .record-entry:nth-child(2) .record-date,
+        .record-entry:nth-child(3) .record-date { grid-column: 1 / -1; }
+        .record-name,
+        .record-entry:nth-child(2) .record-name { grid-column: 1 / -1; margin-top: 1.3rem; }
+        .record-entry:nth-child(3) .record-name { grid-column: 2 / -1; margin-top: 1.3rem; }
+        .record-note,
+        .record-entry:nth-child(3) .record-note { grid-column: 2 / -1; margin-top: 1.5rem; }
+        .record-entry:nth-child(2) .record-date { grid-column: 3 / -1; text-align: right; }
+        .record-entry:nth-child(2) .record-note { grid-column: 1 / span 3; margin-top: 1.5rem; }
+        .contact-lines { margin-top: 4rem; }
+        footer .body-shell { display: grid; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+        .js .atmosphere::before,
+        .js .atmosphere::after {
+          opacity: 1;
+          transform: none;
+        }
+        .js .connections .connection-line-group path { stroke-dashoffset: 0; }
+      }
+      @media print {
+        :root, [data-theme="light"] { color-scheme: light; }
+        body { background: oklch(0.985 0.006 236); color: oklch(0.19 0.045 248); }
+        .site-nav, .scroll-tip, .connector-layer { display: none; }
+        .body-section, .contact, footer, .story, .aisb, .supply-docket, .selected {
+          background: transparent;
+          color: oklch(0.19 0.045 248);
+        }
+        .body-copy, .descriptor, .record-note, .record-name p, .concern-band dd, .contact-lines p { color: oklch(0.33 0.045 246); }
+        .atmosphere::before, .atmosphere::after, .contact::before, .contact::after { display: none; }
+        a { color: currentColor; }
+        .body-section { break-inside: avoid; }
+        .connection-plot { break-inside: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#selected">Skip to selected systems</a>
+    <header class="site-nav">
+      <a class="brand" href="#top">Parth Thakre</a>
+      <nav class="nav-links" aria-label="Portfolio sections">
+        <a href="#selected">Systems</a>
+        <a href="#connections">Connections</a>
+        <a href="#record">Record</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" id="theme-toggle" aria-label="Use light theme" title="Use light theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3v2.2M12 18.8V21M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M3 12h2.2M18.8 12H21M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </button>
+        <a class="resume-link" href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">Resume</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <picture>
+          <source type="image/webp" srcset="/assets/titlis-hero-640.webp 640w, /assets/titlis-hero-1280.webp 1280w, /assets/titlis-hero-2000.webp 2000w" sizes="100vw">
+          <img class="hero-photo" src="/assets/titlis-hero-1280.jpg" srcset="/assets/titlis-hero-640.jpg 640w, /assets/titlis-hero-1280.jpg 1280w, /assets/titlis-hero-2000.jpg 2000w" sizes="100vw" alt="Mount Titlis above the surrounding snow-covered peaks" decoding="async" fetchpriority="high">
+        </picture>
+        <div class="shell hero-grid">
+          <div>
+            <div class="coords" role="group" aria-label="Location coordinates and elevation">
+              <span>46.7719 N</span>
+              <span>8.4371 E</span>
+              <span class="height">3,238 M / 10,623 FT</span>
+            </div>
+            <h1 id="hero-title">AI systems with an audit trail</h1>
+            <div class="rule" aria-hidden="true"></div>
+        <p class="hero-copy">I work across retrieval agents, LLM evaluation rigs, enterprise data access, and private runtime infrastructure. I care about systems that are inspectable after they answer.</p>
+          </div>
+        </div>
+        <a class="scroll-tip" href="#selected">SCROLL</a>
+      </section>
+
+      <section class="selected body-section selected-plane atmosphere" id="selected" aria-labelledby="selected-title">
+        <header class="body-shell body-grid selected-intro">
+          <h2 id="selected-title">Selected systems.</h2>
+          <p>Four systems, shown through the parts that can be checked.</p>
+        </header>
+
+        <article class="project threads atmosphere" id="threads" aria-labelledby="threads-title">
+          <div class="body-shell body-grid">
+            <h3 id="threads-title">Threads</h3>
+            <div class="threads-copy">
+              <p class="descriptor">Local-first desktop AI workspace.</p>
+              <p class="body-copy">Built with Electron, React, TypeScript, and Azure AI Foundry. It keeps authentication, searchable local history, memory, retrieval, model selection, tools, and web grounding on one desktop surface.</p>
+              <p class="source-status">Source is private.</p>
+            </div>
+            <p class="process-line">PDF, DOCX, PPTX, XLSX, CSV, Markdown, source files, and scans → extraction or OCR → searchable local history → models and tools.</p>
+          </div>
+        </article>
+
+        <article class="project supply-docket atmosphere" id="supply-docket" aria-labelledby="supply-docket-title">
+          <div class="body-shell body-grid">
+            <div class="sem-title">
+              <h3 id="supply-docket-title">Supply Docket</h3>
+              <p class="descriptor">Kinaxis supply-chain query agent.</p>
+            </div>
+            <div class="sem-mechanism">
+              <p class="body-copy">A Semantic Kernel agent calls a FastAPI wrapper around Kinaxis RapidResponse worksheet data.</p>
+              <ol class="system-flow" aria-label="Supply Docket request flow">
+                <li>Question</li>
+                <li>Agent tool call</li>
+                <li>FastAPI</li>
+                <li>Kinaxis worksheet</li>
+                <li>Cited answer</li>
+              </ol>
+              <p class="evidence-line">Each answer includes its workbook, worksheet, column, row, applied filters, and exact returned values.</p>
+              <p class="body-copy sem-detail">Eight diagnostic playbooks, per-call debugging metrics, and support for Azure OpenAI or a local OpenAI-compatible runtime.</p>
+              <p class="source-status">Source is private.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="project story atmosphere" id="story-tourney" aria-labelledby="story-title">
+          <div class="body-shell body-grid">
+            <div class="story-heading">
+              <h3 id="story-title">Story Tourney</h3>
+              <p class="descriptor">Blind multi-model story evaluation.</p>
+            </div>
+            <p class="body-copy story-copy">The same prompt runs through two to four OpenRouter models. Outputs are anonymized, reviewed, revised, then ranked.</p>
+            <ol class="phase-list" aria-label="Story Tourney evaluation phases">
+              <li>Generate.</li>
+              <li>Blind review.</li>
+              <li>Revise.</li>
+              <li>Rank.</li>
+            </ol>
+            <p class="body-copy story-method">Four Zod-validated contracts structure the phases. Provider calls are archived. Borda count resolves the ranking with first-place and peer-review tie-breakers.</p>
+            <a class="source-link" href="https://github.com/parth-thakre/story-tourney">Story Tourney source on GitHub.</a>
+          </div>
+        </article>
+
+        <article class="project aisb atmosphere" id="aisb" aria-labelledby="aisb-title">
+          <div class="body-shell body-grid">
+            <div class="aisb-title">
+              <h3 id="aisb-title">AISB</h3>
+              <p class="descriptor">AI Society Benchmark.</p>
+            </div>
+            <div class="roles-note">
+              <strong>Five roles</strong>
+              <p>They act inside repeated simulations with resources, trust, influence, resentment, and role-specific actions.</p>
+            </div>
+            <ol class="criteria" aria-label="AISB scoring criteria">
+              <li><strong>Welfare</strong><span>Whether agents maintain resources and avoid persistent harm across the simulation.</span></li>
+              <li><strong>Economy</strong><span>Whether resources continue to circulate instead of concentrating or disappearing.</span></li>
+              <li><strong>Cohesion</strong><span>Whether trust and cooperation survive conflict between roles.</span></li>
+              <li><strong>Institutions</strong><span>Whether shared rules remain effective when incentives pull agents apart.</span></li>
+              <li><strong>Anti-degeneracy</strong><span>Whether the simulation avoids collapse into repetitive, exploitative, or inert behavior.</span></li>
+            </ol>
+            <p class="body-copy aisb-implementation">Structured event logs and five criteria replace single-number judging. The 18-module Python CLI package uses a canonical data layout and typed artifact schemas.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="connections body-section atmosphere" id="connections" aria-labelledby="connections-title">
+        <div class="body-shell body-grid">
+          <div class="connections-heading">
+            <h2 id="connections-title">Connections.</h2>
+          </div>
+          <figure class="connection-figure body-grid" aria-describedby="connection-note">
+            <figcaption>The projects use different surfaces, but the same concerns recur.</figcaption>
+            <div class="connection-plot">
+              <svg class="connector-layer" viewBox="0 0 1200 640" preserveAspectRatio="none" aria-hidden="true">
+                <g class="connection-line-group" data-project="threads">
+                  <path d="M330 70 H420"/>
+                  <path d="M330 390 V550 H420"/>
+                  <circle cx="330" cy="70" r="4"/><circle cx="330" cy="390" r="4"/><circle cx="330" cy="550" r="4"/>
+                </g>
+                <g class="connection-line-group" data-project="supply-docket">
+                  <path d="M520 70 V550 H610"/>
+                  <circle cx="520" cy="70" r="4"/><circle cx="520" cy="230" r="4"/><circle cx="520" cy="390" r="4"/><circle cx="520" cy="550" r="4"/>
+                </g>
+                <g class="connection-line-group" data-project="story">
+                  <path d="M710 230 V550 H800"/>
+                  <circle cx="710" cy="230" r="4"/><circle cx="710" cy="390" r="4"/><circle cx="710" cy="550" r="4"/>
+                </g>
+                <g class="connection-line-group" data-project="aisb">
+                  <path d="M900 230 V550 H990"/>
+                  <circle cx="900" cy="230" r="4"/><circle cx="900" cy="390" r="4"/><circle cx="900" cy="550" r="4"/>
+                </g>
+              </svg>
+              <div class="connection-bands">
+                <section class="concern-band" aria-labelledby="retrieval-label">
+                  <h3 id="retrieval-label">Retrieval</h3>
+                  <dl>
+                    <div><dt><a class="project-focus-link" data-project="threads" href="#threads">Threads</a></dt><dd>File extraction, OCR, and local retrieval.</dd></div>
+                    <div><dt><a class="project-focus-link" data-project="supply-docket" href="#supply-docket">Supply Docket</a></dt><dd>Worksheet queries and catalog planning.</dd></div>
+                  </dl>
+                </section>
+                <section class="concern-band" aria-labelledby="evaluation-label">
+                  <h3 id="evaluation-label">Evaluation</h3>
+                  <dl>
+                    <div><dt><a class="project-focus-link" data-project="supply-docket" href="#supply-docket">Supply Docket</a></dt><dd>Source metadata and debugging traces.</dd></div>
+                    <div><dt><a class="project-focus-link" data-project="story" href="#story-tourney">Story Tourney</a></dt><dd>Blind review, revision, archived calls, and Borda scoring.</dd></div>
+                    <div><dt><a class="project-focus-link" data-project="aisb" href="#aisb">AISB</a></dt><dd>Five scoring criteria.</dd></div>
+                  </dl>
+                </section>
+                <section class="concern-band" aria-labelledby="infrastructure-label">
+                  <h3 id="infrastructure-label">Infrastructure</h3>
+                  <dl>
+                    <div><dt><a class="project-focus-link" data-project="threads" href="#threads">Threads</a></dt><dd>Azure authentication and Foundry access.</dd></div>
+                    <div><dt><a class="project-focus-link" data-project="supply-docket" href="#supply-docket">Supply Docket</a></dt><dd>Docker with Azure or local runtimes.</dd></div>
+                    <div><dt><a class="project-focus-link" data-project="story" href="#story-tourney">Story Tourney</a></dt><dd>SQLite, encrypted key storage, and deterministic mock fallback.</dd></div>
+                    <div><dt><a class="project-focus-link" data-project="aisb" href="#aisb">AISB</a></dt><dd>Typed artifacts and structured logs.</dd></div>
+                  </dl>
+                </section>
+                <section class="concern-band" aria-labelledby="delivery-label">
+                  <h3 id="delivery-label">Delivery</h3>
+                  <dl>
+                    <div><dt><a class="project-focus-link" data-project="threads" href="#threads">Threads</a></dt><dd>Electron.</dd></div>
+                    <div><dt><a class="project-focus-link" data-project="supply-docket" href="#supply-docket">Supply Docket</a></dt><dd>FastAPI agent-and-API architecture.</dd></div>
+                    <div><dt><a class="project-focus-link" data-project="story" href="#story-tourney">Story Tourney</a></dt><dd>Node.js and Next.js.</dd></div>
+                    <div><dt><a class="project-focus-link" data-project="aisb" href="#aisb">AISB</a></dt><dd>Python CLI.</dd></div>
+                  </dl>
+                </section>
+              </div>
+            </div>
+            <p class="blank-note" id="connection-note">A blank intersection means the source does not name that concern.</p>
+          </figure>
+        </div>
+      </section>
+
+      <section class="record body-section" id="record" aria-labelledby="record-title">
+        <div class="body-shell body-grid">
+          <h2 id="record-title">Recent record.</h2>
+          <div class="record-list">
+            <article class="record-entry">
+              <p class="record-date"><time datetime="2025-12">Dec 2025</time> to present</p>
+              <div class="record-name">
+                <h3>AI Systems Engineer</h3>
+                <p>MaSyCoDa Solutions Pvt. Ltd.</p>
+              </div>
+              <p class="record-note">Built enterprise AI prototypes using Azure AI Foundry, Azure OpenAI, Azure AI Search, Microsoft Fabric, and related Azure services. Integrated Azure AI Foundry agents with Microsoft Copilot Studio and Power Apps. Added citation requirements, eight diagnostic playbooks, and per-call debugging traces to the Kinaxis pilot.</p>
+            </article>
+            <article class="record-entry">
+              <p class="record-date"><time datetime="2022">2022</time> to <time datetime="2026">2026</time></p>
+              <div class="record-name">
+                <h3>B.Tech in Computer Science and Engineering</h3>
+                <p>Honors in AI and Data Science. Shri Ramdeobaba College of Engineering and Management.</p>
+              </div>
+            </article>
+            <article class="record-entry">
+              <p class="record-date">Private infrastructure</p>
+              <div class="record-name">
+                <h3>Linux lab</h3>
+              </div>
+              <p class="record-note">Private Linux lab running more than 20 containers for self-hosted services, AI tooling, reverse proxies, monitoring, and recovery.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact body-section" id="contact" aria-labelledby="contact-title">
+        <div class="body-shell body-grid">
+          <h2 id="contact-title">Contact.</h2>
+          <address>
+            <a class="email-link" href="mailto:hire@psthl.com">hire@psthl.com</a>
+          </address>
+          <div class="contact-lines">
+            <p><a href="https://github.com/parth-thakre">GitHub</a> · <a href="https://www.linkedin.com/in/parthsthakre/">LinkedIn</a></p>
+            <p>Resume: <a href="/">HTML</a> · <a href="/resume.md" download="Parth_Thakre_Resume.md">Markdown</a> · <a href="/assets/Parth_Thakre_Resume.pdf" download="Parth_Thakre_Resume.pdf">PDF</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="body-shell">
+        <span>Parth Thakre</span>
+        <span>Nagpur, India</span>
+      </div>
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      const themeToggle = document.querySelector("#theme-toggle");
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
+      const navTrack = document.querySelector(".nav-links");
+      const navLinks = Array.from(navTrack.querySelectorAll("a"));
+      const navSections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+
+      const updateThemeControls = () => {
+        const useLight = root.dataset.theme !== "light";
+        const label = useLight ? "Use light theme" : "Use dark theme";
+        themeToggle.setAttribute("aria-label", label);
+        themeToggle.setAttribute("title", label);
+        themeColor.setAttribute("content", useLight ? "#05101b" : "#f8fbfd");
+      };
+
+      const applyTheme = (theme, save) => {
+        root.dataset.theme = theme;
+        if (save) writeSavedTheme(theme);
+        updateThemeControls();
+      };
+
+      themeToggle.addEventListener("click", () => {
+        applyTheme(root.dataset.theme === "light" ? "dark" : "light", true);
+      });
+
+      systemTheme.addEventListener("change", (event) => {
+        if (!readSavedTheme()) applyTheme(event.matches ? "light" : "dark", false);
+      });
+      updateThemeControls();
+
+      let navFrame = 0;
+      const setCurrentDestination = () => {
+        navFrame = 0;
+        let current = null;
+        const selectedTop = document.querySelector("#selected").getBoundingClientRect().top;
+        const atDocumentEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+
+        if (selectedTop <= window.innerHeight * 0.45) {
+          current = navSections[0];
+          for (const section of navSections) {
+            if (section.getBoundingClientRect().top <= window.innerHeight * 0.45) current = section;
+          }
+        }
+        if (atDocumentEnd) current = document.querySelector("#contact");
+
+        let currentLink = null;
+        navLinks.forEach((link) => {
+          const isCurrent = current && link.getAttribute("href") === `#${current.id}`;
+          if (isCurrent) {
+            link.setAttribute("aria-current", "location");
+            currentLink = link;
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+
+        if (currentLink && window.innerWidth <= 760) {
+          const trackRect = navTrack.getBoundingClientRect();
+          const linkRect = currentLink.getBoundingClientRect();
+          if (linkRect.left < trackRect.left) navTrack.scrollLeft -= trackRect.left - linkRect.left + 8;
+          if (linkRect.right > trackRect.right) navTrack.scrollLeft += linkRect.right - trackRect.right + 8;
+        }
+      };
+
+      const queueCurrentDestination = () => {
+        if (!navFrame) navFrame = requestAnimationFrame(setCurrentDestination);
+      };
+      setCurrentDestination();
+      window.addEventListener("scroll", queueCurrentDestination, { passive: true });
+      window.addEventListener("resize", queueCurrentDestination);
+
+      const animatedSections = Array.from(document.querySelectorAll(".atmosphere, .connections"));
+      if ("IntersectionObserver" in window) {
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("in-view");
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -8% 0px" });
+        animatedSections.forEach((section) => sectionObserver.observe(section));
+      } else {
+        animatedSections.forEach((section) => section.classList.add("in-view"));
+      }
+
+      const connectionFigure = document.querySelector(".connection-figure");
+      const focusLinks = Array.from(connectionFigure.querySelectorAll(".project-focus-link"));
+      const lineGroups = Array.from(connectionFigure.querySelectorAll(".connection-line-group"));
+
+      const emphasizeProject = (project) => {
+        lineGroups.forEach((line) => {
+          line.classList.toggle("is-strong", line.dataset.project === project);
+          line.classList.toggle("is-quiet", line.dataset.project !== project);
+        });
+      };
+      const clearProjectEmphasis = () => {
+        lineGroups.forEach((line) => line.classList.remove("is-strong", "is-quiet"));
+      };
+
+      focusLinks.forEach((link) => {
+        link.addEventListener("pointerenter", () => emphasizeProject(link.dataset.project));
+        link.addEventListener("pointerleave", clearProjectEmphasis);
+        link.addEventListener("focus", () => emphasizeProject(link.dataset.project));
+        link.addEventListener("blur", clearProjectEmphasis);
+      });
+    </script>
+  <!-- impeccable-live-start -->
+<script src="http://localhost:8400/live.js"></script>
+<!-- impeccable-live-end -->
+</body>
+</html>

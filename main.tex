@@ -1,0 +1,224 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage[scaled=0.96]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[margin=1.15cm]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[hidelinks,pdfauthor={Parth Thakre},pdftitle={Parth Thakre - AI Systems Engineer Resume}]{hyperref}
+\usepackage[most]{tcolorbox}
+
+\definecolor{resumeInk}{HTML}{323B4C}
+\definecolor{resumeMuted}{HTML}{6D7480}
+\definecolor{resumePaper}{HTML}{F7F7F5}
+\definecolor{resumeRule}{HTML}{D8DDE3}
+\definecolor{resumePale}{HTML}{E9EDF1}
+
+\pagecolor{resumePaper}
+\color{resumeInk}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=1.2em, itemsep=1.5pt, topsep=2pt, parsep=0pt, partopsep=0pt}
+\renewcommand{\labelitemi}{\textcolor{resumeInk}{\scriptsize\textbullet}}
+
+\newcommand{\sectionbar}[1]{%
+  \vspace{7pt}
+  \begin{tcolorbox}[
+    enhanced,
+    colback=resumeInk,
+    colframe=resumeInk,
+    boxrule=0pt,
+    arc=0pt,
+    left=7pt,
+    right=7pt,
+    top=4pt,
+    bottom=4pt,
+    width=\linewidth,
+  ]
+    {\color{white}\bfseries\fontsize{9.5}{11}\selectfont #1}
+  \end{tcolorbox}
+  \vspace{3pt}
+}
+
+\newcommand{\headingmarker}{%
+  {\setlength{\fboxsep}{0pt}\colorbox{resumeInk}{\rule{8pt}{13pt}}}%
+}
+
+\newcommand{\project}[4]{%
+  \par\noindent
+  \begin{tabularx}{\linewidth}{@{}p{1.2em}@{}Xr@{}}
+    \raisebox{-1.5pt}{\headingmarker} &
+    \if\relax\detokenize{#2}\relax\textbf{#1}\else\textbf{\href{#2}{#1 | GitHub}}\fi &
+    {\footnotesize\color{resumeMuted}#3} \\
+    & \multicolumn{2}{@{}p{\dimexpr\linewidth-1.2em\relax}@{}}{\raggedright\footnotesize\color{resumeMuted}#4\par}
+  \end{tabularx}
+  \par\vspace{1pt}
+}
+
+\newcommand{\role}[3]{%
+  \par\noindent
+  \begin{tabularx}{\linewidth}{@{}p{1.2em}@{}Xr@{}}
+    \raisebox{-1.5pt}{\headingmarker} &
+    \textbf{#1} &
+    {\footnotesize\color{resumeMuted}#2} \\
+    & \multicolumn{2}{@{}p{\dimexpr\linewidth-1.2em\relax}@{}}{\raggedright\footnotesize\color{resumeMuted}#3\par}
+  \end{tabularx}
+}
+
+\newcommand{\skillrow}[2]{%
+  \textbf{#1}\par
+  {\footnotesize #2}\par\vspace{5pt}
+}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.58\linewidth}
+  \vspace{0pt}
+  {\fontsize{24}{26}\selectfont\bfseries PARTH THAKRE}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+  \vspace{0pt}
+  \raggedleft
+  {\footnotesize \href{mailto:hire@psthl.com}{hire@psthl.com}}\\
+  {\footnotesize \href{https://github.com/parth-thakre}{github.com/parth-thakre}}\\
+  {\footnotesize \href{https://www.linkedin.com/parthsthakre/}{linkedin.com/in/parthsthakre}}
+\end{minipage}
+
+\vspace{2pt}
+{\Large AI Systems Engineer}\hfill{\small Nagpur, India \textbullet\ Open to new engagements}\\[-2pt]
+\textcolor{resumeRule}{\rule{\linewidth}{1.2pt}}
+\vspace{2pt}
+
+\sectionbar{PROFESSIONAL SUMMARY}
+{\small\raggedright
+AI Systems Engineer who builds enterprise LLM systems end to end: retrieval and OCR pipelines, tool-calling agents, multi-model evaluation, and the runtime they deploy onto. Delivers client-facing automation over messy business data, including Kinaxis RapidResponse question answering, local-first AI workspaces, and Azure-based prototypes. Every answer these systems produce is traceable to its source through citations, logs, schemas, and reproducible run artifacts. Deploys on Azure, AWS, a client's own tenant, or fully on-premises, so data residency is a deployment choice rather than a constraint.
+\par}
+
+\vspace{3pt}
+\begin{minipage}[t]{0.48\linewidth}
+  \vspace{0pt}
+  \raggedright
+  \sectionbar{TECHNICAL SKILLS}
+  \skillrow{Languages}{Python, TypeScript, JavaScript, C/C++, Java, Bash}
+  \skillrow{AI/LLM Systems}{Azure AI Foundry, Azure OpenAI, RAG, OCR, tool and function calling, MCP, prompt and schema design}
+  \skillrow{Local Inference}{llama.cpp, vLLM, Ollama, LM Studio, OpenAI-compatible runtimes}
+  \skillrow{Evaluation}{LLM benchmarks, multi-model orchestration, structured rubrics, simulation metrics, artifact schemas}
+  \skillrow{Backend/Product}{FastAPI, Flask, Express, Node.js, REST APIs, SQLite, Pydantic, Zod}
+  \skillrow{Frontend/Desktop}{React, Next.js, Vite, Electron, HTML, CSS}
+  \skillrow{Infrastructure \& Cloud}{Docker, Docker Compose, Linux, reverse proxies, Microsoft Azure, Azure AI Search, Microsoft Fabric, AWS}
+  \skillrow{AI Coding Tools}{Codex, OpenCode, OpenClaw, agentic coding workflows}
+  \skillrow{Microsoft Platforms}{Copilot Studio, Power Apps}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \vspace{0pt}
+  \raggedright
+  \sectionbar{DEPLOYMENT AND DATA BOUNDARY}
+  \begin{itemize}
+    \item \textbf{Managed cloud:} Azure AI Foundry and Azure OpenAI, or AWS, in my subscription or the client's.
+    \item \textbf{Client tenant:} deployed inside the client's own cloud account, so data and keys never leave their boundary.
+    \item \textbf{On-premises and air-gapped:} self-hosted open-weight models through llama.cpp, vLLM, Ollama, or any OpenAI-compatible runtime.
+    \item Applications target an OpenAI-compatible interface, so the same agent, retrieval, and citation logic runs against a hosted frontier model or a local open-weight one without a rewrite.
+  \end{itemize}
+
+  \sectionbar{ENGINEERING APPROACH}
+  \begin{itemize}
+    \item Converts AI prototypes into deployable artifacts: Electron apps, FastAPI services, Dockerized agents, CLI packages, and rendered reports.
+    \item Designs verifiable outputs using citations, structured JSON contracts, debug traces, scorecards, and reproducible run artifacts.
+    \item Treats retrieval, tool use, citations, and failure recovery as baseline product behavior rather than demo extras.
+    \item Keeps client source and client data private by default; publishes only work that is mine to publish.
+  \end{itemize}
+\end{minipage}
+
+\sectionbar{SELECTED EVIDENCE}
+\begin{itemize}
+  \item The Kinaxis pilot replaced manual worksheet navigation with natural-language questions answered from RapidResponse data, each answer carrying its workbook, worksheet, column, row, applied filters, and exact returned value.
+  \item Evaluation projects produce inspectable outputs: four-phase tournaments, five-axis scorecards, per-call logs, and structured artifacts.
+  \item Uses agentic coding tools for implementation, review, and debugging while retaining source control, logs, and behavioral verification.
+\end{itemize}
+
+\newpage
+
+\noindent
+\begin{minipage}[t]{0.58\linewidth}
+  \vspace{0pt}
+  {\fontsize{20}{22}\selectfont\bfseries PARTH THAKRE}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+  \vspace{0pt}
+  \raggedleft
+  {\footnotesize \href{mailto:hire@psthl.com}{hire@psthl.com}}\\
+  {\footnotesize \href{https://github.com/parth-thakre}{github.com/parth-thakre}}
+\end{minipage}
+\textcolor{resumeRule}{\rule{\linewidth}{1.2pt}}
+
+\begin{minipage}[t]{0.66\linewidth}
+  \vspace{0pt}
+  \raggedright
+  \small
+  \sectionbar{SELECTED AI/LLM PROJECTS}
+
+  \project{Threads}{}{Electron, React, TypeScript, Azure AI Foundry}{Local-first desktop AI workspace; private source, OSS release in progress}
+  \begin{itemize}
+    \item Built an Azure-backed desktop AI workspace with Microsoft Entra ID and API-key authentication, memory and retrieval, and searchable local history supporting hundreds of conversations.
+    \item Implemented text extraction for PDF, DOCX, PPTX, XLSX, CSV, Markdown, and source-code files, plus OCR for scanned PDFs and images.
+    \item Added MCP tool discovery and selection, Azure web search grounding, Claude model routing through Azure AI Foundry, and GPT Image generation and editing workflows.
+  \end{itemize}
+
+  \project{Story Tourney}{https://github.com/parth-thakre/story-tourney}{Node.js, TypeScript, Next.js, SQLite}{Blind multi-model LLM evaluation platform}
+  \begin{itemize}
+    \item Orchestrated two to four LLMs through OpenRouter across four structured phases: generation, blind peer review, revision, and final ranking.
+    \item Added four Zod-validated JSON contracts, archived provider calls, encrypted storage for OpenRouter API keys, and a deterministic mock mode for offline testing.
+    \item Implemented Borda count scoring with first-place and peer-review tie-breakers for repeatable tournament rankings.
+  \end{itemize}
+
+  \project{Supply Docket}{}{Python, FastAPI, Semantic Kernel, Docker}{Kinaxis supply-chain query agent; client system, source stays private}
+  \begin{itemize}
+    \item Built a locally deployed agent-and-API architecture in which Semantic Kernel tools query Kinaxis RapidResponse worksheet data through a FastAPI wrapper.
+    \item Added eight diagnostic playbooks, catalog-aware query planning, column-ID filtering guidance, and per-call debugging metrics.
+    \item Attached workbook, worksheet, column, row, applied-filter, and exact-value source metadata to each answer.
+    \item Supported Azure OpenAI and local OpenAI-compatible runtimes, including LM Studio and Ollama, through configurable deployment settings.
+  \end{itemize}
+
+  \project{AISB}{}{Python, CLI, Simulation, Benchmarking}{AI Society Benchmark; public release pending an in-progress refactor}
+  \begin{itemize}
+    \item Created an LLM benchmark that simulates societies with five distinct roles, resource constraints, trust, influence, resentment, and role-specific actions.
+    \item Refactored the benchmark into an 18-module CLI package with a canonical data layout, typed artifact schemas, and structured event logs.
+    \item Replaced single-metric evaluation with five-axis scorecards covering welfare, economic performance, social cohesion, institutional stability, and resistance to degenerate strategies.
+  \end{itemize}
+
+  \sectionbar{WORK EXPERIENCE}
+  \role{MaSyCoDa Solutions Pvt. Ltd.}{Dec 2025\textendash Present}{AI Systems Engineer | Nagpur | the firm I deliver client engagements through}
+  \begin{itemize}
+    \item Built enterprise AI prototypes using Azure AI Foundry, Azure OpenAI, Azure AI Search, Microsoft Fabric, and related Azure services.
+    \item Integrated Azure AI Foundry agents with Microsoft Copilot Studio and Power Apps to create client-facing automation demonstrations.
+    \item Deployed a Kinaxis RapidResponse supply-chain agent pilot designed to reduce manual worksheet navigation through evidence-backed question answering.
+    \item Added eight diagnostic playbooks, citation requirements, and per-call debugging traces to make supply-chain answers reproducible and auditable.
+    \item Used Codex, OpenCode, OpenClaw, and agentic coding harnesses to accelerate implementation, review, debugging, and iteration.
+  \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.30\linewidth}
+  \vspace{0pt}
+  \raggedright
+  \sectionbar{EDUCATION}
+  \textbf{Shri Ramdeobaba College of Engineering and Management}\\
+  {\footnotesize B.Tech in Computer Science and Engineering}\\
+  {\footnotesize Honors in AI and Data Science}\\
+  {\footnotesize 2022\textendash 2026}
+
+  \sectionbar{PRIVATE INFRASTRUCTURE}
+  {\footnotesize
+  Operates a private Linux infrastructure lab running more than 20 containers for self-hosted services, AI tooling, reverse-proxy routing, and monitoring. Uses the lab to practice deployment, privacy-aware runtime design, service recovery, and reliability engineering.
+  }
+\end{minipage}
+
+\end{document}

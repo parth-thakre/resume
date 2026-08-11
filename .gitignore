@@ -1,0 +1,13 @@
+# LaTeX build output (the published copy lives in assets/)
+main.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+# Local dev server
+.local-server.log
+.local-server.pid
+
+# Tooling scratch
+.impeccable/
